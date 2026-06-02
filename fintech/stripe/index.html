@@ -4,12 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Stripe — What I Think — Prajjwal Chittori on fintech</title>
-<meta name="description" content="Stripe&#x27;s founding insight is the most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem." />
+<meta name="description" content="The most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem." />
 <meta name="author" content="Prajjwal Chittori" />
 <link rel="canonical" href="https://pjdurden.github.io/prajjwalchittori/fintech/stripe/" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Stripe — What I Think" />
-<meta property="og:description" content="Stripe&#x27;s founding insight is the most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem." />
+<meta property="og:description" content="The most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem." />
 <meta property="og:url" content="https://pjdurden.github.io/prajjwalchittori/fintech/stripe/" />
 <meta property="article:published_time" content="2025-01-17" />
 <meta name="twitter:card" content="summary" />
@@ -18,7 +18,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Stripe — What I Think",
-  "description": "Stripe&#x27;s founding insight is the most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem.",
+  "description": "The most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem.",
   "datePublished": "2025-01-17",
   "dateModified": "2025-01-17",
   "keywords": "fintech,payments,analysis",
@@ -36,14 +36,14 @@
   <article>
     <h1>Stripe — What I Think</h1>
     <p class="meta">Prajjwal Chittori · January 2025</p>
-    <p>Stripe&rsquo;s founding insight is the most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem.</p>
-<p>Before Stripe, taking a card online meant a merchant account, a gateway, a processor, a week of paperwork, and a contract with a bank that viewed you as a fraud risk by default. Stripe looked at that and saw something everyone in payments had stopped seeing because they were too close to it: the actual work — the thing a person sat down to do — was <em>integrate a payment</em>. Seven lines of code. They built for the person at the keyboard, not the person in the procurement meeting. That&rsquo;s the entire company in one decision.</p>
-<p>The contrarian thing they understood is that in software, the buyer is the builder. Win the engineer and you win the company, because the engineer ships the thing and the thing becomes load-bearing and now you&rsquo;re infrastructure. Stripe optimized documentation the way Visa optimized dispute resolution — as the actual product. I&rsquo;ve integrated a lot of payment systems. The difference between good docs and bad docs is the difference between a Tuesday and a quarter. Stripe priced that difference correctly when no one else thought it had a price.</p>
-<p>Where I think they&rsquo;re directionally right and underappreciated: Stripe treats money movement as a programmable surface, not a service you call. Billing, Connect, Issuing, Treasury, Atlas — each one is &ldquo;what if this annoying financial primitive were just an API.&rdquo; That&rsquo;s the correct mental model for the next twenty years. The economy is being rewritten as software, and software needs money to behave like every other dependency: importable, composable, testable.</p>
-<p>Where I&rsquo;d push: Stripe is, underneath, still a beautiful abstraction over the same card rails and bank rails everyone else uses. The genius is the abstraction. But an abstraction over old plumbing inherits the plumbing&rsquo;s limits — settlement time, interchange, geographic fragmentation, the bank&rsquo;s risk appetite. Stripe&rsquo;s stablecoin and on-chain moves are the tell that they know this. The interesting question for Stripe is whether the company that abstracted away the banks can eventually abstract away the <em>need</em> for them. If anyone ships that, it&rsquo;s the team that already taught money to behave like code.</p>
+    <p>The most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem.</p>
+<p>Before Stripe, taking a card online meant a merchant account, a gateway, a processor, a week of paperwork, and a contract with a bank that assumed you were a fraud risk by default. Stripe looked at that mess and saw the thing everyone in payments had stopped seeing because they were too close to it. The actual work, the thing a person sat down to do, was integrate a payment. Seven lines of code. They built for the person at the keyboard, not the person in the procurement meeting. That one decision is the entire company.</p>
+<p>The contrarian bit is that in software, the buyer is the builder. Win the engineer, win the company, because the engineer ships the thing and the thing becomes load-bearing and now you&rsquo;re infrastructure. Stripe optimized docs the way Visa optimized dispute resolution: as the actual product. I&rsquo;ve integrated a lot of payment systems. The difference between good docs and bad docs is the difference between a Tuesday and a quarter. Stripe priced that difference correctly when nobody else thought it had a price.</p>
+<p>Where I think they&rsquo;re right and underappreciated: Stripe treats money movement as a programmable surface, not a service you call. Billing, Connect, Issuing, Treasury, Atlas. Each one is &ldquo;what if this annoying financial primitive were just an API.&rdquo; That&rsquo;s the correct mental model for the next twenty years. The economy is being rewritten as software, and software wants money to behave like every other dependency. Importable. Composable. Testable.</p>
+<p>Where I&rsquo;d push: Stripe is, underneath, a beautiful abstraction over the same card and bank rails everyone else uses. The genius is the abstraction. But an abstraction over old plumbing inherits the plumbing&rsquo;s limits, settlement time, interchange, geographic fragmentation, the bank&rsquo;s risk appetite. Their stablecoin and on-chain moves are the tell that they know this. The interesting question is whether the company that abstracted away the banks can eventually abstract away the need for them. If anyone ships that, it&rsquo;s the team that already taught money to behave like code. Or something like that.</p>
 <h2>Favorite &amp; worst CEO</h2>
 <p>This is a founder-CEO company, so:</p>
-<p><strong>On its leadership.</strong> Patrick and John Collison built Stripe with a thesis most payments people couldn&rsquo;t even parse: that the bottleneck on internet commerce was developer experience, and that taste — in APIs, in docs, in writing — is a competitive moat. They run the company like editors, not operators, and it shows in the coherence of the product surface. The risk in founder-led idealism is over-engineering elegance the market didn&rsquo;t ask for, and Stripe occasionally drifts there. But of everyone in this series, they&rsquo;re the leaders whose mental model of &ldquo;what payments is becoming&rdquo; most resembles how I think about it: money as a programmable primitive, and the developer as the real customer.</p>
+<p><strong>On its leadership.</strong> Patrick and John Collison built Stripe on a thesis most payments people couldn&rsquo;t even parse, that the bottleneck on internet commerce was developer experience, and that taste, in APIs, in docs, in writing, is a moat. They run the company like editors, not operators, and it shows in how coherent the product surface is. The risk in founder-led idealism is over-engineering elegance the market never asked for, and Stripe occasionally drifts there. But of everyone in this series, their mental model of what payments is becoming most resembles mine. Money as a programmable primitive, the developer as the real customer.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
   <footer>
