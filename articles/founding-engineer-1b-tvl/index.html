@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer — Prajjwal Chittori</title>
+<meta name="description" content="I joined Stader Labs as an intern in my final year at Delhi Technological University, and somewhere between writing my first CosmWasm contract and watching the dashboards tick past a billion dollars i" />
+<meta name="author" content="Prajjwal Chittori" />
+<link rel="canonical" href="https://pjdurden.github.io/prajjwalchittori/articles/founding-engineer-1b-tvl/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer" />
+<meta property="og:description" content="I joined Stader Labs as an intern in my final year at Delhi Technological University, and somewhere between writing my first CosmWasm contract and watching the dashboards tick past a billion dollars i" />
+<meta property="og:url" content="https://pjdurden.github.io/prajjwalchittori/articles/founding-engineer-1b-tvl/" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer",
+  "description": "I joined Stader Labs as an intern in my final year at Delhi Technological University, and somewhere between writing my first CosmWasm contract and watching the dashboards tick past a billion dollars i",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "keywords": "crypto,defi,rust,smart-contracts,engineering",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://pjdurden.github.io/prajjwalchittori/articles/founding-engineer-1b-tvl/" },
+  "author": {
+    "@type": "Person",
+    "name": "Prajjwal Chittori",
+    "url": "https://pjdurden.github.io/prajjwalchittori/",
+    "sameAs": ["https://www.linkedin.com/in/prajjwal-chittori", "https://github.com/pjdurden", "https://www.instagram.com/prajjwalsinghchittori", "https://www.youtube.com/@prajjwalsinghchittori"]
+  },
+  "publisher": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://pjdurden.github.io/prajjwalchittori/" }
+}
+</script>
+<link rel="stylesheet" href="../article.css" />
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="https://pjdurden.github.io/prajjwalchittori/">&larr; Prajjwal Chittori</a>
+  <article>
+    <h1>What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer</h1>
+    <p class="meta">Prajjwal Chittori · June 2026</p>
+    <p>I joined Stader Labs as an intern in my final year at Delhi Technological University, and somewhere between writing my first CosmWasm contract and watching the dashboards tick past a billion dollars in staked assets, I became a founding engineer on a ~7-person team building multi-chain liquid staking. This is what that taught me — the parts that generalize beyond crypto.</p>
+<h2>1. &ldquo;Founding engineer&rdquo; means you own the seams, not the features</h2>
+<p>On a small team there is no one whose job is &ldquo;the boring glue.&rdquo; The validator doesn&rsquo;t talk to the dashboard, the on-chain state doesn&rsquo;t match the off-chain cache, the new chain integration breaks an assumption three modules deep — and all of that is yours. The most valuable thing I did wasn&rsquo;t a single clever contract; it was owning the <em>reconciliation</em> between systems that were each individually correct but collectively drifting.</p>
+<p>If you want to grow fast early in your career, volunteer for the seams. They&rsquo;re where you learn how a system actually holds together.</p>
+<h2>2. At scale, money bugs are not like normal bugs</h2>
+<p>A web app that drops a request shows a spinner. A staking contract that mishandles a rounding boundary silently misallocates real value, and you find out from users, not tests. Crossing $1B in TVL changed how I write code permanently:</p>
+<ul>
+<li><strong>Invariants over assertions.</strong> I started thinking in terms of properties that must hold across every state transition (total staked = sum of positions, always), not just &ldquo;does this function return the right number.&rdquo;</li>
+<li><strong>Reconciliation is a feature.</strong> Build the job that re-derives state from first principles and screams when it disagrees with your stored state. It will catch things your unit tests never imagined.</li>
+<li><strong>The blast radius defines the review bar.</strong> Code whose worst case is &ldquo;a chart looks wrong&rdquo; and code whose worst case is &ldquo;funds are misallocated&rdquo; should not get the same scrutiny, even if they&rsquo;re in the same PR.</li>
+</ul>
+<h2>3. Gas is a product constraint, not an afterthought</h2>
+<p>A lot of my time went into gas-fee analysis — benchmarking storage patterns and swap costs on Terra/CosmWasm so contract execution stayed economical at scale. The lesson that stuck: <strong>on-chain, your data model is your cost model.</strong> How you lay out storage is a user-facing decision because someone pays for every byte and every read. Engineers coming from web2 underrate this for months. Internalize it on day one: profile gas the way you&rsquo;d profile a hot loop.</p>
+<h2>4. Multi-chain forces honesty about your abstractions</h2>
+<p>Supporting liquidity pools across multiple chains meant constantly confronting which of my &ldquo;general&rdquo; abstractions were actually just the first chain&rsquo;s quirks wearing a trenchcoat. Every new chain integration is a test of whether your core logic is genuinely chain-agnostic or secretly coupled. Cross-chain architecture and on-chain/off-chain sync pipelines are unglamorous, but they&rsquo;re where the real design happens.</p>
+<h2>5. The validator-analytics platform taught me more than the contracts</h2>
+<p>I built a system monitoring 1M+ nodes (React, MongoDB, Ethereum APIs) with APR dashboards. Watching real validator behavior at that scale is the fastest way to understand what your protocol <em>actually</em> incentivizes versus what you intended. The on-chain logic defines the rules; the analytics tell you the game people are really playing. If you build DeFi, instrument the behavior before you tune the mechanism.</p>
+<h2>Why this still shapes how I work</h2>
+<p>Today I work at the intersection of crypto and traditional payments — systems where on-chain state has to reconcile with real money movement to the cent. That&rsquo;s the same seam I learned to love at Stader, just with a card network on the other side. The billion-dollar lesson wasn&rsquo;t any one technique. It was a posture: <strong>assume your two sources of truth will diverge, and make the divergence loud.</strong></p>
+<hr />
+<p><em>I&rsquo;m Prajjwal Chittori, a backend engineer working across crypto infrastructure and payments. More at <a href="https://prajjwalchittori.com">prajjwalchittori.com</a> · <a href="https://github.com/pjdurden">GitHub</a> · <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>.</em></p>
+  </article>
+  <footer>
+    <p>Written by <strong>Prajjwal Chittori</strong> — backend engineer (crypto &times; payments), founder, creator.</p>
+    <p class="links">
+      <a href="https://pjdurden.github.io/prajjwalchittori/">Website</a> ·
+      <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a> ·
+      <a href="https://github.com/pjdurden">GitHub</a> ·
+      <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> ·
+      <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a>
+    </p>
+    <p class="more"><a href="https://pjdurden.github.io/prajjwalchittori/articles/">More writing &rarr;</a></p>
+  </footer>
+</main>
+<script>
+(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();
+</script>
+</body>
+</html>
