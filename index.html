@@ -17,7 +17,7 @@
 <meta property="profile:last_name" content="Chittori" />
 <meta name="twitter:card" content="summary" />
 
-<!-- Person structured data: the single highest-leverage thing for Google entity / knowledge panel -->
+<!-- Person structured data: highest-leverage thing for Google entity / knowledge panel -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,35 +31,11 @@
   "url": "https://prajjwalchittori.com/",
   "image": "https://prajjwalchittori.com/prajjwal.jpg",
   "nationality": "Indian",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "EtherFi"
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Delhi Technological University"
-  },
-  "homeLocation": {
-    "@type": "Place",
-    "name": "George Town, Cayman Islands"
-  },
-  "knowsAbout": [
-    "Backend Engineering",
-    "Cryptocurrency",
-    "DeFi",
-    "Liquid Restaking",
-    "Cross-border Payments",
-    "Smart Contracts",
-    "Rust",
-    "Go",
-    "Solidity",
-    "Distributed Systems",
-    "Competitive Programming"
-  ],
-  "award": [
-    "Codeforces Expert",
-    "Y Combinator Startup School feature (KuruX)"
-  ],
+  "worksFor": { "@type": "Organization", "name": "EtherFi" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Delhi Technological University" },
+  "homeLocation": { "@type": "Place", "name": "George Town, Cayman Islands" },
+  "knowsAbout": ["Backend Engineering","Cryptocurrency","DeFi","Liquid Restaking","Cross-border Payments","Smart Contracts","Rust","Go","Solidity","Distributed Systems","Competitive Programming"],
+  "award": ["Codeforces Expert","Y Combinator Startup School feature (KuruX)"],
   "sameAs": [
     "https://www.linkedin.com/in/prajjwal-chittori",
     "https://github.com/pjdurden",
@@ -70,86 +46,320 @@
 </script>
 
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: #0b0d10; color: #e7e9ea;
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  :root{
+    --bg:#0b0d10; --panel:#11151a; --panel2:#0e1216; --text:#e7e9ea; --soft:#cdd3d8;
+    --muted:#7d868e; --line:#1c2127; --accent:#7cc4ff; --accent2:#9b8cff; --pill:#2a2f36;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
-  h1 { font-size: 2.1rem; margin: 0 0 4px; letter-spacing: -0.02em; }
-  .tag { color: #9aa4ad; font-size: 1.05rem; margin: 0 0 28px; }
-  h2 { font-size: 1.15rem; margin: 40px 0 12px; color: #fff; letter-spacing: -0.01em; }
-  p { margin: 0 0 14px; color: #cdd3d8; }
-  a { color: #7cc4ff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  ul { padding-left: 1.1em; margin: 0 0 14px; }
-  li { margin: 6px 0; color: #cdd3d8; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
-  .links a {
-    border: 1px solid #2a2f36; padding: 7px 13px; border-radius: 999px;
-    font-size: 0.92rem; color: #e7e9ea;
+  :root[data-theme="light"]{
+    --bg:#f6f7f9; --panel:#ffffff; --panel2:#fbfcfd; --text:#0b0d10; --soft:#2b3138;
+    --muted:#6b747c; --line:#e4e8ec; --accent:#1a73e8; --accent2:#6b4dff; --pill:#e9edf1;
   }
-  .links a:hover { border-color: #7cc4ff; text-decoration: none; }
-  .muted { color: #7d868e; font-size: 0.9rem; }
-  hr { border: none; border-top: 1px solid #1c2127; margin: 40px 0; }
-  strong { color: #fff; }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);overflow-x:hidden;
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    transition:background .4s ease,color .4s ease;
+  }
+  /* cursor-follow glow */
+  #glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(380px circle at var(--mx,50%) var(--my,18%),
+      rgba(124,196,255,.10),rgba(155,140,255,.06) 40%,transparent 70%);
+    transition:background .15s ease;}
+  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 24px 100px}
+
+  /* top bar */
+  nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px}
+  .brand{font-weight:600;letter-spacing:-.01em}
+  .navactions{display:flex;gap:10px;align-items:center}
+  .kbd{border:1px solid var(--line);background:var(--panel);color:var(--muted);
+    border-radius:8px;padding:5px 9px;font-size:.78rem;cursor:pointer;display:flex;gap:6px;align-items:center}
+  .kbd:hover{border-color:var(--accent);color:var(--text)}
+  .kbd code{font:600 .78rem ui-monospace,Menlo,monospace}
+  .iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);
+    width:36px;height:32px;border-radius:8px;cursor:pointer;font-size:.95rem;line-height:1}
+  .iconbtn:hover{border-color:var(--accent)}
+
+  /* hero */
+  h1{font-size:2.5rem;margin:0 0 8px;letter-spacing:-.025em;line-height:1.05}
+  .role{color:var(--soft);font-size:1.12rem;min-height:1.6em;margin:0 0 6px}
+  .role .cursor{display:inline-block;width:.6ch;background:var(--accent);
+    animation:blink 1s steps(1) infinite;color:transparent;margin-left:1px}
+  @keyframes blink{50%{opacity:0}}
+  .tag{color:var(--muted);font-size:1rem;margin:0 0 22px}
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px}
+  .links a,.copybtn{border:1px solid var(--pill);background:transparent;color:var(--text);
+    padding:8px 14px;border-radius:999px;font-size:.92rem;cursor:pointer;text-decoration:none;
+    transition:.18s ease}
+  .links a:hover,.copybtn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .copybtn.ok{border-color:#3ad29f;color:#3ad29f}
+
+  /* filter tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:42px 0 22px}
+  .tab{border:1px solid var(--line);background:var(--panel);color:var(--soft);
+    padding:7px 14px;border-radius:999px;font-size:.9rem;cursor:pointer;transition:.18s}
+  .tab:hover{border-color:var(--accent)}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#04121f;font-weight:600}
+  :root[data-theme="light"] .tab.active{color:#fff}
+
+  /* cards */
+  .grid{display:grid;gap:14px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;
+    padding:18px 20px;opacity:0;transform:translateY(14px);
+    transition:opacity .5s ease,transform .5s ease,border-color .18s;}
+  .card.in{opacity:1;transform:none}
+  .card.hide{display:none}
+  .card:hover{border-color:var(--accent)}
+  .card h3{margin:0 0 2px;font-size:1.06rem}
+  .card .when{color:var(--muted);font-size:.82rem;float:right;font-weight:500}
+  .card p{margin:6px 0 0;color:var(--soft);font-size:.96rem}
+  .card .cat{display:inline-block;margin-top:10px;font-size:.72rem;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--accent2)}
+  .card a{color:var(--accent);text-decoration:none}
+  .card a:hover{text-decoration:underline}
+
+  footer{margin-top:46px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line);padding-top:20px}
+
+  /* command palette */
+  .cmdk{position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;
+    background:rgba(2,4,8,.55);backdrop-filter:blur(4px);padding-top:14vh}
+  .cmdk.open{display:flex;animation:fade .12s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .palette{width:min(540px,92vw);background:var(--panel2);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .palette input{width:100%;border:0;outline:0;background:transparent;color:var(--text);
+    padding:16px 18px;font-size:1rem;border-bottom:1px solid var(--line)}
+  .palette ul{list-style:none;margin:0;padding:6px;max-height:46vh;overflow:auto}
+  .palette li{padding:11px 14px;border-radius:9px;cursor:pointer;display:flex;justify-content:space-between;
+    align-items:center;color:var(--soft);font-size:.95rem}
+  .palette li .hint{color:var(--muted);font-size:.78rem}
+  .palette li.sel,.palette li:hover{background:var(--accent);color:#04121f}
+  :root[data-theme="light"] .palette li.sel,:root[data-theme="light"] .palette li:hover{color:#fff}
+  .palette li.sel .hint,.palette li:hover .hint{color:rgba(4,18,31,.7)}
+
+  @media(max-width:560px){h1{font-size:2rem}.kbd .label{display:none}}
 </style>
 </head>
 <body>
+<div id="glow"></div>
 <main class="wrap">
+
+  <nav>
+    <span class="brand">PC</span>
+    <div class="navactions">
+      <button class="kbd" id="open-cmdk" aria-label="Open menu"><span class="label">Menu</span> <code>&#8984;K</code></button>
+      <button class="iconbtn" id="theme" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+    </div>
+  </nav>
+
   <h1>Prajjwal Chittori</h1>
-  <p class="tag">Senior backend engineer at the crypto × payments intersection · founder · creator</p>
-
-  <p>
-    Prajjwal Chittori is a senior backend engineer who builds at the rare intersection of
-    <strong>crypto and traditional payments rails</strong>. He is currently on the Cash product
-    team at <strong>EtherFi</strong>, where liquid-restaking infrastructure meets Visa card
-    settlement. Before that he spent his career moving real money at scale — first writing the
-    Rust smart contracts that helped take <strong>Stader Labs</strong> to over <strong>$1B in
-    total value locked</strong> as a founding engineer, then building cross-border payments
-    infrastructure at <strong>Visa</strong>.
-  </p>
-
-  <h2>Engineering</h2>
-  <ul>
-    <li><strong>EtherFi</strong> — Senior Backend Engineer, Cash. Crypto / liquid restaking ↔ Visa card rails, event-driven settlement (Go, Solidity, Kafka, EigenLayer).</li>
-    <li><strong>Visa</strong> — SDE → Senior SDE. Cross-border payments, Visa Direct A2A, 100+ SWIFT message types; led an 8-engineer team on a real-time platform at 2000+ TPS.</li>
-    <li><strong>Stader Labs</strong> — Founding engineer. Rust smart contracts powering liquidity pools to $1B+ TVL; validator analytics across 1M+ nodes.</li>
-    <li><strong>Delhi Technological University</strong> — B.Tech, Computer Science (2018–2022).</li>
-  </ul>
-
-  <h2>Building</h2>
-  <ul>
-    <li><strong>KuruX Enterprises</strong> — consumer brand (NAMELESS / WipeZilla) in sustainable cleaning; ₹2L revenue in the first month.</li>
-    <li><strong>Bizpedia</strong> — a free, open-source wiki for the world of business (<a href="https://bizpedia.org">bizpedia.org</a>).</li>
-    <li><strong>Veri5</strong> — real-time identity &amp; account-verification API for EU cross-border payments.</li>
-    <li><strong>KuruX</strong> — a private-equity trading simulator, <strong>featured by Y Combinator Startup School</strong>.</li>
-  </ul>
-
-  <h2>Creating</h2>
-  <p>
-    As <a href="https://www.instagram.com/prajjwalsinghchittori">@prajjwalsinghchittori</a>, Prajjwal
-    makes short-form philosophy — an English quote, explained in Hindi — reaching
-    <strong>22K+ followers and millions of views</strong> across Instagram and YouTube.
-  </p>
-
-  <h2>Competitive</h2>
-  <ul>
-    <li><strong>Codeforces Expert</strong>; ~8,000 problems solved across LeetCode, Codeforces, CodeChef, UVa and more.</li>
-    <li><strong>FIDE-registered chess player</strong> (1600+).</li>
-  </ul>
+  <p class="role"><span id="typed"></span><span class="cursor">.</span></p>
+  <p class="tag">Senior backend engineer at the crypto &times; payments intersection — based in George Town, Cayman Islands.</p>
 
   <div class="links">
     <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>
     <a href="https://github.com/pjdurden">GitHub</a>
     <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a>
     <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a>
-    <a href="mailto:prajjwalchittoriwork@gmail.com">Email</a>
+    <button class="copybtn" id="copy" data-email="prajjwalchittoriwork@gmail.com">Copy email</button>
   </div>
 
-  <hr />
-  <p class="muted">Prajjwal Chittori — crypto &amp; fintech backend engineer, founder of KuruX Enterprises and Bizpedia, and philosophy creator. Based in George Town, Cayman Islands.</p>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-f="all">All</button>
+    <button class="tab" data-f="eng">Engineering</button>
+    <button class="tab" data-f="build">Building</button>
+    <button class="tab" data-f="create">Creating</button>
+    <button class="tab" data-f="compete">Competitive</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="card" data-cat="eng">
+      <span class="when">2026 &ndash; now</span>
+      <h3>EtherFi — Senior Backend Engineer, Cash</h3>
+      <p>Crypto / liquid restaking reconciled with Visa card settlement — real-time authorization, capture &amp; reconciliation, Borrow Mode, and an event-driven cashback pipeline on Kafka. <em>Go &middot; Solidity &middot; EigenLayer &middot; Kafka.</em></p>
+      <span class="cat">Engineering</span>
+    </article>
+    <article class="card" data-cat="eng">
+      <span class="when">2022 &ndash; 2026</span>
+      <h3>Visa — Senior Software Engineer</h3>
+      <p>Cross-border payments: Visa Direct A2A, 100+ SWIFT message types, Treasury-as-a-Service across 15 currencies. Led an 8-engineer team on a real-time platform at 2,000+ TPS, 99.98% uptime. <em>Java &middot; Spring &middot; Hazelcast &middot; K8s.</em></p>
+      <span class="cat">Engineering</span>
+    </article>
+    <article class="card" data-cat="eng">
+      <span class="when">2021 &ndash; 2022</span>
+      <h3>Stader Labs — Founding Engineer</h3>
+      <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$1B in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes. <em>Rust &middot; CosmWasm &middot; TypeScript.</em></p>
+      <span class="cat">Engineering</span>
+    </article>
+    <article class="card" data-cat="build">
+      <span class="when">2025</span>
+      <h3>KuruX Enterprises — NAMELESS / WipeZilla</h3>
+      <p>A sustainable-cleaning consumer brand, built solo end to end (manufacturing, compliance, listings). <strong>&#8377;2L revenue in month one</strong>; now run by family. <a href="https://www.wipezilla.in">wipezilla.in</a>.</p>
+      <span class="cat">Building</span>
+    </article>
+    <article class="card" data-cat="build">
+      <span class="when">2024</span>
+      <h3>Bizpedia</h3>
+      <p>A free, open-source wiki for the world of business. <a href="https://bizpedia.org">bizpedia.org</a>.</p>
+      <span class="cat">Building</span>
+    </article>
+    <article class="card" data-cat="build">
+      <span class="when">2024 &ndash; 25</span>
+      <h3>Veri5</h3>
+      <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability. <em>Spring &middot; Redis &middot; Hazelcast.</em></p>
+      <span class="cat">Building</span>
+    </article>
+    <article class="card" data-cat="build">
+      <span class="when">2023</span>
+      <h3>KuruX — trading simulator</h3>
+      <p>A private-equity trading simulator with a hand-built order book, <strong>featured by Y Combinator Startup School</strong>.</p>
+      <span class="cat">Building</span>
+    </article>
+    <article class="card" data-cat="create">
+      <span class="when">active</span>
+      <h3>@prajjwalsinghchittori — philosophy, short-form</h3>
+      <p>An English quote, explained in Hindi. <strong>22K+ followers</strong> and millions of views across Instagram &amp; YouTube. <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &middot; <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a>.</p>
+      <span class="cat">Creating</span>
+    </article>
+    <article class="card" data-cat="compete">
+      <h3>Competitive programming</h3>
+      <p><strong>Codeforces Expert</strong>; ~8,000 problems solved across Codeforces, CodeChef, LeetCode, UVa and more. <a href="https://codeforces.com/profile/pjdurden">codeforces/pjdurden</a>.</p>
+      <span class="cat">Competitive</span>
+    </article>
+    <article class="card" data-cat="compete">
+      <h3>Chess</h3>
+      <p>FIDE-registered player, 1600+ rating.</p>
+      <span class="cat">Competitive</span>
+    </article>
+  </div>
+
+  <footer>
+    Prajjwal Chittori — crypto &amp; fintech backend engineer, founder of KuruX Enterprises and Bizpedia, philosophy creator. Press <code>&#8984;K</code> or <code>/</code> to jump anywhere.
+  </footer>
 </main>
+
+<!-- command palette -->
+<div class="cmdk" id="cmdk">
+  <div class="palette">
+    <input id="cmdk-input" placeholder="Jump to… (LinkedIn, GitHub, email, projects)" autocomplete="off" />
+    <ul id="cmdk-list"></ul>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* ---- theme ---- */
+  var root=document.documentElement;
+  var saved=localStorage.getItem("pc-theme");
+  if(saved) root.setAttribute("data-theme",saved);
+  $("#theme").addEventListener("click",function(){
+    var next=root.getAttribute("data-theme")==="light"?"":"light";
+    if(next) root.setAttribute("data-theme",next); else root.removeAttribute("data-theme");
+    localStorage.setItem("pc-theme",next);
+  });
+
+  /* ---- typewriter ---- */
+  var roles=["builds at the crypto × payments edge",
+             "founding engineer → $1B TVL (Stader)",
+             "founder of KuruX Enterprises & Bizpedia",
+             "philosophy creator — 22K+ followers",
+             "Codeforces Expert · FIDE chess"];
+  var ti=0,ci=0,del=false,el=$("#typed");
+  function tick(){
+    var w=roles[ti];
+    el.textContent=del?w.slice(0,ci--):w.slice(0,ci++);
+    var d=del?38:64;
+    if(!del&&ci===w.length+1){del=true;d=1500;}
+    else if(del&&ci<0){del=false;ci=0;ti=(ti+1)%roles.length;d=260;}
+    setTimeout(tick,d);
+  }
+  tick();
+
+  /* ---- cursor glow ---- */
+  window.addEventListener("pointermove",function(e){
+    root.style.setProperty("--mx",e.clientX+"px");
+    root.style.setProperty("--my",e.clientY+"px");
+  },{passive:true});
+
+  /* ---- copy email ---- */
+  var cb=$("#copy");
+  cb.addEventListener("click",function(){
+    var em=cb.getAttribute("data-email");
+    (navigator.clipboard?navigator.clipboard.writeText(em):Promise.reject())
+      .then(function(){cb.textContent="Copied ✓";cb.classList.add("ok");
+        setTimeout(function(){cb.textContent="Copy email";cb.classList.remove("ok");},1600);})
+      .catch(function(){location.href="mailto:"+em;});
+  });
+
+  /* ---- filter tabs ---- */
+  $("#tabs").addEventListener("click",function(e){
+    var t=e.target.closest(".tab"); if(!t) return;
+    $$(".tab").forEach(function(x){x.classList.remove("active")});
+    t.classList.add("active");
+    var f=t.getAttribute("data-f");
+    $$(".card").forEach(function(c){
+      var show=f==="all"||c.getAttribute("data-cat")===f;
+      c.classList.toggle("hide",!show);
+      if(show){c.classList.remove("in");requestAnimationFrame(function(){c.classList.add("in")});}
+    });
+  });
+
+  /* ---- scroll reveal ---- */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
+    },{threshold:.12});
+    $$(".card").forEach(function(c){io.observe(c)});
+  } else { $$(".card").forEach(function(c){c.classList.add("in")}); }
+
+  /* ---- command palette ---- */
+  var items=[
+    {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
+    {label:"Instagram",hint:"@prajjwalsinghchittori",url:"https://www.instagram.com/prajjwalsinghchittori"},
+    {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
+    {label:"Email",hint:"prajjwalchittoriwork@gmail.com",url:"mailto:prajjwalchittoriwork@gmail.com"},
+    {label:"Codeforces",hint:"Expert",url:"https://codeforces.com/profile/pjdurden"},
+    {label:"WipeZilla",hint:"NAMELESS brand",url:"https://www.wipezilla.in"},
+    {label:"Bizpedia",hint:"business wiki",url:"https://bizpedia.org"}
+  ];
+  var modal=$("#cmdk"),input=$("#cmdk-input"),list=$("#cmdk-list"),sel=0,view=items.slice();
+  function render(){
+    list.innerHTML="";
+    view.forEach(function(it,i){
+      var li=document.createElement("li");
+      if(i===sel) li.className="sel";
+      li.innerHTML='<span>'+it.label+'</span><span class="hint">'+it.hint+'</span>';
+      li.addEventListener("click",function(){go(it)});
+      list.appendChild(li);
+    });
+  }
+  function open(){modal.classList.add("open");input.value="";view=items.slice();sel=0;render();setTimeout(function(){input.focus()},30);}
+  function close(){modal.classList.remove("open")}
+  function go(it){close();if(it.url.indexOf("mailto:")===0)location.href=it.url;else window.open(it.url,"_blank","noopener");}
+  $("#open-cmdk").addEventListener("click",open);
+  modal.addEventListener("click",function(e){if(e.target===modal)close()});
+  input.addEventListener("input",function(){
+    var q=input.value.toLowerCase();
+    view=items.filter(function(it){return (it.label+" "+it.hint).toLowerCase().indexOf(q)>=0});
+    sel=0;render();
+  });
+  document.addEventListener("keydown",function(e){
+    var typing=document.activeElement&&document.activeElement.tagName==="INPUT";
+    if((e.key==="k"&&(e.metaKey||e.ctrlKey))||(e.key==="/"&&!modal.classList.contains("open")&&!typing)){
+      e.preventDefault();open();return;
+    }
+    if(!modal.classList.contains("open"))return;
+    if(e.key==="Escape")close();
+    else if(e.key==="ArrowDown"){e.preventDefault();sel=Math.min(sel+1,view.length-1);render();}
+    else if(e.key==="ArrowUp"){e.preventDefault();sel=Math.max(sel-1,0);render();}
+    else if(e.key==="Enter"&&view[sel]){go(view[sel]);}
+  });
+})();
+</script>
 </body>
 </html>
