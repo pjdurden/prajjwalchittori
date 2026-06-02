@@ -118,6 +118,15 @@
   .card a{color:var(--accent);text-decoration:none}
   .card a:hover{text-decoration:underline}
 
+  .feature{display:block;margin:30px 0 4px;padding:18px 20px;border:1px solid var(--accent);
+    border-radius:14px;text-decoration:none;color:var(--text);
+    background:linear-gradient(180deg,rgba(124,196,255,.10),transparent);transition:.18s}
+  .feature:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(124,196,255,.12)}
+  .feature .fbadge{display:inline-block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    color:#04121f;background:var(--accent);border-radius:999px;padding:2px 9px;font-weight:700;margin-bottom:9px}
+  :root[data-theme="light"] .feature .fbadge{color:#fff}
+  .feature strong{display:block;font-size:1.08rem;letter-spacing:-.01em;margin-bottom:5px}
+  .feature .fsub{display:block;color:var(--muted);font-size:.92rem}
   .sec{font-size:1.15rem;margin:46px 0 16px;letter-spacing:-.01em}
   .writing{display:flex;flex-direction:column;gap:2px}
   .writing a{display:block;padding:13px 16px;border:1px solid var(--line);background:var(--panel);
@@ -170,6 +179,12 @@
     <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a>
     <button class="copybtn" id="copy" data-email="prajjwalchittoriwork@gmail.com">Copy email</button>
   </div>
+
+  <a class="feature" href="fintech/">
+    <span class="fbadge">New</span>
+    <strong>What I Think About the Top 50 Fintech Companies of All Time</strong>
+    <span class="fsub">Vision over financials — 50 companies, what each got right and wrong, and the founders behind them. &rarr;</span>
+  </a>
 
   <div class="tabs" id="tabs">
     <button class="tab active" data-f="all">All</button>
