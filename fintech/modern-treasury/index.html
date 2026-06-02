@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modern Treasury — What I Think — Prajjwal Chittori on fintech</title>
+<meta name="description" content="Modern Treasury picked the least glamorous problem in all of fintech and was right to: moving money is easy, knowing what happened to the money is hard. Every engineer who has ever built a payments fl" />
+<meta name="author" content="Prajjwal Chittori" />
+<link rel="canonical" href="https://pjdurden.github.io/prajjwalchittori/fintech/modern-treasury/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Modern Treasury — What I Think" />
+<meta property="og:description" content="Modern Treasury picked the least glamorous problem in all of fintech and was right to: moving money is easy, knowing what happened to the money is hard. Every engineer who has ever built a payments fl" />
+<meta property="og:url" content="https://pjdurden.github.io/prajjwalchittori/fintech/modern-treasury/" />
+<meta property="article:published_time" content="2025-12-19" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Modern Treasury — What I Think",
+  "description": "Modern Treasury picked the least glamorous problem in all of fintech and was right to: moving money is easy, knowing what happened to the money is hard. Every engineer who has ever built a payments fl",
+  "datePublished": "2025-12-19",
+  "dateModified": "2025-12-19",
+  "keywords": "fintech,crypto,analysis",
+  "about": "Modern Treasury",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://pjdurden.github.io/prajjwalchittori/fintech/modern-treasury/" },
+  "author": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://pjdurden.github.io/prajjwalchittori/", "sameAs": ["https://www.linkedin.com/in/prajjwal-chittori", "https://github.com/pjdurden", "https://www.instagram.com/prajjwalsinghchittori", "https://www.youtube.com/@prajjwalsinghchittori"] },
+  "publisher": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://pjdurden.github.io/prajjwalchittori/" }
+}
+</script>
+<link rel="stylesheet" href="../article.css" />
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="https://pjdurden.github.io/prajjwalchittori/fintech/">&larr; The Top 50 Fintech</a>
+  <article>
+    <h1>Modern Treasury — What I Think</h1>
+    <p class="meta">Prajjwal Chittori · December 2025</p>
+    <p>Modern Treasury picked the least glamorous problem in all of fintech and was right to: moving money is easy, knowing what happened to the money is hard. Every engineer who has ever built a payments flow learns this the painful way. Initiating an ACH or a wire is a single API call. The nightmare is everything after — did it settle, did it bounce, did it get returned five business days later, does it reconcile against the order it was supposed to pay, and is your internal ledger telling the truth right now. I&rsquo;ve debugged exactly this class of bug. The hard part of money movement is the bookkeeping, not the movement.</p>
+<p>What they understood that almost everyone underrates: reconciliation is the actual product. The whole industry obsesses over rails — faster payments, new networks, instant settlement — but the thing that breaks businesses is the gap between &ldquo;money moved&rdquo; and &ldquo;our books agree about it.&rdquo; Modern Treasury built payment operations as software: a ledger that&rsquo;s correct by construction, automated reconciliation, a single layer over ACH, wire, RTP, and cards so a company isn&rsquo;t hand-rolling its own brittle integration with each bank. They treated the ledger as the source of truth and the payment as a side effect, which is exactly backwards from how most people build it, and exactly right.</p>
+<p>Where they were directionally right: as more non-fintech companies started moving money at scale — marketplaces, insurers, lenders, platforms paying out to thousands of accounts — they all hit the same wall, and none of them wanted to become a payments-engineering shop to climb it. Modern Treasury bet that &ldquo;payment operations&rdquo; deserved to be a category the way &ldquo;CRM&rdquo; or &ldquo;data warehouse&rdquo; is a category, bought rather than built. Turning an internal cost center every company rebuilds badly into a product they can buy is a classic, durable infrastructure thesis. The correct ledger is the kind of thing you only appreciate after one has betrayed you, and then you&rsquo;ll pay anything for it.</p>
+<p>Where they&rsquo;re exposed, directionally: the ledger-and-reconciliation layer is supremely valuable and also supremely abstract, which makes it a quiet land-grab from several directions. Banks want to offer it natively, the big payment platforms want to absorb it upward, and the relevance of the original &ldquo;unify the ACH/wire mess&rdquo; wedge depends partly on how fragmented US rails stay — instant-payments standardization could simplify the very mess they organize. The bigger question is whether payment-ops-as-a-category becomes its own durable software market or gets swallowed as a feature by the rails and the ERPs on either side. I lean toward durable, because correctness-of-ledger is a trust good and trust goods consolidate to whoever got it right first. But being the right abstraction is only half the battle. You also have to be the one people standardize on.</p>
+<h2>Favorite &amp; worst CEO</h2>
+<p>Founder-led, so this is on its leadership. Dimitri Dadiomov built Modern Treasury around an insight that only people who&rsquo;ve actually shipped payments at scale tend to have — that the ledger and the reconciliation, not the transfer, are where the real pain and the real value live. Choosing to productize the boring, correctness-obsessed middle of money movement, rather than chase a flashier consumer or rails story, is exactly the kind of unsexy infrastructure conviction I respect most; it&rsquo;s a bet that being right about plumbing compounds. The push into programmable ledgers and treating payment operations as a first-class category shows he&rsquo;s playing for the abstraction layer, not a point feature. My one critique is the standing risk for any horizontal infrastructure company — being the correct, neutral layer is necessary but not sufficient; you also have to win the standardization fight before the banks and ERPs encircle the category. The strongest version of Dadiomov&rsquo;s Modern Treasury is the default ledger of record for any company that moves money, period. That&rsquo;s a worthy thing to be building toward.</p>
+<p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
+  </article>
+  <footer>
+    <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
+    <p class="links">
+      <a href="https://pjdurden.github.io/prajjwalchittori/">Website</a> ·
+      <a href="https://pjdurden.github.io/prajjwalchittori/fintech/">All 50 companies</a> ·
+      <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>
+    </p>
+  </footer>
+</main>
+<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+</body>
+</html>

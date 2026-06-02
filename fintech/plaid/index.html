@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plaid — What I Think — Prajjwal Chittori on fintech</title>
+<meta name="description" content="Plaid built the thing every fintech founder needed and no one wanted to build: the boring, unglamorous, soul-destroying work of connecting to thousands of banks that have no API, no standards, and no " />
+<meta name="author" content="Prajjwal Chittori" />
+<link rel="canonical" href="https://pjdurden.github.io/prajjwalchittori/fintech/plaid/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Plaid — What I Think" />
+<meta property="og:description" content="Plaid built the thing every fintech founder needed and no one wanted to build: the boring, unglamorous, soul-destroying work of connecting to thousands of banks that have no API, no standards, and no " />
+<meta property="og:url" content="https://pjdurden.github.io/prajjwalchittori/fintech/plaid/" />
+<meta property="article:published_time" content="2022-01-21" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Plaid — What I Think",
+  "description": "Plaid built the thing every fintech founder needed and no one wanted to build: the boring, unglamorous, soul-destroying work of connecting to thousands of banks that have no API, no standards, and no ",
+  "datePublished": "2022-01-21",
+  "dateModified": "2022-01-21",
+  "keywords": "fintech,crypto,analysis",
+  "about": "Plaid",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://pjdurden.github.io/prajjwalchittori/fintech/plaid/" },
+  "author": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://pjdurden.github.io/prajjwalchittori/", "sameAs": ["https://www.linkedin.com/in/prajjwal-chittori", "https://github.com/pjdurden", "https://www.instagram.com/prajjwalsinghchittori", "https://www.youtube.com/@prajjwalsinghchittori"] },
+  "publisher": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://pjdurden.github.io/prajjwalchittori/" }
+}
+</script>
+<link rel="stylesheet" href="../article.css" />
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="https://pjdurden.github.io/prajjwalchittori/fintech/">&larr; The Top 50 Fintech</a>
+  <article>
+    <h1>Plaid — What I Think</h1>
+    <p class="meta">Prajjwal Chittori · January 2022</p>
+    <p>Plaid built the thing every fintech founder needed and no one wanted to build: the boring, unglamorous, soul-destroying work of connecting to thousands of banks that have no API, no standards, and no interest in helping you. The insight wasn&rsquo;t a product insight. It was a willingness insight. They were willing to do the dirty job — scraping, screen-parsing, maintaining ten thousand brittle integrations against banks actively trying to break them — so that every other fintech could pretend connecting to a bank account was a single function call.</p>
+<p>That&rsquo;s the deepest thing they understood: in fintech, the moat is in the plumbing nobody photographs. Venmo, Robinhood, Coinbase, Chime — half the consumer fintech revolution of the 2010s quietly ran on the same realization, which is that &ldquo;link your bank account&rdquo; is the activation step the entire funnel depends on, and whoever owns that step owns a tollbooth on the whole ecosystem. Plaid made themselves the default verb for it. Becoming infrastructure is the best business in software because you stop competing on features and start competing on being unavoidable.</p>
+<p>What they got directionally right: data portability is a one-way ratchet. Once consumers got used to apps that could see their financial life, there was no going back to manually typing account numbers. Plaid bet that the open-banking future was inevitable in the US even without a regulatory mandate forcing it — that they could build the de facto standard before anyone legislated a de jure one. Building the standard before the regulator does is exactly how you end up writing the rules instead of obeying them.</p>
+<p>Where they&rsquo;re directionally exposed: Plaid&rsquo;s original method — credential-based screen scraping — was always borrowed time. It works because banks tolerate it, and banks tolerate it grudgingly. The whole industry is migrating to sanctioned bank APIs and open-banking rules, and in that world the thing Plaid uniquely owned — the messy, proprietary glue — becomes a published spec anyone can implement. The deeper question is whether Plaid is a temporary patch over a gap the banks will eventually close, or whether they&rsquo;ve used that head start to become the trusted network layer that sits on top regardless. I think it&rsquo;s the latter, but it&rsquo;s not guaranteed. Being the bridge is great until the river gets a real bridge.</p>
+<h2>Favorite &amp; worst CEO</h2>
+<p>Founder-led, so this is on its leadership. Zach Perret and William Hockey nailed something most founders miss: they picked the worst job in fintech on purpose, because the worst job was the most defensible one. The early Stripe-for-bank-data positioning was a masterclass in choosing infrastructure over flash — they could have built a flashy consumer app on top of their own pipes and instead chose to be the pipes for everyone, which is the harder, richer, more patient call. Perret&rsquo;s continued steering through the open-banking transition is the part I&rsquo;m watching: the founder who built a moat out of banks&rsquo; missing APIs now has to stay essential as those APIs arrive. My only critique is the structural one, not a personal one — a company born from filling a gap has to keep proving it&rsquo;s more than the gap. The strongest version of their vision is Plaid as the trust-and-identity network for money movement, not just the connection layer. They&rsquo;ve been building toward exactly that.</p>
+<p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
+  </article>
+  <footer>
+    <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
+    <p class="links">
+      <a href="https://pjdurden.github.io/prajjwalchittori/">Website</a> ·
+      <a href="https://pjdurden.github.io/prajjwalchittori/fintech/">All 50 companies</a> ·
+      <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>
+    </p>
+  </footer>
+</main>
+<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+</body>
+</html>
