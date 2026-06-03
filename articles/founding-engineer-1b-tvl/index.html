@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer — Prajjwal Chittori</title>
-<meta name="description" content="I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past a billion dollars in staked assets, the title &quot;founding engineer" />
+<title>What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer — Prajjwal Chittori</title>
+<meta name="description" content="I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past half a billion in staked assets, the title &quot;founding engineer&quot; g" />
 <meta name="author" content="Prajjwal Chittori" />
 <link rel="canonical" href="https://prajj.com/articles/founding-engineer-1b-tvl/" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer" />
-<meta property="og:description" content="I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past a billion dollars in staked assets, the title &quot;founding engineer" />
+<meta property="og:title" content="What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer" />
+<meta property="og:description" content="I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past half a billion in staked assets, the title &quot;founding engineer&quot; g" />
 <meta property="og:url" content="https://prajj.com/articles/founding-engineer-1b-tvl/" />
 <meta property="article:published_time" content="2022-07-15" />
 <meta name="twitter:card" content="summary" />
@@ -17,8 +17,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer",
-  "description": "I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past a billion dollars in staked assets, the title &quot;founding engineer",
+  "headline": "What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer",
+  "description": "I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past half a billion in staked assets, the title &quot;founding engineer&quot; g",
   "datePublished": "2022-07-15",
   "dateModified": "2022-07-15",
   "keywords": "crypto,defi,rust,smart-contracts,engineering",
@@ -33,14 +33,14 @@
 <main class="wrap">
   <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
   <article>
-    <h1>What I Learned Taking a Liquid-Staking Protocol Past $1B TVL as a Founding Engineer</h1>
+    <h1>What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer</h1>
     <p class="meta">Prajjwal Chittori · July 2022</p>
-    <p>I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past a billion dollars in staked assets, the title &ldquo;founding engineer&rdquo; got attached to me on a ~7-person team building multi-chain liquid staking. Nobody hands you that title. It&rsquo;s just what&rsquo;s left over when there are seven of you and a billion dollars. Here&rsquo;s the part that generalizes.</p>
+    <p>I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past half a billion in staked assets, the title &ldquo;founding engineer&rdquo; got attached to me on a ~7-person team building multi-chain liquid staking. Nobody hands you that title. It&rsquo;s just what&rsquo;s left over when there are seven of you and half a billion dollars. Here&rsquo;s the part that generalizes.</p>
 <h2>&ldquo;Founding engineer&rdquo; means you own the seams</h2>
 <p>On a small team nobody&rsquo;s job is the boring glue. The validator doesn&rsquo;t talk to the dashboard. The on-chain state doesn&rsquo;t match the off-chain cache. A new chain integration breaks an assumption three modules deep, and all of it is yours.</p>
 <p>The most valuable thing I did wasn&rsquo;t one clever contract. It was owning the reconciliation between systems that were each individually correct and collectively drifting. If you want to grow fast early, volunteer for the seams. That&rsquo;s where you learn how a system actually holds together, as opposed to how the design doc says it does.</p>
 <h2>Money bugs are not normal bugs</h2>
-<p>A web app that drops a request shows a spinner. A staking contract that mishandles a rounding boundary silently misallocates real value, and you hear about it from users, not tests. Crossing $1B changed how I write code permanently.</p>
+<p>A web app that drops a request shows a spinner. A staking contract that mishandles a rounding boundary silently misallocates real value, and you hear about it from users, not tests. Crossing half a billion changed how I write code permanently.</p>
 <ul>
 <li><strong>Invariants over assertions.</strong> Think in properties that must hold across every state transition — total staked = sum of positions, always — not &ldquo;does this function return the right number.&rdquo;</li>
 <li><strong>Reconciliation is a feature, not a chore.</strong> Build the job that re-derives state from first principles and screams when it disagrees with what you stored. It catches things your unit tests never imagined.</li>
@@ -54,9 +54,9 @@
 <p>I built a system monitoring 1M+ nodes (React, MongoDB, Ethereum APIs) with APR dashboards. Watching real validator behavior at that scale is the fastest way to learn what your protocol actually incentivizes versus what you intended. The on-chain logic writes the rules. The analytics tell you the game people are really playing, which is never the one you wrote. Instrument the behavior before you tune the mechanism.</p>
 <h2>Why this still shapes how I work</h2>
 <p>Today I work where crypto meets traditional payments — systems where on-chain state has to reconcile with real money movement to the cent. Same seam I learned to love at Stader, just with a card network on the other side.</p>
-<p>The billion-dollar lesson wasn&rsquo;t a technique. It was a posture: assume your two sources of truth will diverge, and make the divergence loud. They always diverge. The only choice you get is whether you find out from a monitor or from a user.</p>
+<p>The expensive lesson wasn&rsquo;t a technique. It was a posture: assume your two sources of truth will diverge, and make the divergence loud. They always diverge. The only choice you get is whether you find out from a monitor or from a user.</p>
 <hr />
-<p><em>I&rsquo;m Prajjwal Chittori, a backend engineer working across crypto infrastructure and payments. More at <a href="https://prajj.com">prajj.com</a> · <a href="https://github.com/pjdurden">GitHub</a> · <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>.</em></p>
+<p><em>I&rsquo;m Prajjwal Chittori, a backend engineer working across crypto infrastructure and payments. More at <a href="https://prajjwalchittori.com">prajjwalchittori.com</a> · <a href="https://github.com/pjdurden">GitHub</a> · <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>.</em></p>
   </article>
   <footer>
     <p>Written by <strong>Prajjwal Chittori</strong> — backend engineer (crypto &times; payments), founder, creator.</p>
