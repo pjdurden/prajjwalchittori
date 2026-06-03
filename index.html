@@ -188,6 +188,7 @@
   <div class="tabs" id="tabs">
     <button class="tab active" data-f="all">All</button>
     <button class="tab" data-f="eng">Engineering</button>
+    <button class="tab" data-f="oss">Open source</button>
     <button class="tab" data-f="build">Building</button>
     <button class="tab" data-f="create">Creating</button>
     <button class="tab" data-f="compete">Competitive</button>
@@ -211,6 +212,12 @@
       <h3>Stader Labs — Founding Engineer</h3>
       <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$500M+ in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes. <em>Rust &middot; CosmWasm &middot; TypeScript.</em></p>
       <span class="cat">Engineering</span>
+    </article>
+    <article class="card" data-cat="oss">
+      <span class="when">2026</span>
+      <h3>revm — interpreter fix</h3>
+      <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a>.</p>
+      <span class="cat">Open source</span>
     </article>
     <article class="card" data-cat="build">
       <span class="when">2025</span>
@@ -355,6 +362,7 @@
   var items=[
     {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
     {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
+    {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"Instagram",hint:"@prajjwalsinghchittori",url:"https://www.instagram.com/prajjwalsinghchittori"},
     {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
     {label:"Email",hint:"prajjwalchittoriwork@gmail.com",url:"mailto:prajjwalchittoriwork@gmail.com"},
