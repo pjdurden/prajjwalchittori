@@ -34,13 +34,14 @@
   "worksFor": { "@type": "Organization", "name": "EtherFi" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Delhi Technological University" },
   "homeLocation": { "@type": "Place", "name": "George Town, Cayman Islands" },
-  "knowsAbout": ["Backend Engineering","Cryptocurrency","DeFi","Liquid Restaking","Cross-border Payments","Smart Contracts","Rust","Go","Solidity","Distributed Systems","Competitive Programming"],
+  "knowsAbout": ["Backend Engineering","Cryptocurrency","DeFi","Liquid Restaking","Cross-border Payments","Smart Contracts","Rust","Go","Solidity","Distributed Systems","Decentralized Machine Learning Training","Machine Learning Systems","Competitive Programming"],
   "award": ["Codeforces Expert","Y Combinator Startup School feature (KuruX)"],
   "sameAs": [
     "https://www.linkedin.com/in/prajjwal-chittori",
     "https://github.com/pjdurden",
     "https://www.instagram.com/prajjwalsinghchittori",
-    "https://www.youtube.com/@prajjwalsinghchittori"
+    "https://www.youtube.com/@prajjwalsinghchittori",
+    "https://doi.org/10.5281/zenodo.20574905"
   ]
 }
 </script>
@@ -188,7 +189,7 @@
   <div class="tabs" id="tabs">
     <button class="tab active" data-f="all">All</button>
     <button class="tab" data-f="eng">Engineering</button>
-    <button class="tab" data-f="oss">Open source</button>
+    <button class="tab" data-f="oss">OSS &amp; Research</button>
     <button class="tab" data-f="build">Building</button>
     <button class="tab" data-f="create">Creating</button>
     <button class="tab" data-f="compete">Competitive</button>
@@ -217,7 +218,25 @@
       <span class="when">2026</span>
       <h3>revm — interpreter fix</h3>
       <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a>.</p>
-      <span class="cat">Open source</span>
+      <span class="cat">OSS &amp; Research</span>
+    </article>
+    <article class="card" data-cat="oss">
+      <span class="when">2026 &middot; paper</span>
+      <h3>churn — StragglerPolicy <span class="when">(research)</span></h3>
+      <p><strong>StragglerPolicy: Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a>.</p>
+      <span class="cat">OSS &amp; Research</span>
+    </article>
+    <article class="card" data-cat="oss">
+      <span class="when">2022</span>
+      <h3>CoinSwap — CosmWasm + Terraswap</h3>
+      <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a>.</p>
+      <span class="cat">OSS &amp; Research</span>
+    </article>
+    <article class="card" data-cat="oss">
+      <span class="when">2022</span>
+      <h3>Gas-Fee Benchmark — cw-storage-plus / Terraswap</h3>
+      <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a>.</p>
+      <span class="cat">OSS &amp; Research</span>
     </article>
     <article class="card" data-cat="build">
       <span class="when">2025</span>
@@ -234,7 +253,7 @@
     <article class="card" data-cat="build">
       <span class="when">2024 &ndash; 25</span>
       <h3>Veri5</h3>
-      <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability. <em>Spring &middot; Redis &middot; Hazelcast.</em></p>
+      <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability. <em>Spring &middot; Redis &middot; Hazelcast.</em> <a href="https://github.com/pjdurden/veri5-mvp">pjdurden/veri5-mvp</a>.</p>
       <span class="cat">Building</span>
     </article>
     <article class="card" data-cat="build">
@@ -363,6 +382,8 @@
     {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
     {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
+    {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
+    {label:"churn",hint:"decentralized-training simulator · pjdurden/churn",url:"https://github.com/pjdurden/churn"},
     {label:"Instagram",hint:"@prajjwalsinghchittori",url:"https://www.instagram.com/prajjwalsinghchittori"},
     {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
     {label:"Email",hint:"prajjwalchittoriwork@gmail.com",url:"mailto:prajjwalchittoriwork@gmail.com"},
