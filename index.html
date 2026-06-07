@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prajjwal Chittori — Backend &amp; Crypto Engineer, Builder, Creator</title>
-<meta name="description" content="Prajjwal Chittori is a senior backend engineer working at the intersection of crypto and payments (EtherFi, ex-Visa, ex-Stader Labs). Founder of KuruX Enterprises and Bizpedia, and a 22K+ creator on philosophy." />
+<title>Prajjwal Chittori — Founder, Backend &amp; Crypto Engineer, Creator</title>
+<meta name="description" content="Prajjwal Chittori — founder of KuruX Enterprises and Bizpedia, 22K+ philosophy creator, and a senior backend engineer at the crypto x payments intersection (EtherFi, ex-Visa, ex-Stader Labs)." />
 <meta name="author" content="Prajjwal Chittori" />
 <link rel="canonical" href="https://prajj.com/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile" />
-<meta property="og:title" content="Prajjwal Chittori — Backend &amp; Crypto Engineer, Builder, Creator" />
-<meta property="og:description" content="Senior backend engineer at the crypto x payments intersection. EtherFi, ex-Visa, ex-Stader Labs ($500M+ TVL). Founder, creator, Codeforces Expert." />
+<meta property="og:title" content="Prajjwal Chittori — Founder, Backend &amp; Crypto Engineer, Creator" />
+<meta property="og:description" content="Founder of KuruX Enterprises and Bizpedia. 22K+ philosophy creator. Senior backend engineer at the crypto x payments intersection — EtherFi, ex-Visa, ex-Stader Labs ($500M+ TVL)." />
 <meta property="og:url" content="https://prajj.com/" />
 <meta property="profile:first_name" content="Prajjwal" />
 <meta property="profile:last_name" content="Chittori" />
@@ -27,7 +27,7 @@
   "familyName": "Chittori",
   "gender": "Male",
   "jobTitle": "Senior Backend Engineer",
-  "description": "Senior backend engineer working at the intersection of crypto and payments. Founder of KuruX Enterprises and Bizpedia. Creator on philosophy with 22K+ followers.",
+  "description": "Founder of KuruX Enterprises and Bizpedia. Creator on philosophy with 22K+ followers. Senior backend engineer working at the intersection of crypto and payments.",
   "url": "https://prajj.com/",
   "image": "https://prajj.com/prajjwal.jpg",
   "nationality": "Indian",
@@ -50,10 +50,12 @@
   :root{
     --bg:#0b0d10; --panel:#11151a; --panel2:#0e1216; --text:#e7e9ea; --soft:#cdd3d8;
     --muted:#7d868e; --line:#1c2127; --accent:#7cc4ff; --accent2:#9b8cff; --pill:#2a2f36;
+    --navbg:rgba(11,13,16,.72);
   }
   :root[data-theme="light"]{
     --bg:#f6f7f9; --panel:#ffffff; --panel2:#fbfcfd; --text:#0b0d10; --soft:#2b3138;
     --muted:#6b747c; --line:#e4e8ec; --accent:#1a73e8; --accent2:#6b4dff; --pill:#e9edf1;
+    --navbg:rgba(246,247,249,.8);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -62,15 +64,17 @@
     font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     transition:background .4s ease,color .4s ease;
   }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
   /* cursor-follow glow */
   #glow{position:fixed;inset:0;pointer-events:none;z-index:0;
-    background:radial-gradient(380px circle at var(--mx,50%) var(--my,18%),
+    background:radial-gradient(380px circle at var(--mx,50%) var(--my,12%),
       rgba(124,196,255,.10),rgba(155,140,255,.06) 40%,transparent 70%);
     transition:background .15s ease;}
-  .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 24px 100px}
+  .wrap{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:26px 24px 110px}
 
   /* top bar */
-  nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
   .brand{font-weight:600;letter-spacing:-.01em}
   .navactions{display:flex;gap:10px;align-items:center}
   .kbd{border:1px solid var(--line);background:var(--panel);color:var(--muted);
@@ -82,60 +86,72 @@
   .iconbtn:hover{border-color:var(--accent)}
 
   /* hero */
-  h1{font-size:2.5rem;margin:0 0 8px;letter-spacing:-.025em;line-height:1.05}
+  h1{font-size:2.55rem;margin:0 0 8px;letter-spacing:-.026em;line-height:1.05}
   .role{color:var(--soft);font-size:1.12rem;min-height:1.6em;margin:0 0 6px}
   .role .cursor{display:inline-block;width:.6ch;background:var(--accent);
     animation:blink 1s steps(1) infinite;color:transparent;margin-left:1px}
   @keyframes blink{50%{opacity:0}}
-  .tag{color:var(--muted);font-size:1rem;margin:0 0 22px}
-  .links{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px}
+  .tag{color:var(--muted);font-size:1.02rem;margin:0 0 22px;max-width:60ch}
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
   .links a,.copybtn{border:1px solid var(--pill);background:transparent;color:var(--text);
     padding:8px 14px;border-radius:999px;font-size:.92rem;cursor:pointer;text-decoration:none;
     transition:.18s ease}
-  .links a:hover,.copybtn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .links a:hover,.copybtn:hover{border-color:var(--accent);transform:translateY(-1px);text-decoration:none}
   .copybtn.ok{border-color:#3ad29f;color:#3ad29f}
 
-  /* filter tabs */
-  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:42px 0 22px}
-  .tab{border:1px solid var(--line);background:var(--panel);color:var(--soft);
-    padding:7px 14px;border-radius:999px;font-size:.9rem;cursor:pointer;transition:.18s}
-  .tab:hover{border-color:var(--accent)}
-  .tab.active{background:var(--accent);border-color:var(--accent);color:#04121f;font-weight:600}
-  :root[data-theme="light"] .tab.active{color:#fff}
+  /* sticky section nav (scroll-spy) */
+  .secnav{position:sticky;top:0;z-index:20;margin:30px -24px 8px;padding:11px 24px;
+    display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
+    background:var(--navbg);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .secnav::-webkit-scrollbar{display:none}
+  .secnav a{flex:0 0 auto;color:var(--muted);font-size:.85rem;padding:5px 11px;border-radius:999px;
+    border:1px solid transparent;transition:.18s;white-space:nowrap}
+  .secnav a:hover{color:var(--text);text-decoration:none}
+  .secnav a.active{color:var(--accent);border-color:var(--accent)}
+
+  /* section heading */
+  section{scroll-margin-top:64px;padding-top:40px}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 4px}
+  .eyebrow h2{margin:0;font-size:1.3rem;letter-spacing:-.015em}
+  .eyebrow .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--accent2),transparent)}
+  .eyebrow .count{color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums}
+  .lead{color:var(--muted);font-size:.92rem;margin:0 0 18px;max-width:64ch}
 
   /* cards */
   .grid{display:grid;gap:14px}
+  @media(min-width:620px){.grid.two{grid-template-columns:1fr 1fr}}
   .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;
-    padding:18px 20px;opacity:0;transform:translateY(14px);
+    padding:17px 19px;opacity:0;transform:translateY(14px);position:relative;
     transition:opacity .5s ease,transform .5s ease,border-color .18s;}
   .card.in{opacity:1;transform:none}
-  .card.hide{display:none}
   .card:hover{border-color:var(--accent)}
-  .card h3{margin:0 0 2px;font-size:1.06rem}
-  .card .when{color:var(--muted);font-size:.82rem;float:right;font-weight:500}
-  .card p{margin:6px 0 0;color:var(--soft);font-size:.96rem}
-  .card .cat{display:inline-block;margin-top:10px;font-size:.72rem;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--accent2)}
-  .card a{color:var(--accent);text-decoration:none}
-  .card a:hover{text-decoration:underline}
+  .card .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .card h3{margin:0;font-size:1.05rem;letter-spacing:-.01em}
+  .card .when{color:var(--muted);font-size:.8rem;font-weight:500;white-space:nowrap}
+  .card p{margin:7px 0 0;color:var(--soft);font-size:.95rem;line-height:1.6}
+  .card code{font:600 .85em ui-monospace,Menlo,monospace;color:var(--accent2)}
+  .card .stack{display:block;margin-top:9px;color:var(--muted);font-size:.84rem}
 
-  .feature{display:block;margin:30px 0 4px;padding:18px 20px;border:1px solid var(--accent);
+  /* feature tile (Top-50 fintech, inside Creator) */
+  .feature{display:block;margin:0 0 14px;padding:18px 20px;border:1px solid var(--accent);
     border-radius:14px;text-decoration:none;color:var(--text);
     background:linear-gradient(180deg,rgba(124,196,255,.10),transparent);transition:.18s}
-  .feature:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(124,196,255,.12)}
+  .feature:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(124,196,255,.12);text-decoration:none}
   .feature .fbadge{display:inline-block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
     color:#04121f;background:var(--accent);border-radius:999px;padding:2px 9px;font-weight:700;margin-bottom:9px}
   :root[data-theme="light"] .feature .fbadge{color:#fff}
-  .feature strong{display:block;font-size:1.08rem;letter-spacing:-.01em;margin-bottom:5px}
-  .feature .fsub{display:block;color:var(--muted);font-size:.92rem}
-  .sec{font-size:1.15rem;margin:46px 0 16px;letter-spacing:-.01em}
-  .writing{display:flex;flex-direction:column;gap:2px}
+  .feature strong{display:block;font-size:1.06rem;letter-spacing:-.01em;margin-bottom:5px}
+  .feature .fsub{display:block;color:var(--muted);font-size:.91rem}
+
+  /* writing list */
+  .writing{display:flex;flex-direction:column;gap:8px}
   .writing a{display:block;padding:13px 16px;border:1px solid var(--line);background:var(--panel);
-    border-radius:11px;color:var(--text);text-decoration:none;font-size:.98rem;transition:.18s;margin-bottom:8px}
-  .writing a:hover{border-color:var(--accent);transform:translateY(-1px)}
-  .writing a span{color:var(--muted);font-size:.9rem}
+    border-radius:11px;color:var(--text);font-size:.97rem;transition:.18s}
+  .writing a:hover{border-color:var(--accent);transform:translateY(-1px);text-decoration:none}
+  .writing a span{color:var(--muted);font-size:.89rem}
   .writing a.all{border-style:dashed;text-align:center;color:var(--accent)}
-  footer{margin-top:46px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line);padding-top:20px}
+  footer{margin-top:54px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line);padding-top:20px}
 
   /* command palette */
   .cmdk{position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;
@@ -154,24 +170,24 @@
   :root[data-theme="light"] .palette li.sel,:root[data-theme="light"] .palette li:hover{color:#fff}
   .palette li.sel .hint,.palette li:hover .hint{color:rgba(4,18,31,.7)}
 
-  @media(max-width:560px){h1{font-size:2rem}.kbd .label{display:none}}
+  @media(max-width:560px){h1{font-size:2.1rem}.kbd .label{display:none}}
 </style>
 </head>
 <body>
 <div id="glow"></div>
 <main class="wrap">
 
-  <nav>
+  <div class="topbar">
     <span class="brand">PC</span>
     <div class="navactions">
       <button class="kbd" id="open-cmdk" aria-label="Open menu"><span class="label">Menu</span> <code>&#8984;K</code></button>
       <button class="iconbtn" id="theme" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
     </div>
-  </nav>
+  </div>
 
   <h1>Prajjwal Chittori</h1>
   <p class="role"><span id="typed"></span><span class="cursor">.</span></p>
-  <p class="tag">Senior backend engineer at the crypto &times; payments intersection — based in George Town, Cayman Islands.</p>
+  <p class="tag">Founder &amp; creator who ships production backends — building at the crypto &times; payments intersection, based in George Town, Cayman Islands.</p>
 
   <div class="links">
     <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>
@@ -181,121 +197,147 @@
     <button class="copybtn" id="copy" data-email="prajjwalchittoriwork@gmail.com">Copy email</button>
   </div>
 
-  <a class="feature" href="fintech/">
-    <strong>What I Think About the Top 50 Fintech Companies of All Time</strong>
-    <span class="fsub">Vision over financials — 50 companies, what each got right and wrong, and the founders behind them. &rarr;</span>
-  </a>
+  <nav class="secnav" id="secnav" aria-label="Sections">
+    <a href="#companies">Companies</a>
+    <a href="#creator">Creator</a>
+    <a href="#oss">Open Source</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Side Projects</a>
+    <a href="#competitive">Competitive</a>
+    <a href="#writing">Writing</a>
+  </nav>
 
-  <div class="tabs" id="tabs">
-    <button class="tab active" data-f="all">All</button>
-    <button class="tab" data-f="eng">Engineering</button>
-    <button class="tab" data-f="oss">OSS &amp; Research</button>
-    <button class="tab" data-f="build">Building</button>
-    <button class="tab" data-f="create">Creating</button>
-    <button class="tab" data-f="compete">Competitive</button>
-  </div>
+  <!-- COMPANIES FOUNDED -->
+  <section id="companies">
+    <div class="eyebrow"><h2>Companies Founded</h2><span class="rule"></span><span class="count">2 ventures</span></div>
+    <p class="lead">Things I started from zero and shipped to real customers.</p>
+    <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>KuruX Enterprises</h3><span class="when">2025</span></div>
+        <p>A sustainable-cleaning consumer brand (<strong>NAMELESS / WipeZilla</strong>), built solo end to end — manufacturing, compliance, listings. <strong>&#8377;2L revenue in month one</strong>; now run by family. <a href="https://www.wipezilla.in">wipezilla.in</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Bizpedia</h3><span class="when">2024</span></div>
+        <p>A free, open-source wiki for the world of business — structured, contributor-driven reference. <a href="https://bizpedia.org">bizpedia.org</a></p>
+      </article>
+    </div>
+  </section>
 
-  <div class="grid" id="grid">
-    <article class="card" data-cat="eng">
-      <span class="when">2026 &ndash; now</span>
-      <h3>EtherFi — Senior Backend Engineer, Cash</h3>
-      <p>Crypto / liquid restaking reconciled with Visa card settlement — real-time authorization, capture &amp; reconciliation, Borrow Mode, and an event-driven cashback pipeline on Kafka. <em>Go &middot; Solidity &middot; EigenLayer &middot; Kafka.</em></p>
-      <span class="cat">Engineering</span>
-    </article>
-    <article class="card" data-cat="eng">
-      <span class="when">2022 &ndash; 2026</span>
-      <h3>Visa — Senior Software Engineer</h3>
-      <p>Cross-border payments: Visa Direct A2A, 100+ SWIFT message types, Treasury-as-a-Service across 15 currencies. Led an 8-engineer team on a real-time platform at 2,000+ TPS, 99.98% uptime. <em>Java &middot; Spring &middot; Hazelcast &middot; K8s.</em></p>
-      <span class="cat">Engineering</span>
-    </article>
-    <article class="card" data-cat="eng">
-      <span class="when">2021 &ndash; 2022</span>
-      <h3>Stader Labs — Founding Engineer</h3>
-      <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$500M+ in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes. <em>Rust &middot; CosmWasm &middot; TypeScript.</em></p>
-      <span class="cat">Engineering</span>
-    </article>
-    <article class="card" data-cat="oss">
-      <span class="when">2026</span>
-      <h3>revm — interpreter fix</h3>
-      <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a>.</p>
-      <span class="cat">OSS &amp; Research</span>
-    </article>
-    <article class="card" data-cat="oss">
-      <span class="when">2026 &middot; paper</span>
-      <h3>churn — StragglerPolicy <span class="when">(research)</span></h3>
-      <p><strong>StragglerPolicy: Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a>.</p>
-      <span class="cat">OSS &amp; Research</span>
-    </article>
-    <article class="card" data-cat="oss">
-      <span class="when">2022</span>
-      <h3>CoinSwap — CosmWasm + Terraswap</h3>
-      <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a>.</p>
-      <span class="cat">OSS &amp; Research</span>
-    </article>
-    <article class="card" data-cat="oss">
-      <span class="when">2022</span>
-      <h3>Gas-Fee Benchmark — cw-storage-plus / Terraswap</h3>
-      <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a>.</p>
-      <span class="cat">OSS &amp; Research</span>
-    </article>
-    <article class="card" data-cat="build">
-      <span class="when">2025</span>
-      <h3>KuruX Enterprises — NAMELESS / WipeZilla</h3>
-      <p>A sustainable-cleaning consumer brand, built solo end to end (manufacturing, compliance, listings). <strong>&#8377;2L revenue in month one</strong>; now run by family. <a href="https://www.wipezilla.in">wipezilla.in</a>.</p>
-      <span class="cat">Building</span>
-    </article>
-    <article class="card" data-cat="build">
-      <span class="when">2024</span>
-      <h3>Bizpedia</h3>
-      <p>A free, open-source wiki for the world of business. <a href="https://bizpedia.org">bizpedia.org</a>.</p>
-      <span class="cat">Building</span>
-    </article>
-    <article class="card" data-cat="build">
-      <span class="when">2024 &ndash; 25</span>
-      <h3>Veri5</h3>
-      <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability. <em>Spring &middot; Redis &middot; Hazelcast.</em> <a href="https://github.com/pjdurden/veri5-mvp">pjdurden/veri5-mvp</a>.</p>
-      <span class="cat">Building</span>
-    </article>
-    <article class="card" data-cat="build">
-      <span class="when">2023</span>
-      <h3>KuruX — trading simulator</h3>
-      <p>A private-equity trading simulator with a hand-built order book, <strong>featured by Y Combinator Startup School</strong>.</p>
-      <span class="cat">Building</span>
-    </article>
-    <article class="card" data-cat="create">
-      <span class="when">active</span>
-      <h3>@prajjwalsinghchittori — philosophy, short-form</h3>
-      <p>An English quote, explained in Hindi. <strong>22K+ followers</strong> and millions of views across Instagram &amp; YouTube. <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &middot; <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a>.</p>
-      <span class="cat">Creating</span>
-    </article>
-    <article class="card" data-cat="compete">
-      <h3>Competitive programming</h3>
-      <p><strong>Codeforces Expert</strong>; ~8,000 problems solved across Codeforces, CodeChef, LeetCode, UVa and more. <a href="https://codeforces.com/profile/pjdurden">codeforces/pjdurden</a>.</p>
-      <span class="cat">Competitive</span>
-    </article>
-    <article class="card" data-cat="compete">
-      <h3>Chess</h3>
-      <p>FIDE-registered player, 1600+ rating.</p>
-      <span class="cat">Competitive</span>
-    </article>
-  </div>
+  <!-- CREATOR -->
+  <section id="creator">
+    <div class="eyebrow"><h2>Creator</h2><span class="rule"></span><span class="count">22K+ following</span></div>
+    <p class="lead">Short-form philosophy and long-form takes — an audience built on one consistent format.</p>
+    <a class="feature" href="fintech/">
+      <span class="fbadge">Series</span>
+      <strong>What I Think About the Top 50 Fintech Companies of All Time</strong>
+      <span class="fsub">Vision over financials — 50 companies, what each got right and wrong, and the founders behind them. &rarr;</span>
+    </a>
+    <div class="grid">
+      <article class="card">
+        <div class="head"><h3>@prajjwalsinghchittori — philosophy, short-form</h3><span class="when">active</span></div>
+        <p>An English quote, explained in Hindi. <strong>22K+ followers</strong> and millions of views across Instagram &amp; YouTube — one format, run with relentless consistency. <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &middot; <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a></p>
+      </article>
+    </div>
+  </section>
 
-  <h2 class="sec">Writing</h2>
-  <div class="writing">
-    <a href="articles/founding-engineer-1b-tvl/">Taking a Liquid-Staking Protocol Past $500M+ TVL <span>— founding-engineer lessons</span></a>
-    <a href="articles/solo-amazon-brand/">&#8377;2 Lakh in Month One <span>— building a physical brand solo</span></a>
-    <a href="articles/8000-problems-practice-system/">From Codeforces Expert to ~8,000 Problems <span>— a practice system</span></a>
-    <a href="articles/22k-one-format/">How I Built a 22K Audience With One Format <span>— consistency over creativity</span></a>
-    <a class="all" href="articles/">All writing &rarr;</a>
-  </div>
+  <!-- OPEN SOURCE -->
+  <section id="oss">
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">3 contributions</span></div>
+    <p class="lead">Merged work on the infrastructure other people build on.</p>
+    <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>revm — interpreter fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>CoinSwap — CosmWasm + Terraswap</h3><span class="when">2022</span></div>
+        <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Gas-Fee Benchmark</h3><span class="when">2022</span></div>
+        <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
+      </article>
+    </div>
+  </section>
 
-  <h2 class="sec">Fintech</h2>
-  <div class="writing">
-    <a href="fintech/">What I Think About the Top 50 Fintech Companies of All Time <span>— vision, not financials · 50 companies</span></a>
-  </div>
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="eyebrow"><h2>Research</h2><span class="rule"></span><span class="count">1 paper</span></div>
+    <p class="lead">Published, peer-citable work.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="head"><h3>StragglerPolicy — decentralized training</h3><span class="when">2026 &middot; paper</span></div>
+        <p><strong>Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="eyebrow"><h2>Experience</h2><span class="rule"></span><span class="count">2021 &ndash; now</span></div>
+    <p class="lead">Backend engineering across crypto and global payments.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="head"><h3>EtherFi — Senior Backend Engineer, Cash</h3><span class="when">2026 &ndash; now</span></div>
+        <p>Crypto / liquid restaking reconciled with Visa card settlement — real-time authorization, capture &amp; reconciliation, Borrow Mode, and an event-driven cashback pipeline on Kafka.<span class="stack">Go &middot; Solidity &middot; EigenLayer &middot; Kafka</span></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Visa — Senior Software Engineer</h3><span class="when">2022 &ndash; 2026</span></div>
+        <p>Cross-border payments: Visa Direct A2A, 100+ SWIFT message types, Treasury-as-a-Service across 15 currencies. Led an 8-engineer team on a real-time platform at 2,000+ TPS, 99.98% uptime.<span class="stack">Java &middot; Spring &middot; Hazelcast &middot; K8s</span></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Stader Labs — Founding Engineer</h3><span class="when">2021 &ndash; 2022</span></div>
+        <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$500M+ in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes.<span class="stack">Rust &middot; CosmWasm &middot; TypeScript</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SIDE PROJECTS -->
+  <section id="projects">
+    <div class="eyebrow"><h2>Side Projects</h2><span class="rule"></span><span class="count">2 builds</span></div>
+    <p class="lead">Smaller things built to learn or to prove a point.</p>
+    <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>Veri5</h3><span class="when">2024 &ndash; 25</span></div>
+        <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability.<span class="stack">Spring &middot; Redis &middot; Hazelcast</span> <a href="https://github.com/pjdurden/veri5-mvp">pjdurden/veri5-mvp</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>KuruX — trading simulator</h3><span class="when">2023</span></div>
+        <p>A private-equity trading simulator with a hand-built order book, <strong>featured by Y Combinator Startup School</strong>.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE -->
+  <section id="competitive">
+    <div class="eyebrow"><h2>Competitive</h2><span class="rule"></span></div>
+    <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>Competitive programming</h3></div>
+        <p><strong>Codeforces Expert</strong>; ~8,000 problems solved across Codeforces, CodeChef, LeetCode, UVa and more. <a href="https://codeforces.com/profile/pjdurden">codeforces/pjdurden</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Chess</h3></div>
+        <p>FIDE-registered player, 1600+ rating.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="eyebrow"><h2>Writing</h2><span class="rule"></span></div>
+    <div class="writing">
+      <a href="articles/founding-engineer-1b-tvl/">Taking a Liquid-Staking Protocol Past $500M+ TVL <span>— founding-engineer lessons</span></a>
+      <a href="articles/solo-amazon-brand/">&#8377;2 Lakh in Month One <span>— building a physical brand solo</span></a>
+      <a href="articles/8000-problems-practice-system/">From Codeforces Expert to ~8,000 Problems <span>— a practice system</span></a>
+      <a href="articles/22k-one-format/">How I Built a 22K Audience With One Format <span>— consistency over creativity</span></a>
+      <a class="all" href="articles/">All writing &rarr;</a>
+    </div>
+  </section>
 
   <footer>
-    Prajjwal Chittori — crypto &amp; fintech backend engineer, founder of KuruX Enterprises and Bizpedia, philosophy creator. Press <code>&#8984;K</code> or <code>/</code> to jump anywhere.
+    Prajjwal Chittori — founder of KuruX Enterprises and Bizpedia, philosophy creator, crypto &amp; fintech backend engineer. Press <code>&#8984;K</code> or <code>/</code> to jump anywhere.
   </footer>
 </main>
 
@@ -324,10 +366,10 @@
   });
 
   /* ---- typewriter ---- */
-  var roles=["builds at the crypto × payments edge",
-             "founding engineer → $500M+ TVL (Stader)",
-             "founder of KuruX Enterprises & Bizpedia",
+  var roles=["founder of KuruX Enterprises & Bizpedia",
              "philosophy creator — 22K+ followers",
+             "builds at the crypto × payments edge",
+             "founding engineer → $500M+ TVL (Stader)",
              "Codeforces Expert · FIDE chess"];
   var ti=0,ci=0,del=false,el=$("#typed");
   function tick(){
@@ -356,19 +398,6 @@
       .catch(function(){location.href="mailto:"+em;});
   });
 
-  /* ---- filter tabs ---- */
-  $("#tabs").addEventListener("click",function(e){
-    var t=e.target.closest(".tab"); if(!t) return;
-    $$(".tab").forEach(function(x){x.classList.remove("active")});
-    t.classList.add("active");
-    var f=t.getAttribute("data-f");
-    $$(".card").forEach(function(c){
-      var show=f==="all"||c.getAttribute("data-cat")===f;
-      c.classList.toggle("hide",!show);
-      if(show){c.classList.remove("in");requestAnimationFrame(function(){c.classList.add("in")});}
-    });
-  });
-
   /* ---- scroll reveal ---- */
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(ents){
@@ -377,19 +406,36 @@
     $$(".card").forEach(function(c){io.observe(c)});
   } else { $$(".card").forEach(function(c){c.classList.add("in")}); }
 
+  /* ---- section-nav scroll-spy ---- */
+  var navlinks=$$(".secnav a");
+  var byId={};navlinks.forEach(function(a){byId[a.getAttribute("href").slice(1)]=a;});
+  if("IntersectionObserver" in window){
+    var spy=new IntersectionObserver(function(ents){
+      ents.forEach(function(en){
+        if(en.isIntersecting){
+          navlinks.forEach(function(a){a.classList.remove("active")});
+          var a=byId[en.target.id];
+          if(a){a.classList.add("active");
+            a.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});}
+        }
+      });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    $$("section[id]").forEach(function(s){spy.observe(s)});
+  }
+
   /* ---- command palette ---- */
   var items=[
-    {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
-    {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
+    {label:"KuruX Enterprises",hint:"WipeZilla / NAMELESS brand",url:"https://www.wipezilla.in"},
+    {label:"Bizpedia",hint:"business wiki",url:"https://bizpedia.org"},
+    {label:"Instagram",hint:"@prajjwalsinghchittori · 22K",url:"https://www.instagram.com/prajjwalsinghchittori"},
+    {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"churn",hint:"decentralized-training simulator · pjdurden/churn",url:"https://github.com/pjdurden/churn"},
-    {label:"Instagram",hint:"@prajjwalsinghchittori",url:"https://www.instagram.com/prajjwalsinghchittori"},
-    {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
+    {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
     {label:"Email",hint:"prajjwalchittoriwork@gmail.com",url:"mailto:prajjwalchittoriwork@gmail.com"},
-    {label:"Codeforces",hint:"Expert",url:"https://codeforces.com/profile/pjdurden"},
-    {label:"WipeZilla",hint:"NAMELESS brand",url:"https://www.wipezilla.in"},
-    {label:"Bizpedia",hint:"business wiki",url:"https://bizpedia.org"}
+    {label:"Codeforces",hint:"Expert",url:"https://codeforces.com/profile/pjdurden"}
   ];
   var modal=$("#cmdk"),input=$("#cmdk-input"),list=$("#cmdk-list"),sel=0,view=items.slice();
   function render(){
