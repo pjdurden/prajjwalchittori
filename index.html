@@ -256,9 +256,13 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">3 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">4 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on.</p>
     <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>Meilisearch — ranking-rules fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine (58K&#9733;): fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
+      </article>
       <article class="card">
         <div class="head"><h3>revm — interpreter fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
@@ -442,6 +446,7 @@
   /* ---- command palette ---- */
   var items=[
     {label:"EtherFi",hint:"Senior Backend Engineer, Cash",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"churn",hint:"decentralized-training simulator · pjdurden/churn",url:"https://github.com/pjdurden/churn"},
