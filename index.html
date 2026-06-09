@@ -84,6 +84,16 @@
   .iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);
     width:36px;height:32px;border-radius:8px;cursor:pointer;font-size:.95rem;line-height:1}
   .iconbtn:hover{border-color:var(--accent)}
+  /* visitor counter pill */
+  .visits{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
+    background:var(--panel);color:var(--muted);border-radius:8px;padding:5px 9px;
+    font-size:.78rem;font-variant-numeric:tabular-nums;white-space:nowrap;user-select:none}
+  .visits .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);
+    animation:vpulse 2.2s ease-out infinite}
+  .visits #visits-n{color:var(--text);font-weight:600}
+  @keyframes vpulse{0%{box-shadow:0 0 0 0 rgba(124,196,255,.5)}
+    70%{box-shadow:0 0 0 5px rgba(124,196,255,0)}100%{box-shadow:0 0 0 0 rgba(124,196,255,0)}}
+  @media(max-width:430px){.visits .lbl{display:none}}
 
   /* hero */
   h1{font-size:2.55rem;margin:0 0 8px;letter-spacing:-.026em;line-height:1.05}
@@ -181,6 +191,9 @@
   <div class="topbar">
     <span class="brand">PC</span>
     <div class="navactions">
+      <span class="visits" id="visits" title="Unique visitors — via GoatCounter" aria-live="polite">
+        <span class="dot"></span><span id="visits-n">&#8212;</span><span class="lbl">&nbsp;visits</span>
+      </span>
       <button class="kbd" id="open-cmdk" aria-label="Open menu"><span class="label">Menu</span> <code>&#8984;K</code></button>
       <button class="iconbtn" id="theme" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
     </div>
@@ -474,6 +487,31 @@
     else if(e.key==="ArrowUp"){e.preventDefault();sel=Math.max(sel-1,0);render();}
     else if(e.key==="Enter"&&view[sel]){go(view[sel]);}
   });
+})();
+</script>
+<!-- GoatCounter: privacy-friendly analytics + live visitor count -->
+<script>
+(function(){
+  var CODE = "pjdurden"; // GoatCounter site code → CODE.goatcounter.com
+  var base = "https://" + CODE + ".goatcounter.com";
+
+  // load the tracker (records this pageview)
+  var s = document.createElement("script");
+  s.async = true; s.src = "//gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", base + "/count");
+  document.head.appendChild(s);
+
+  // fetch and display the total unique-visitor count
+  // requires "Allow getting visitor counts" enabled in GoatCounter → Settings → Site
+  fetch(base + "/counter/TOTAL.json")
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d) return;
+      var n = d.count_unique || d.count;
+      var el = document.getElementById("visits-n");
+      if(el && n) el.textContent = n;
+    })
+    .catch(function(){ /* leave the dash if the API is unreachable */ });
 })();
 </script>
 </body>
