@@ -256,9 +256,13 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">4 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">5 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on.</p>
     <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>vLLM — build-correctness fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
+      </article>
       <article class="card">
         <div class="head"><h3>Meilisearch — ranking-rules fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine (58K&#9733;): fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
@@ -446,6 +450,7 @@
   /* ---- command palette ---- */
   var items=[
     {label:"EtherFi",hint:"Senior Backend Engineer, Cash",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
