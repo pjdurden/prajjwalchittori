@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d10"/>
+      <stop offset="1" stop-color="#04121f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3ad29f"/>
+      <stop offset="1" stop-color="#9b8cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="none"/>
+
+  <!-- accent bar -->
+  <rect x="90" y="232" width="64" height="6" rx="3" fill="url(#accent)"/>
+
+  <!-- name -->
+  <text x="88" y="320" font-family="Helvetica, Arial, sans-serif" font-size="92" font-weight="700" fill="#fbfcfd" letter-spacing="-2">Prajjwal Chittori</text>
+
+  <!-- tagline -->
+  <text x="90" y="388" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="500" fill="#cdd3d8">Senior Backend Engineer &#183; crypto &#215; AI infra</text>
+
+  <!-- credentials line -->
+  <text x="90" y="438" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="400" fill="#7d868e">ether.fi &#183; ex-Visa &#183; ex-Stader Labs &#183; Go &#183; Rust &#183; vLLM</text>
+
+  <!-- url chip -->
+  <rect x="90" y="486" width="220" height="56" rx="28" fill="none" stroke="#3ad29f" stroke-width="2"/>
+  <text x="200" y="523" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="#3ad29f">prajj.com</text>
+
+  <!-- decorative dots top-right -->
+  <circle cx="1080" cy="120" r="6" fill="#3ad29f" opacity="0.9"/>
+  <circle cx="1120" cy="120" r="6" fill="#9b8cff" opacity="0.7"/>
+  <circle cx="1100" cy="160" r="6" fill="#7cc4ff" opacity="0.5"/>
+</svg>
