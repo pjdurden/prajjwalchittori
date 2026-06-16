@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Crypto & Infrastructure</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Modern Treasury — What I Think</h1>
     <p class="meta">Prajjwal Chittori · December 2025</p>
@@ -45,6 +48,12 @@
 <p>Founder-led, so this is on leadership. Dimitri Dadiomov built Modern Treasury around an insight only people who&rsquo;ve actually shipped payments at scale tend to have — the ledger and the reconciliation, not the transfer, are where the real pain and the real value live. Choosing to productise the boring, correctness-obsessed middle of money movement instead of chasing a flashier consumer or rails story is exactly the kind of unsexy infrastructure conviction I respect most. It&rsquo;s a bet that being right about plumbing compounds. The push into programmable ledgers and treating payment operations as a first-class category shows he&rsquo;s playing for the abstraction layer, not a point feature. My one gripe is the standing risk for any horizontal infrastructure company — being the correct, neutral layer is necessary but not sufficient, you also have to win the standardisation fight before the banks and ERPs encircle the category. The strongest version is the default ledger of record for anyone that moves money, period. Worth building toward.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/mercury/"><span class="dir">&larr; Previous</span><span class="ttl">Mercury</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/plaid/"><span class="dir">Next &rarr;</span><span class="ttl">Plaid</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -54,6 +63,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

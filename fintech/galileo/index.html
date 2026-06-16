@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Crypto & Infrastructure</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Galileo — What I Think</h1>
     <p class="meta">Prajjwal Chittori · June 2020</p>
@@ -45,6 +48,12 @@
 <p>Two eras. Galileo was founded by Clay Wilkes, and his is the vision I connect with most — he saw, early and unfashionably, that the durable position in payments wasn&rsquo;t the consumer brand but the processing engine under it, and built a deep, hard infrastructure business while everyone else wanted to be the shiny front end. Building the unsexy primitive everyone else depends on is the highest form of fintech craft. The era I connect with least, on vision not execution, is the post-2020 chapter under SoFi&rsquo;s umbrella (Anthony Noto as SoFi&rsquo;s CEO) — not because it&rsquo;s badly run, but because folding a neutral processor into a consumer-fintech parent trades the thing that made Galileo special, its Switzerland status, for scale and strategic fit. Sound corporate decision. Just the opposite of the founding instinct that made it matter.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/coinbase/"><span class="dir">&larr; Previous</span><span class="ttl">Coinbase</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/mercury/"><span class="dir">Next &rarr;</span><span class="ttl">Mercury</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -54,6 +63,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

@@ -458,6 +458,8 @@
 
   /* ---- command palette ---- */
   var items=[
+    {label:"All Writing",hint:"106 essays · philosophy & building",url:"/articles/"},
+    {label:"Top 50 Fintech",hint:"the full series",url:"/fintech/"},
     {label:"EtherFi",hint:"Senior Backend Engineer, Cash",url:"https://www.linkedin.com/in/prajjwal-chittori"},
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
@@ -488,7 +490,9 @@
   }
   function open(){modal.classList.add("open");input.value="";view=items.slice();sel=0;render();setTimeout(function(){input.focus()},30);}
   function close(){modal.classList.remove("open")}
-  function go(it){close();if(it.url.indexOf("mailto:")===0)location.href=it.url;else window.open(it.url,"_blank","noopener");}
+  function go(it){close();
+    if(it.url.indexOf("mailto:")===0||it.url.indexOf("/")===0)location.href=it.url;
+    else window.open(it.url,"_blank","noopener");}
   $("#open-cmdk").addEventListener("click",open);
   modal.addEventListener("click",function(e){if(e.target===modal)close()});
   input.addEventListener("input",function(){

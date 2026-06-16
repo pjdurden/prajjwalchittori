@@ -31,7 +31,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/articles/">Writing</a><span class="sep">&rsaquo;</span><span class="here">Engineering & Building</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer</h1>
     <p class="meta">Prajjwal Chittori · July 2022</p>
@@ -58,6 +61,12 @@
 <hr />
 <p><em>I&rsquo;m Prajjwal Chittori, a backend engineer working across crypto infrastructure and payments. More at <a href="https://prajjwalchittori.com">prajjwalchittori.com</a> · <a href="https://github.com/pjdurden">GitHub</a> · <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/articles/8000-problems-practice-system/"><span class="dir">&larr; Previous</span><span class="ttl">From Codeforces Expert to ~8,000 Problems: The Practice System That Actually Worked</span></a>
+    <a class="nextlink" href="https://prajj.com/articles/engineer-philosopher/"><span class="dir">Next &rarr;</span><span class="ttl">The Engineer-Philosopher</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>Written by <strong>Prajjwal Chittori</strong> — backend engineer (crypto &times; payments), founder, creator.</p>
     <p class="links">
@@ -70,6 +79,14 @@
     <p class="more"><a href="https://prajj.com/articles/">More writing &rarr;</a></p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

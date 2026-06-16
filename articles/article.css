@@ -47,3 +47,44 @@ h2.grp{font-size:1.18rem;letter-spacing:-.01em;margin:46px 0 14px;display:flex;a
 h2.grp span{font-size:.8rem;color:var(--muted);font-weight:500;border:1px solid var(--line);
   border-radius:999px;padding:2px 9px}
 @media(max-width:560px){h1{font-size:1.7rem}body{font-size:17px}}
+
+/* ===== navigation additions ===== */
+/* page header row: back/breadcrumb + theme toggle */
+.pagehead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:30px}
+.pagehead .back,.pagehead .crumbs{margin-bottom:0}
+.themebtn{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);color:var(--text);
+  width:38px;height:34px;border-radius:9px;cursor:pointer;font-size:1rem;line-height:1;transition:.18s}
+.themebtn:hover{border-color:var(--accent)}
+
+/* breadcrumb */
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:.9rem}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .sep{opacity:.45}
+.crumbs .here{color:var(--soft)}
+
+/* index toolbar: sticky search + category jump */
+.toolbar{position:sticky;top:0;z-index:30;margin:0 -24px 6px;padding:14px 24px 12px;
+  background:var(--bg);border-bottom:1px solid var(--line)}
+.search{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);
+  border-radius:11px;padding:12px 16px;font-size:1rem;outline:none;transition:.18s}
+.search:focus{border-color:var(--accent)}
+.search::placeholder{color:var(--muted)}
+.jump{display:flex;gap:7px;margin-top:11px;overflow-x:auto;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{flex:0 0 auto;color:var(--muted);font-size:.82rem;padding:5px 11px;border-radius:999px;
+  border:1px solid var(--line);text-decoration:none;transition:.18s;white-space:nowrap}
+.jump a:hover{color:var(--text);border-color:var(--accent)}
+.noresults{display:none;color:var(--muted);text-align:center;padding:46px 0}
+h2.grp{scroll-margin-top:118px}
+
+/* prev/next series nav on individual pages */
+.seriesnav{display:grid;gap:12px;margin:50px 0 0}
+@media(min-width:560px){.seriesnav{grid-template-columns:1fr 1fr}}
+.seriesnav a{display:flex;flex-direction:column;gap:5px;border:1px solid var(--line);
+  background:var(--panel);border-radius:12px;padding:14px 16px;text-decoration:none;transition:.18s}
+.seriesnav a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.seriesnav .dir{color:var(--muted);font-size:.78rem;letter-spacing:.03em}
+.seriesnav .ttl{color:var(--text);font-size:.98rem;line-height:1.35}
+.seriesnav a.nextlink{text-align:right}
+.seriesnav a.nextlink .ttl{order:2}

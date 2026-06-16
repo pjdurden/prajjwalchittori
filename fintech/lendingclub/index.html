@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Neobanks, Investing & Lending</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>LendingClub — What I Think</h1>
     <p class="meta">Prajjwal Chittori · January 2026</p>
@@ -44,6 +47,12 @@
 <p>Two distinct eras. Favorite, on vision: Renaud Laplanche, the founder, for the sheer audacity of the original peer-to-peer thesis, genuinely one of the boldest ideas the industry produced, and he took it all the way to a landmark IPO. His 2016 departure as CEO amid a board review of loan-sales and disclosure issues is well-documented public record, and I&rsquo;ll cite it as the fact it is without piling on. Where I land on era: Scott Sanborn inherited a company in crisis and did the unglamorous, genuinely impressive work of turning a wounded marketplace into a real, profitable bank, including the bank acquisition that finally gave it stable funding. I connect more with Laplanche&rsquo;s founding heresy. But Sanborn&rsquo;s pragmatism is the only reason there&rsquo;s still a company to write about, and that pragmatic pivot is itself the lesson of the whole story.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/chime/"><span class="dir">&larr; Previous</span><span class="ttl">Chime</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/monzo/"><span class="dir">Next &rarr;</span><span class="ttl">Monzo</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -53,6 +62,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

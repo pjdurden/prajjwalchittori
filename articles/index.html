@@ -10,17 +10,33 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+  <div class="pagehead">
+    <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <h1>Writing</h1>
   <p class="meta">106 essays on philosophy, building, founders, power, and the engineering life — written since 2016.</p>
-    <h2 class="grp">Engineering & Building <span>4</span></h2>
+  <div class="toolbar">
+    <input class="search" id="filter" type="search" placeholder="Search 106 essays by title or topic…  (press / )" autocomplete="off" aria-label="Search essays" />
+    <nav class="jump" aria-label="Jump to category">
+      <a href="#g0">Engineering &amp; Building</a>
+      <a href="#g1">On Building &amp; Life</a>
+      <a href="#g2">The Greeks</a>
+      <a href="#g3">Stoics &amp; Romans</a>
+      <a href="#g4">Founders &amp; Enlightenment</a>
+      <a href="#g5">The Existentialists</a>
+      <a href="#g6">Power &amp; Strategy</a>
+    </nav>
+  </div>
+  <p class="noresults" id="noresults">No essays match that search.</p>
+    <h2 class="grp" id="g0">Engineering & Building <span>4</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/22k-one-format/"><h3>How I Built a 22K Audience With One Repeatable Format (and Why Consistency Beats Creativity)</h3><p>In a few months one short-form format took me past 22,000 followers and roughly 14.7 million views in a single 90-day window. I&#x27;m a backend engineer by day. This was a side experiment in distribution.</p><span class="when">March 2026</span></a>
       <a class="card" href="https://prajj.com/articles/solo-amazon-brand/"><h3>₹2 Lakh in Month One: What a Backend Engineer Learned Building a Physical Brand Solo</h3><p>I write smart contracts and payments backends for a living. So when I decided to build a consumer cleaning brand — NAMELESS, under my company KuruX Enterprises, with a sponge-wipe line called WipeZill</p><span class="when">October 2025</span></a>
       <a class="card" href="https://prajj.com/articles/8000-problems-practice-system/"><h3>From Codeforces Expert to ~8,000 Problems: The Practice System That Actually Worked</h3><p>Over the years I&#x27;ve solved close to 8,000 problems across Codeforces, CodeChef, LeetCode, UVa, and other judges, and made Codeforces Expert in university. Pre-2022, before AI assistants, every solutio</p><span class="when">April 2023</span></a>
       <a class="card" href="https://prajj.com/articles/founding-engineer-1b-tvl/"><h3>What I Learned Taking a Liquid-Staking Protocol Past $500M+ TVL as a Founding Engineer</h3><p>I joined Stader Labs as an intern in my final year at DTU. Somewhere between my first CosmWasm contract and the dashboards ticking past half a billion in staked assets, the title &quot;founding engineer&quot; g</p><span class="when">July 2022</span></a>
     </div>
-    <h2 class="grp">On Building & Life <span>22</span></h2>
+    <h2 class="grp" id="g1">On Building & Life <span>22</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/engineer-philosopher/"><h3>The Engineer-Philosopher</h3><p>People find it weird that the same guy who&#x27;s solved eight thousand competitive programming problems also reads Kafka and the Stoics for fun. They file engineering and philosophy as two unrelated hobbi</p><span class="when">March 2026</span></a>
       <a class="card" href="https://prajj.com/articles/discipline-of-shipping/"><h3>The Discipline of Shipping</h3><p>Every project hits a moment where the thing is good enough to be embarrassing in public but not good enough to satisfy you, and what you do in that moment decides whether you&#x27;re a builder or just some</p><span class="when">August 2025</span></a>
@@ -45,7 +61,7 @@
       <a class="card" href="https://prajj.com/articles/solo-builder-vs-hiring/"><h3>The Case Against Hiring</h3><p>The default startup story has a moment everyone treats as graduation. You hire. Headcount, an office, an org chart. The press calls it scaling. I want to make the unfashionable case that for a certain</p><span class="when">November 2016</span></a>
       <a class="card" href="https://prajj.com/articles/cities-and-ambition/"><h3>Cities, Ambition, and Leaving</h3><p>Paul Graham has an essay arguing that cities send you a message. New York whispers you should be richer. Silicon Valley whispers you should be more powerful and build something that matters. The city </p><span class="when">April 2016</span></a>
     </div>
-    <h2 class="grp">The Greeks <span>16</span></h2>
+    <h2 class="grp" id="g2">The Greeks <span>16</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/diogenes-status-freedom/"><h3>Diogenes Lived in a Barrel and Feared No One</h3><p>Alexander the Great, the most powerful man alive, came to visit Diogenes the Cynic, who was lying in the sun outside the barrel he lived in. Alexander offered to grant him anything he wanted — anythin</p><span class="when">January 2026</span></a>
       <a class="card" href="https://prajj.com/articles/aristotle-virtue-is-a-habit/"><h3>You Are What You Repeatedly Ship</h3><p>Aristotle has a line the self-help industry stole and ruined: we are what we repeatedly do, excellence is not an act but a habit. The ruined version is a motivational poster. The original is a theory </p><span class="when">October 2025</span></a>
@@ -64,7 +80,7 @@
       <a class="card" href="https://prajj.com/articles/plato-forms-abstraction/"><h3>Plato Was the First Backend Engineer</h3><p>Plato&#x27;s theory of forms sounds like the most useless idea in philosophy until you&#x27;ve written enough code, and then it sounds like the only idea. The claim: the particular things we see — this chair, t</p><span class="when">February 2017</span></a>
       <a class="card" href="https://prajj.com/articles/aristotle-akrasia-discipline/"><h3>Knowing Is Not Half the Battle</h3><p>There&#x27;s a Greek word for the gap that runs your life: akrasia. It means acting against your own better judgment — knowing the right thing and doing the other thing anyway. The Greeks were obsessed wit</p><span class="when">January 2017</span></a>
     </div>
-    <h2 class="grp">Stoics & Romans <span>16</span></h2>
+    <h2 class="grp" id="g3">Stoics & Romans <span>16</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/cicero-duty-and-the-craft/"><h3>Cicero On Why You Do The Work Well When No One Is Watching</h3><p>Near the end of his life, with the Roman republic falling apart around him, Cicero wrote a long letter to his son about duty — De Officiis. It became one of the most influential books in Western histo</p><span class="when">December 2025</span></a>
       <a class="card" href="https://prajj.com/articles/epictetus-premeditatio-malorum/"><h3>Rehearse The Crash Before You Launch</h3><p>The Stoics had a practice that sounds, on first contact, like a recipe for a panic attack: premeditatio malorum, the premeditation of evils. You deliberately imagine, in detail, the things going wrong</p><span class="when">September 2025</span></a>
@@ -83,7 +99,7 @@
       <a class="card" href="https://prajj.com/articles/marcus-do-the-next-right-thing/"><h3>Do The Next Thing In Front Of You</h3><p>There&#x27;s a passage where Marcus, clearly tired, gives himself the simplest possible instruction. Don&#x27;t let your imagination get crushed by picturing the whole of your life at once — every trouble, all </p><span class="when">August 2017</span></a>
       <a class="card" href="https://prajj.com/articles/marcus-the-view-from-above/"><h3>The View From Above</h3><p>Marcus Aurelius had a trick for when things got loud. He&#x27;d zoom out. Picture the whole earth from way up — the cities, the wars, the marriages, the festivals — and watch the thing eating him shrink to</p><span class="when">August 2016</span></a>
     </div>
-    <h2 class="grp">Founders & the Enlightenment <span>16</span></h2>
+    <h2 class="grp" id="g4">Founders & the Enlightenment <span>16</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/locke-you-built-it-you-own-it/"><h3>Locke&#x27;s Rule: You Mixed Your Labor, You Own It</h3><p>John Locke had a theory of where property comes from that I think about constantly, because I work in an industry obsessed with the question and rarely honest about the answer. Locke said the world st</p><span class="when">September 2025</span></a>
       <a class="card" href="https://prajj.com/articles/design-for-your-own-irrelevance/"><h3>Design for Your Own Irrelevance</h3><p>The deist God&#x27;s most impressive act was leaving. He built the machine, set the laws, and then — this is the part that scandalized everyone — stepped back and never intervened again. No miracles, no re</p><span class="when">August 2025</span></a>
@@ -102,7 +118,7 @@
       <a class="card" href="https://prajj.com/articles/the-clockwork-and-the-ai/"><h3>The Clockwork Universe Already Survived This Panic</h3><p>When the deists started describing the universe as a clockwork mechanism — lawful, predictable, running on its own without a hovering God — a lot of people panicked. If the world is just a machine fol</p><span class="when">March 2019</span></a>
       <a class="card" href="https://prajj.com/articles/humes-guillotine-is-ought/"><h3>Hume&#x27;s Guillotine and the Metric That Lies</h3><p>David Hume noticed something so simple that for centuries nobody had said it out loud. Writers would reason along comfortably about what is — how the world works, what happens, what causes what — and </p><span class="when">June 2017</span></a>
     </div>
-    <h2 class="grp">The Existentialists <span>16</span></h2>
+    <h2 class="grp" id="g5">The Existentialists <span>16</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/the-metamorphosis-of-the-employee/"><h3>The Metamorphosis of the Employee</h3><p>Gregor Samsa wakes up as a giant insect, and here&#x27;s the detail everyone gets wrong. His first thought is not what happened to me. His first thought is the train. He&#x27;s worried he&#x27;ll be late for work. T</p><span class="when">February 2026</span></a>
       <a class="card" href="https://prajj.com/articles/the-absurd-is-a-contract/"><h3>The Absurd Is a Contract</h3><p>People think the absurd, in Camus, is a property of the universe. That the world is absurd. Not quite. Camus is careful here, and the carefulness is the whole insight. The absurd isn&#x27;t in the world an</p><span class="when">October 2024</span></a>
@@ -121,7 +137,7 @@
       <a class="card" href="https://prajj.com/articles/freedom-over-comfort/"><h3>Freedom Over Comfort</h3><p>Dostoevsky stages a confrontation in The Brothers Karamazov that I&#x27;d put on the wall of every company. A returned Christ gets arrested by the Grand Inquisitor, an old cardinal, who explains, almost te</p><span class="when">October 2016</span></a>
       <a class="card" href="https://prajj.com/articles/condemned-to-be-free/"><h3>Condemned to Be Free</h3><p>Sartre has a phrase that sounds like a contradiction: we are condemned to be free. Condemned, like a sentence, a punishment. Why would freedom be a punishment? Because, he says, we didn&#x27;t choose to ex</p><span class="when">February 2016</span></a>
     </div>
-    <h2 class="grp">Power & Strategy <span>16</span></h2>
+    <h2 class="grp" id="g6">Power & Strategy <span>16</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/articles/feared-or-loved-the-real-answer/"><h3>Feared or Loved Is the Wrong Question</h3><p>Everyone quotes the line: is it better to be feared or loved? And everyone stops one sentence too early. Machiavelli&#x27;s actual answer is that it&#x27;s best to be both, but since that&#x27;s hard, it&#x27;s safer to </p><span class="when">April 2026</span></a>
       <a class="card" href="https://prajj.com/articles/chanakya-build-the-system/"><h3>Chanakya&#x27;s Lesson: Build the System, Not the Hero</h3><p>Most people know Chanakya, if at all, as the cunning advisor who installed an empire. The Indian Machiavelli, two thousand years early. What gets lost is that the Arthashastra, his manual of statecraf</p><span class="when">March 2026</span></a>
@@ -141,6 +157,47 @@
       <a class="card" href="https://prajj.com/articles/48-laws-as-defense/"><h3>I Make Content About the 48 Laws. Here&#x27;s Why It&#x27;s Self-Defense.</h3><p>I make short videos about The 48 Laws of Power, and people sometimes assume that means I&#x27;m teaching manipulation. It&#x27;s the opposite, and the distinction is the whole point. Robert Greene&#x27;s book isn&#x27;t </p><span class="when">February 2016</span></a>
     </div>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){
+  var r=document.documentElement, s=localStorage.getItem("pc-theme");
+  if(s) r.setAttribute("data-theme",s);
+  var b=document.getElementById("themebtn");
+  if(b) b.addEventListener("click",function(){
+    var n=r.getAttribute("data-theme")==="light"?"":"light";
+    if(n) r.setAttribute("data-theme",n); else r.removeAttribute("data-theme");
+    localStorage.setItem("pc-theme",n);
+  });
+
+  /* instant filter */
+  var q=document.getElementById("filter");
+  if(!q) return;
+  var cards=[].slice.call(document.querySelectorAll("a.card"));
+  var groups=[].slice.call(document.querySelectorAll("h2.grp"));
+  var nr=document.getElementById("noresults");
+  function apply(){
+    var t=q.value.trim().toLowerCase(), any=false;
+    cards.forEach(function(c){
+      var hit=!t||c.textContent.toLowerCase().indexOf(t)>=0;
+      c.style.display=hit?"":"none";
+      if(hit) any=true;
+    });
+    groups.forEach(function(g){
+      var list=g.nextElementSibling, vis=false;
+      if(list) [].slice.call(list.querySelectorAll("a.card")).forEach(function(c){
+        if(c.style.display!=="none") vis=true;
+      });
+      g.style.display=vis?"":"none";
+      if(list) list.style.display=vis?"":"none";
+    });
+    if(nr) nr.style.display=any?"none":"block";
+  }
+  q.addEventListener("input",apply);
+  document.addEventListener("keydown",function(e){
+    var typing=document.activeElement&&/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+    if(e.key==="/"&&!typing){e.preventDefault();q.focus();}
+    else if(e.key==="Escape"&&document.activeElement===q){q.value="";apply();q.blur();}
+  });
+})();
+</script>
 </body>
 </html>

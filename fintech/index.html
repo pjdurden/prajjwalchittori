@@ -10,10 +10,24 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+  <div class="pagehead">
+    <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <h1>What I Think About the Top 50 Fintech Companies of All Time</h1>
   <p class="meta">Vision over financials. 50 companies — what each one understood that others didn't, where they went wrong, and a word on the founders. Opinions are mine.</p>
-    <h2 class="grp">Networks & Processors <span>10</span></h2>
+  <div class="toolbar">
+    <input class="search" id="filter" type="search" placeholder="Search 50 companies…  (press / )" autocomplete="off" aria-label="Search companies" />
+    <nav class="jump" aria-label="Jump to category">
+      <a href="#g0">Networks &amp; Processors</a>
+      <a href="#g1">Asia, LatAm &amp; Global</a>
+      <a href="#g2">Neobanks, Investing &amp; Lending</a>
+      <a href="#g3">Crypto &amp; Infrastructure</a>
+      <a href="#g4">Wallets, Remittance &amp; Cautionary Tales</a>
+    </nav>
+  </div>
+  <p class="noresults" id="noresults">No companies match that search.</p>
+    <h2 class="grp" id="g0">Networks & Processors <span>10</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/fintech/adyen/"><h3>Adyen</h3><p>Adyen won by refusing to do the thing everyone else thought was smart: buying their way to a payments stack.</p><span class="when">March 2021</span></a>
       <a class="card" href="https://prajj.com/fintech/block-square/"><h3>Block (Square)</h3><p>Square started as a piece of plastic in a headphone jack. That little dongle carried a worldview most of the industry found beneath them: the small merchant is not a small bank&#x27;s customer. They&#x27;re an </p><span class="when">May 2023</span></a>
@@ -26,7 +40,7 @@
       <a class="card" href="https://prajj.com/fintech/stripe/"><h3>Stripe</h3><p>The most underrated sentence in fintech: accepting money on the internet was a developer problem, not a banking problem.</p><span class="when">January 2025</span></a>
       <a class="card" href="https://prajj.com/fintech/visa/"><h3>Visa</h3><p>Visa is not a payments company. Almost everyone gets this wrong, including, in my experience, people who work there. Visa is a set of rules. A court nobody ever has to walk into. A language banks who </p><span class="when">November 2023</span></a>
     </div>
-    <h2 class="grp">Asia, LatAm & Global <span>10</span></h2>
+    <h2 class="grp" id="g1">Asia, LatAm & Global <span>10</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/fintech/ant-group-alipay/"><h3>Ant Group (Alipay)</h3><p>Alipay started as escrow. That&#x27;s the whole story, and almost nobody remembers it.</p><span class="when">March 2024</span></a>
       <a class="card" href="https://prajj.com/fintech/klarna/"><h3>Klarna</h3><p>Klarna understood something subtle and slightly dangerous: the friction in checkout isn&#x27;t technical, it&#x27;s emotional, and you can sell people the removal of that hesitation.</p><span class="when">August 2024</span></a>
@@ -39,7 +53,7 @@
       <a class="card" href="https://prajj.com/fintech/tencent-wechat-pay/"><h3>Tencent (WeChat Pay)</h3><p>WeChat Pay is the best proof that in fintech, distribution beats product. And it&#x27;s the most uncomfortable lesson, because builders like me want the product to win.</p><span class="when">March 2019</span></a>
       <a class="card" href="https://prajj.com/fintech/wise/"><h3>Wise (TransferWise)</h3><p>Wise is the most honest company in fintech, and it built a moat out of honesty, which almost nobody believes is possible.</p><span class="when">March 2024</span></a>
     </div>
-    <h2 class="grp">Neobanks, Investing & Lending <span>10</span></h2>
+    <h2 class="grp" id="g2">Neobanks, Investing & Lending <span>10</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/fintech/affirm/"><h3>Affirm</h3><p>Affirm&#x27;s real product was never installment loans. It was honesty as a wedge. The whole company is a bet that the credit card industry built itself on a lie, that &quot;0% APR&quot; and &quot;minimum payment&quot; and &quot;r</p><span class="when">July 2024</span></a>
       <a class="card" href="https://prajj.com/fintech/afterpay/"><h3>Afterpay</h3><p>Afterpay won by refusing to be a lender, and that refusal was the entire strategy. Pay in four. No interest, ever. Miss a payment and you&#x27;re locked out until you settle. That&#x27;s it. While Affirm was bu</p><span class="when">September 2021</span></a>
@@ -52,7 +66,7 @@
       <a class="card" href="https://prajj.com/fintech/starling/"><h3>Starling</h3><p>Starling is the neobank that didn&#x27;t want to be cool, and that turned out to be the contrarian masterstroke. While Monzo was building a coral-card cult and Revolut was chasing every shiny vertical, Sta</p><span class="when">June 2021</span></a>
       <a class="card" href="https://prajj.com/fintech/upstart/"><h3>Upstart</h3><p>Upstart asked the one question the credit industry had quietly decided was settled: what if the FICO score is just wrong? Not biased, not outdated. Wrong, as in leaving real money on the table by judg</p><span class="when">October 2025</span></a>
     </div>
-    <h2 class="grp">Crypto & Infrastructure <span>10</span></h2>
+    <h2 class="grp" id="g3">Crypto & Infrastructure <span>10</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/fintech/binance/"><h3>Binance</h3><p>Binance won by refusing to have an address.</p><span class="when">April 2023</span></a>
       <a class="card" href="https://prajj.com/fintech/brex/"><h3>Brex</h3><p>Brex started with one sharp, almost rude observation. Startups had money but no credit.</p><span class="when">February 2020</span></a>
@@ -65,7 +79,7 @@
       <a class="card" href="https://prajj.com/fintech/ramp/"><h3>Ramp</h3><p>Ramp did the one thing no other corporate card company would say out loud. They built a product whose explicit goal is to make you spend less.</p><span class="when">December 2022</span></a>
       <a class="card" href="https://prajj.com/fintech/ripple/"><h3>Ripple</h3><p>Ripple is the most interesting wrong-shaped right bet in crypto.</p><span class="when">September 2024</span></a>
     </div>
-    <h2 class="grp">Wallets, Remittance & Cautionary Tales <span>10</span></h2>
+    <h2 class="grp" id="g4">Wallets, Remittance & Cautionary Tales <span>10</span></h2>
     <div class="cardlist">
       <a class="card" href="https://prajj.com/fintech/airwallex/"><h3>Airwallex</h3><p>Airwallex is what happens when engineers who actually had the problem rebuild the cross-border stack from the silicon up instead of reselling someone else&#x27;s.</p><span class="when">October 2020</span></a>
       <a class="card" href="https://prajj.com/fintech/cash-app/"><h3>Cash App</h3><p>Cash App is the most underestimated product in American fintech, and the reason is the people underestimating it have never been poor.</p><span class="when">June 2022</span></a>
@@ -79,6 +93,47 @@
       <a class="card" href="https://prajj.com/fintech/wirecard/"><h3>Wirecard</h3><p>Wirecard is the cautionary tale fintech doesn&#x27;t like to tell honestly, because telling it honestly means admitting how badly everyone wanted to believe.</p><span class="when">January 2020</span></a>
     </div>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){
+  var r=document.documentElement, s=localStorage.getItem("pc-theme");
+  if(s) r.setAttribute("data-theme",s);
+  var b=document.getElementById("themebtn");
+  if(b) b.addEventListener("click",function(){
+    var n=r.getAttribute("data-theme")==="light"?"":"light";
+    if(n) r.setAttribute("data-theme",n); else r.removeAttribute("data-theme");
+    localStorage.setItem("pc-theme",n);
+  });
+
+  /* instant filter */
+  var q=document.getElementById("filter");
+  if(!q) return;
+  var cards=[].slice.call(document.querySelectorAll("a.card"));
+  var groups=[].slice.call(document.querySelectorAll("h2.grp"));
+  var nr=document.getElementById("noresults");
+  function apply(){
+    var t=q.value.trim().toLowerCase(), any=false;
+    cards.forEach(function(c){
+      var hit=!t||c.textContent.toLowerCase().indexOf(t)>=0;
+      c.style.display=hit?"":"none";
+      if(hit) any=true;
+    });
+    groups.forEach(function(g){
+      var list=g.nextElementSibling, vis=false;
+      if(list) [].slice.call(list.querySelectorAll("a.card")).forEach(function(c){
+        if(c.style.display!=="none") vis=true;
+      });
+      g.style.display=vis?"":"none";
+      if(list) list.style.display=vis?"":"none";
+    });
+    if(nr) nr.style.display=any?"none":"block";
+  }
+  q.addEventListener("input",apply);
+  document.addEventListener("keydown",function(e){
+    var typing=document.activeElement&&/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
+    if(e.key==="/"&&!typing){e.preventDefault();q.focus();}
+    else if(e.key==="Escape"&&document.activeElement===q){q.value="";apply();q.blur();}
+  });
+})();
+</script>
 </body>
 </html>

@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Crypto & Infrastructure</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Circle — What I Think</h1>
     <p class="meta">Prajjwal Chittori · April 2020</p>
@@ -45,6 +48,12 @@
 <p>Founder-led, so this is on leadership. Jeremy Allaire is a rare two-arc founder — built internet-video infrastructure in the 90s, then did it again for money. The through-line: he keeps betting open protocols beat closed products, and that regulation is a moat, not an enemy. In crypto, where the default instinct is to flee jurisdiction, that&rsquo;s genuinely contrarian. Choosing the transparent US-regulated path against Tether&rsquo;s offshore juggernaut was a decade-long patience trade, and patience is the rarest asset in this industry. My one gripe: the same instinct can tip into being so compliance-shaped the roadmap waits on legislation. The strongest version of his Circle treats USDC less like a regulated token and more like a settlement standard the whole internet defaults to. And acts like it already won.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/brex/"><span class="dir">&larr; Previous</span><span class="ttl">Brex</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/coinbase/"><span class="dir">Next &rarr;</span><span class="ttl">Coinbase</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -54,6 +63,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

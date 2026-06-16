@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Wallets, Remittance & Cautionary Tales</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Nium — What I Think</h1>
     <p class="meta">Prajjwal Chittori · January 2025</p>
@@ -45,6 +48,12 @@
 <p>On leadership: Prajit Nanu, co-founder and CEO. Soft spot for the origin — the story goes he couldn&rsquo;t easily send money for a friend&rsquo;s wedding and decided the whole B2B plumbing was the real thing worth fixing, not the consumer app. Going down a layer to the rails, away from the shiny front-end where everyone else is brawling, is the correct instinct. It&rsquo;s the one I&rsquo;d make too. The founder risk is the perennial infrastructure-founder trap: a global rails business demands ruthless focus and operational discipline across many markets at once, and ambition that outpaces execution is how promising networks quietly stall. The vision is right. Infrastructure punishes anything less than relentless on the follow-through.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/gocardless/"><span class="dir">&larr; Previous</span><span class="ttl">GoCardless</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/payoneer/"><span class="dir">Next &rarr;</span><span class="ttl">Payoneer</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -54,6 +63,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

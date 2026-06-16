@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Crypto & Infrastructure</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Coinbase — What I Think</h1>
     <p class="meta">Prajjwal Chittori · February 2022</p>
@@ -46,6 +49,12 @@
 <p>One founder-CEO, so this is on leadership. Brian Armstrong is the most underrated operator in crypto precisely because he&rsquo;s boring. No theatrics, no airdrop populism, just a flat conviction that the regulated path is the only one that compounds. His &ldquo;mission-focused, no politics at work&rdquo; memo cost him talent and bought him a culture that survived 2022 intact. In this industry surviving 2022 intact is the whole scoreboard. Base is the clearest sign he gets the arc — stop renting legitimacy to traders, start owning the layer they settle on. My one gripe is the flip side of the praise: the same legalism that kept them alive can read as waiting for permission. The best version of his Coinbase stops asking and just becomes the rail. Closer to that than people think. Or something like that.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/circle/"><span class="dir">&larr; Previous</span><span class="ttl">Circle</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/galileo/"><span class="dir">Next &rarr;</span><span class="ttl">Galileo</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -55,6 +64,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

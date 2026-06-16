@@ -31,7 +31,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/">&larr; Prajjwal Chittori</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/articles/">Writing</a><span class="sep">&rsaquo;</span><span class="here">The Greeks</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Build a Garden, Not an Empire</h1>
     <p class="meta">Prajjwal Chittori · July 2023</p>
@@ -44,6 +47,12 @@
 <hr />
 <p><em>One of a series of essays. I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/articles/aristotle-the-mean/"><span class="dir">&larr; Previous</span><span class="ttl">The Mean Is Not the Middle</span></a>
+    <a class="nextlink" href="https://prajj.com/articles/epicurus-desire-reduction/"><span class="dir">Next &rarr;</span><span class="ttl">Epicurus Would Have Hated Your Growth Plan</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>Written by <strong>Prajjwal Chittori</strong> — backend engineer (crypto &times; payments), founder, creator.</p>
     <p class="links">
@@ -56,6 +65,14 @@
     <p class="more"><a href="https://prajj.com/articles/">More writing &rarr;</a></p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>

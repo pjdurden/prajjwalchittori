@@ -32,7 +32,10 @@
 </head>
 <body>
 <main class="wrap">
-  <a class="back" href="https://prajj.com/fintech/">&larr; The Top 50 Fintech</a>
+    <div class="pagehead">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="https://prajj.com/">Home</a><span class="sep">&rsaquo;</span><a href="https://prajj.com/fintech/">Top 50 Fintech</a><span class="sep">&rsaquo;</span><span class="here">Crypto & Infrastructure</span></nav>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
+  </div>
   <article>
     <h1>Ramp — What I Think</h1>
     <p class="meta">Prajjwal Chittori · December 2022</p>
@@ -45,6 +48,12 @@
 <p>Founder-led, so this is on leadership. Eric Glyman built Ramp around a genuinely contrarian act of product courage — an interchange-funded business that openly tries to reduce the spend it earns on. Most founders would never deliberately aim their product at their own revenue line. Glyman made the contradiction the brand and bet customer trust would compound faster than short-term swipe revenue. Real thesis, not a tagline. The AI-native push — treating the finance back office as a set of tasks software agents should just do — is the clearest sign he knows where the value is migrating, from the card to the automation. My one gripe is baked into the model: a company whose pitch is efficiency has to keep proving the efficiency is real and not a customer-acquisition story, especially as it scales into bigger, messier enterprises. The strongest version is the autonomous finance team. That&rsquo;s worth betting on.</p>
 <p><em>Part of &ldquo;What I Think About the Top 50 Fintech Companies of All Time.&rdquo; I&rsquo;m Prajjwal Chittori. <a href="https://prajjwalchittori.com">prajjwalchittori.com</a>.</em></p>
   </article>
+    <!-- SERIESNAV:START -->
+  <nav class="seriesnav" aria-label="More in this series">
+    <a class="prevlink" href="https://prajj.com/fintech/plaid/"><span class="dir">&larr; Previous</span><span class="ttl">Plaid</span></a>
+    <a class="nextlink" href="https://prajj.com/fintech/ripple/"><span class="dir">Next &rarr;</span><span class="ttl">Ripple</span></a>
+  </nav>
+  <!-- SERIESNAV:END -->
   <footer>
     <p>From <strong>"What I Think About the Top 50 Fintech Companies of All Time"</strong> by Prajjwal Chittori — backend engineer (crypto &times; payments), ex-Visa, ex-Stader.</p>
     <p class="links">
@@ -54,6 +63,14 @@
     </p>
   </footer>
 </main>
-<script>(function(){var s=localStorage.getItem("pc-theme");if(s)document.documentElement.setAttribute("data-theme",s);})();</script>
+<script>
+(function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s)r.setAttribute("data-theme",s);
+var b=document.getElementById("themebtn");
+if(b)b.addEventListener("click",function(){
+var n=r.getAttribute("data-theme")==="light"?"":"light";
+if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
+localStorage.setItem("pc-theme",n);});})();
+</script>
 </body>
 </html>
