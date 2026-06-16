@@ -261,9 +261,17 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">6 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">8 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; increasingly in AI inference and ML systems.</p>
     <div class="grid two">
+      <article class="card">
+        <div class="head"><h3>Optimism — op-wheel metrics fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>Optimism</strong>, the OP Stack monorepo powering Ethereum L2s like Base &amp; OP Mainnet: fixed an <code>op-wheel</code> metrics bug where <code>RecordBlockStats</code> wrote block gas twice and left the base-fee gauge unset, and corrected the pre-block status log. <a href="https://github.com/ethereum-optimism/optimism/pull/21127">ethereum-optimism/optimism #21127</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>mcp-go — OAuth error-handling fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>mcp-go</strong>, the leading Go implementation of the Model Context Protocol (MCP): fixed <code>getServerMetadata</code> returning <code>(nil, nil)</code> on failure instead of an error, removing a silent-failure path for OAuth discovery. <a href="https://github.com/mark3labs/mcp-go/pull/904">mark3labs/mcp-go #904</a></p>
+      </article>
       <article class="card">
         <div class="head"><h3>vLLM — build-correctness fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
@@ -461,6 +469,8 @@
     {label:"All Writing",hint:"106 essays · philosophy & building",url:"/articles/"},
     {label:"Top 50 Fintech",hint:"the full series",url:"/fintech/"},
     {label:"EtherFi",hint:"Senior Backend Engineer, Cash",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"Optimism PR",hint:"merged · ethereum-optimism/optimism #21127",url:"https://github.com/ethereum-optimism/optimism/pull/21127"},
+    {label:"mcp-go PR",hint:"merged · mark3labs/mcp-go #904",url:"https://github.com/mark3labs/mcp-go/pull/904"},
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
