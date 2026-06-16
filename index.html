@@ -51,6 +51,17 @@
 }
 </script>
 
+<!-- apply theme before first paint to avoid a flash of the wrong theme -->
+<script>
+(function(){
+  try{
+    var t=localStorage.getItem("pc-theme");
+    if(t===null&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches) t="light";
+    if(t) document.documentElement.setAttribute("data-theme",t);
+  }catch(e){}
+})();
+</script>
+
 <style>
   :root{
     --bg:#0b0d10; --panel:#11151a; --panel2:#0e1216; --text:#e7e9ea; --soft:#cdd3d8;
@@ -187,6 +198,16 @@
   .palette li.sel .hint,.palette li:hover .hint{color:rgba(4,18,31,.7)}
 
   @media(max-width:560px){h1{font-size:2.1rem}.kbd .label{display:none}}
+
+  /* respect users who ask for less motion */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+      transition-duration:.001ms!important}
+    .card{opacity:1;transform:none}
+    #glow{display:none}
+    .role .cursor{animation:none}
+  }
 </style>
 </head>
 <body>
@@ -197,7 +218,7 @@
     <span class="brand">PC</span>
     <div class="navactions">
       <span class="visits" id="visits" title="Unique visitors — via GoatCounter" aria-live="polite">
-        <span class="dot"></span><span id="visits-n">&#8212;</span><span class="lbl">&nbsp;visits</span>
+        <span class="dot"></span><span id="visits-n">0</span><span class="lbl">&nbsp;visits</span>
       </span>
       <button class="kbd" id="open-cmdk" aria-label="Open menu"><span class="label">Menu</span> <code>&#8984;K</code></button>
       <button class="iconbtn" id="theme" aria-label="Toggle theme" title="Toggle theme">&#9680;</button>
@@ -413,7 +434,9 @@
              "philosophy creator — 20M+ views",
              "Codeforces Expert · FIDE chess"];
   var ti=0,ci=0,del=false,el=$("#typed");
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function tick(){
+    if(reduce){el.textContent=roles[0];return;}
     var w=roles[ti];
     el.textContent=del?w.slice(0,ci--):w.slice(0,ci++);
     var d=del?38:64;
@@ -535,17 +558,20 @@
   s.setAttribute("data-goatcounter", base + "/count");
   document.head.appendChild(s);
 
-  // fetch and display the total unique-visitor count
-  // requires "Allow getting visitor counts" enabled in GoatCounter → Settings → Site
+  var el = document.getElementById("visits-n");
+  function show(n){ if(el) el.textContent = n.toLocaleString("en-US"); }
+
+  // render immediately so the pill never shows a dash
+  show(0);
+
   fetch(base + "/counter/TOTAL.json")
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){
       if(!d) return;
-      var n = d.count_unique || d.count;
-      var el = document.getElementById("visits-n");
-      if(el && n) el.textContent = n;
+      var n = parseInt(d.count_unique || d.count, 10) || 0;
+      show(n);
     })
-    .catch(function(){ /* leave the dash if the API is unreachable */ });
+    .catch(function(){});
 })();
 </script>
 </body>
