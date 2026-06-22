@@ -282,7 +282,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">9 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">11 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; increasingly in AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
@@ -296,6 +296,14 @@
       <article class="card">
         <div class="head"><h3>vLLM — build-correctness fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>SGLang — PD cache-aware routing fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>SGLang</strong>, the high-throughput LLM/VLM serving engine: the prefill/decode router's cache-aware routing keyed chat requests on the first message only; routing on the full conversation lifted KV-cache hits from <strong>~69% to ~96%</strong> and output throughput from <strong>~678 to ~1078 TPS</strong>. <a href="https://github.com/sgl-project/sglang/pull/27430">sgl-project/sglang #27430</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>AIBrix — KV-event decoder fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>llguidance — constrained-decoding fixes</h3><span class="when">2026</span></div>
@@ -508,6 +516,8 @@
     {label:"Optimism PR",hint:"merged · ethereum-optimism/optimism #21127",url:"https://github.com/ethereum-optimism/optimism/pull/21127"},
     {label:"mcp-go PR",hint:"merged · mark3labs/mcp-go #904",url:"https://github.com/mark3labs/mcp-go/pull/904"},
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
+    {label:"SGLang PR",hint:"merged · sgl-project/sglang #27430",url:"https://github.com/sgl-project/sglang/pull/27430"},
+    {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2384",url:"https://github.com/vllm-project/aibrix/pull/2384"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
