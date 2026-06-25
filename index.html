@@ -246,7 +246,7 @@
     <p class="role">&gt;&nbsp;<span id="typed"></span><span class="cursor">_</span></p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ cat summary.txt</p>
-    <p class="tag"><b>Backend / systems engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL), ex-Visa cross-border payments, now Senior Backend Engineer at EtherFi. Shipping inference-infra open source in public: merged to vLLM, SGLang, AIBrix and llguidance. Based in George Town, Cayman Islands.</p>
+    <p class="tag"><b>Backend / systems engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL), ex-Visa cross-border payments, now Senior Backend Engineer at EtherFi. Shipping inference-infra open source in public: merged to vLLM, SGLang, AIBrix, mistral.rs and llguidance. Based in George Town, Cayman Islands.</p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ ls links/</p>
     <div class="links">
@@ -307,7 +307,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">11 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">13 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; increasingly in AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
@@ -329,6 +329,10 @@
       <article class="card">
         <div class="head"><h3>AIBrix — KV-event decoder fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>mistral.rs — scheduler &amp; GGUF-loader fixes</h3><span class="when">2026</span></div>
+        <p>Two merged contributions to <strong>mistral.rs</strong>, the Rust LLM inference &amp; serving engine: fixed reversed FCFS priority in the <code>PagedAttentionScheduler</code> preemption path so the oldest request is preempted last, and validated GGUF special-token ids against the vocab to prevent an out-of-bounds panic on model load. <a href="https://github.com/EricLBuehler/mistral.rs/pull/2250">EricLBuehler/mistral.rs #2250</a> &middot; <a href="https://github.com/EricLBuehler/mistral.rs/pull/2282">#2282</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>llguidance — constrained-decoding fixes</h3><span class="when">2026</span></div>
@@ -543,6 +547,8 @@
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
     {label:"SGLang PR",hint:"merged · sgl-project/sglang #27430",url:"https://github.com/sgl-project/sglang/pull/27430"},
     {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2384",url:"https://github.com/vllm-project/aibrix/pull/2384"},
+    {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
+    {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
