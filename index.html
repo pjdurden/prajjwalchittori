@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://prajj.com/assets/og-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Prajjwal Chittori — Senior Backend Engineer, crypto x AI infra" />
+<meta property="og:image:alt" content="Prajjwal Chittori — Senior Backend Engineer, crypto x payments infra" />
 <meta property="profile:first_name" content="Prajjwal" />
 <meta property="profile:last_name" content="Chittori" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -32,14 +32,14 @@
   "familyName": "Chittori",
   "gender": "Male",
   "jobTitle": "Senior Backend Engineer",
-  "description": "Engineer, founder, and creator with 20M+ views. Senior backend engineer working at the intersection of crypto and payments, and an active open-source contributor to AI inference infrastructure (vLLM). Founder of KuruX Enterprises and Bizpedia.",
+  "description": "Engineer, founder, and creator with 20M+ views. Senior backend engineer working at the intersection of crypto and payments — liquid restaking, on-chain settlement, card and cross-border payment rails — and an active open-source contributor to blockchain and AI-inference infrastructure. Founder of KuruX Enterprises and Bizpedia.",
   "url": "https://prajj.com/",
   "image": "https://prajj.com/prajjwal.jpg",
   "nationality": "Indian",
   "worksFor": { "@type": "Organization", "name": "EtherFi" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Delhi Technological University" },
   "homeLocation": { "@type": "Place", "name": "George Town, Cayman Islands" },
-  "knowsAbout": ["Backend Engineering","AI Inference","LLM Inference","AI Infrastructure","vLLM","Machine Learning Systems","Distributed Systems","Decentralized Machine Learning Training","Cryptocurrency","DeFi","Liquid Restaking","Cross-border Payments","Smart Contracts","Rust","Go","Solidity","Competitive Programming"],
+  "knowsAbout": ["Backend Engineering","Cryptocurrency","DeFi","Liquid Staking","Liquid Restaking","Smart Contracts","Ethereum","EigenLayer","On-chain Settlement","Stablecoins","Cross-border Payments","Card & Payment Rails","Distributed Systems","Solidity","Rust","Go","AI Inference","LLM Inference","vLLM","Competitive Programming"],
   "award": ["Codeforces Expert","Y Combinator Startup School feature (KuruX)"],
   "sameAs": [
     "https://www.linkedin.com/in/prajjwal-chittori",
@@ -246,7 +246,7 @@
     <p class="role">&gt;&nbsp;<span id="typed"></span><span class="cursor">_</span></p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ cat summary.txt</p>
-    <p class="tag"><b>Backend / systems engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL), ex-Visa cross-border payments, now Senior Backend Engineer at EtherFi. Shipping inference-infra open source in public: merged to vLLM, SGLang, AIBrix, mistral.rs and llguidance. Based in George Town, Cayman Islands.</p>
+    <p class="tag"><b>Crypto &amp; payments backend engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL liquid staking), ex-Visa cross-border payments &amp; stablecoins, now Senior Backend Engineer at EtherFi building card &harr; on-chain settlement. Merged open source across blockchain infra (Optimism, revm, celestia-node, ethrex) and AI inference (vLLM, SGLang, mistral.rs). Based in George Town, Cayman Islands.</p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ ls links/</p>
     <div class="links">
@@ -308,11 +308,31 @@
   <!-- OPEN SOURCE -->
   <section id="oss">
     <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">13 contributions</span></div>
-    <p class="lead">Merged work on the infrastructure other people build on &mdash; increasingly in AI inference and ML systems.</p>
+    <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
         <div class="head"><h3>Optimism — op-wheel metrics fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>Optimism</strong>, the OP Stack monorepo powering Ethereum L2s like Base &amp; OP Mainnet: fixed an <code>op-wheel</code> metrics bug where <code>RecordBlockStats</code> wrote block gas twice and left the base-fee gauge unset, and corrected the pre-block status log. <a href="https://github.com/ethereum-optimism/optimism/pull/21127">ethereum-optimism/optimism #21127</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>revm — EVM interpreter fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>ethrex — Ethereum client startup fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>ethrex</strong>, the Rust Ethereum L1/L2 execution client by LambdaClass: replaced a too-broad <code>datadir non-empty</code> check with an actual-DB probe, so unrelated files (e.g. an EthDocker JWT secret in the same directory) no longer block a fresh node from booting. <a href="https://github.com/lambdaclass/ethrex/pull/6786">lambdaclass/ethrex #6786</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>celestia-node — DA layer test-infra</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>celestia-node</strong>, the Go node for the Celestia data-availability layer: unified the header <code>TestSuite</code> constructors behind functional options, cutting duplicated test setup. <a href="https://github.com/celestiaorg/celestia-node/pull/5041">celestiaorg/celestia-node #5041</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>CoinSwap — CosmWasm + Terraswap DEX</h3><span class="when">2022</span></div>
+        <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Gas-Fee Benchmark — Terra/CosmWasm</h3><span class="when">2022</span></div>
+        <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>mcp-go — OAuth error-handling fix</h3><span class="when">2026</span></div>
@@ -341,26 +361,6 @@
       <article class="card">
         <div class="head"><h3>Meilisearch — ranking-rules fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine (58K&#9733;): fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>revm — interpreter fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>celestia-node — test-infra refactor</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>celestia-node</strong>, the Go node for the Celestia data-availability layer: unified the header <code>TestSuite</code> constructors behind functional options, cutting duplicated test setup. <a href="https://github.com/celestiaorg/celestia-node/pull/5041">celestiaorg/celestia-node #5041</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>ethrex — L1 startup fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>ethrex</strong>, the Rust Ethereum L1/L2 execution client by LambdaClass: replaced a too-broad <code>datadir non-empty</code> check with an actual-DB probe, so unrelated files (e.g. an EthDocker JWT secret in the same directory) no longer block a fresh node from booting. <a href="https://github.com/lambdaclass/ethrex/pull/6786">lambdaclass/ethrex #6786</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>CoinSwap — CosmWasm + Terraswap</h3><span class="when">2022</span></div>
-        <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Gas-Fee Benchmark</h3><span class="when">2022</span></div>
-        <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
       </article>
     </div>
   </section>
@@ -477,10 +477,11 @@
   });
 
   /* ---- typewriter ---- */
-  var roles=["backend & systems engineer",
-             "founding engineer → $500M+ TVL @ Stader",
-             "inference-infra OSS · vLLM · SGLang · llguidance",
+  var roles=["crypto & payments backend engineer",
+             "founding engineer → $500M+ TVL liquid staking @ Stader",
+             "on-chain ⇄ Visa card settlement @ EtherFi",
              "ex-Visa · cross-border payments at 2,000+ TPS",
+             "blockchain OSS · Optimism · revm · celestia · ethrex",
              "Codeforces Expert · 20M+ content views"];
   var ti=0,ci=0,del=false,el=$("#typed");
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
