@@ -246,7 +246,7 @@
     <p class="role">&gt;&nbsp;<span id="typed"></span><span class="cursor">_</span></p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ cat summary.txt</p>
-    <p class="tag"><b>Crypto &amp; payments backend engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL liquid staking), ex-Visa cross-border payments &amp; stablecoins, now Senior Backend Engineer at EtherFi building card &harr; on-chain settlement. Merged open source across blockchain infra (Optimism, revm, celestia-node, ethrex) and AI inference (vLLM, SGLang, mistral.rs). Based in George Town, Cayman Islands.</p>
+    <p class="tag"><b>Crypto &amp; payments backend engineer.</b> ex-Stader (founding engineer &rarr; $500M+ TVL liquid staking), ex-Visa cross-border payments &amp; stablecoins, now Senior Backend Engineer at EtherFi building card &harr; on-chain settlement. Merged open source across blockchain infra (Optimism, revm, alloy, celestia-node, ethrex) and AI inference (vLLM, SGLang, mistral.rs). Based in George Town, Cayman Islands.</p>
 
     <p class="prompt"><span class="usr">prajjwal@chittori</span>:<span class="pth">~</span>$ ls links/</p>
     <div class="links">
@@ -307,7 +307,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">13 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">14 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
@@ -317,6 +317,10 @@
       <article class="card">
         <div class="head"><h3>revm — EVM interpreter fix</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>alloy — sol! macro derive fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>alloy</strong>, the Rust Ethereum-types &amp; <code>sol!</code> toolkit used across Foundry, reth &amp; the wider Rust EVM ecosystem: the <code>sol!</code> macro silently dropped <code>Debug</code>/<code>PartialEq</code>/<code>Eq</code>/<code>Hash</code> derives on the event/error enums it generates for contracts with overloaded events (e.g. Uniswap V3's two <code>Swap</code> events), because synthetic <code>_N</code>-suffixed variant names didn't resolve; fixed it to compute derivability from the underlying parameter types. <a href="https://github.com/alloy-rs/core/pull/1118">alloy-rs/core #1118</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>ethrex — Ethereum client startup fix</h3><span class="when">2026</span></div>
@@ -347,8 +351,8 @@
         <p>Merged contribution to <strong>SGLang</strong>, the high-throughput LLM/VLM serving engine: the prefill/decode router's cache-aware routing keyed chat requests on the first message only; routing on the full conversation lifted KV-cache hits from <strong>~69% to ~96%</strong> and output throughput from <strong>~678 to ~1078 TPS</strong>. <a href="https://github.com/sgl-project/sglang/pull/27430">sgl-project/sglang #27430</a></p>
       </article>
       <article class="card">
-        <div class="head"><h3>AIBrix — KV-event decoder fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a></p>
+        <div class="head"><h3>AIBrix — KV-event decoder &amp; eviction fixes</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models; and made the KV-event indexer purge a pod's cached prefixes on <code>AllBlocksCleared</code> so evicted blocks are no longer served as stale cache hits. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a> &middot; <a href="https://github.com/vllm-project/aibrix/pull/2385">#2385</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>mistral.rs — scheduler &amp; GGUF-loader fixes</h3><span class="when">2026</span></div>
@@ -481,7 +485,7 @@
              "founding engineer → $500M+ TVL liquid staking @ Stader",
              "on-chain ⇄ Visa card settlement @ EtherFi",
              "ex-Visa · cross-border payments at 2,000+ TPS",
-             "blockchain OSS · Optimism · revm · celestia · ethrex",
+             "blockchain OSS · Optimism · revm · alloy · celestia · ethrex",
              "Codeforces Expert · 20M+ content views"];
   var ti=0,ci=0,del=false,el=$("#typed");
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -548,11 +552,13 @@
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
     {label:"SGLang PR",hint:"merged · sgl-project/sglang #27430",url:"https://github.com/sgl-project/sglang/pull/27430"},
     {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2384",url:"https://github.com/vllm-project/aibrix/pull/2384"},
+    {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2385",url:"https://github.com/vllm-project/aibrix/pull/2385"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
+    {label:"alloy PR",hint:"merged · alloy-rs/core #1118",url:"https://github.com/alloy-rs/core/pull/1118"},
     {label:"celestia-node PR",hint:"merged · celestiaorg/celestia-node #5041",url:"https://github.com/celestiaorg/celestia-node/pull/5041"},
     {label:"ethrex PR",hint:"merged · lambdaclass/ethrex #6786",url:"https://github.com/lambdaclass/ethrex/pull/6786"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
