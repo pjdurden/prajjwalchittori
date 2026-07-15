@@ -307,7 +307,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">14 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">16 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
@@ -353,6 +353,10 @@
       <article class="card">
         <div class="head"><h3>AIBrix — KV-event decoder &amp; eviction fixes</h3><span class="when">2026</span></div>
         <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models; and made the KV-event indexer purge a pod's cached prefixes on <code>AllBlocksCleared</code> so evicted blocks are no longer served as stale cache hits. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a> &middot; <a href="https://github.com/vllm-project/aibrix/pull/2385">#2385</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>Envoy AI Gateway — MCP proxy &amp; token-usage fixes</h3><span class="when">2026</span></div>
+        <p>Two merged contributions to <strong>Envoy AI Gateway</strong>, the Envoy-based gateway for AI/LLM traffic: the MCP proxy failed <code>initialize</code> with a 500 when a backend's SSE response opened with a keep-alive / empty <code>data:</code> event before the JSON-RPC result (seen on some FastMCP backends), so the SSE parser now skips non-response events instead of treating them as a fatal parse error; and the Anthropic translator dropped the input/cache token usage reported on <code>message_delta</code>, leaving it out of the final usage totals, now fixed to merge it in. <a href="https://github.com/envoyproxy/ai-gateway/pull/2267">envoyproxy/ai-gateway #2267</a> &middot; <a href="https://github.com/envoyproxy/ai-gateway/pull/2292">#2292</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>mistral.rs — scheduler &amp; GGUF-loader fixes</h3><span class="when">2026</span></div>
@@ -553,6 +557,8 @@
     {label:"SGLang PR",hint:"merged · sgl-project/sglang #27430",url:"https://github.com/sgl-project/sglang/pull/27430"},
     {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2384",url:"https://github.com/vllm-project/aibrix/pull/2384"},
     {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2385",url:"https://github.com/vllm-project/aibrix/pull/2385"},
+    {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2267",url:"https://github.com/envoyproxy/ai-gateway/pull/2267"},
+    {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2292",url:"https://github.com/envoyproxy/ai-gateway/pull/2292"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
