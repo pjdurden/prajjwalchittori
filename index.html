@@ -291,9 +291,13 @@
 
   <!-- RESEARCH -->
   <section id="research">
-    <div class="eyebrow"><h2>Research</h2><span class="rule"></span><span class="count">2 papers</span></div>
+    <div class="eyebrow"><h2>Research</h2><span class="rule"></span><span class="count">3 papers</span></div>
     <p class="lead">Published, peer-citable work.</p>
     <div class="grid">
+      <article class="card">
+        <div class="head"><h3>Cache-aware request planning for black-box LLM APIs</h3><span class="when">2026 &middot; preprint</span></div>
+        <p><strong>Cache-Aware Client-Side Request Planning for Black-Box LLM APIs.</strong> When you consume an LLM through a paid per-token API you pay for the tokens the server processes, so the only lossless lever a client has is re-ordering requests to hit the provider's prompt cache. Formalizes that design space and ships a <strong>greedy prefix-clustering scheduler</strong> that shapes request order to maximize cache hits — <strong>up to 60% billed-cost reduction</strong> on an agentic workload at zero quality loss, Pareto-dominating prompt compression and semantic caching. <a href="https://doi.org/10.5281/zenodo.21386594">DOI 10.5281/zenodo.21386594</a> &middot; <a href="https://github.com/pjdurden/cache-aware-request-planning">pjdurden/cache-aware-request-planning</a></p>
+      </article>
       <article class="card">
         <div class="head"><h3>Executable correctness under KV-cache compression</h3><span class="when">2026 &middot; preprint</span></div>
         <p><strong>Perplexity Holds, Programs Break: Executable Correctness as a Blind Spot of KV-Cache Compression.</strong> KV-cache compression is benchmarked almost entirely on token-overlap and retrieval metrics that never check whether generated code actually runs or a tool call is schema-valid. Introduces <strong>kv-exec-bench</strong>, an open benchmark measuring code unit-test pass@1 and tool-call JSON-Schema validity under compression, built on NVIDIA's <code>kvpress</code> so any press works unmodified. <a href="https://doi.org/10.5281/zenodo.20805562">DOI 10.5281/zenodo.20805562</a> &middot; <a href="https://github.com/pjdurden/kv-exec-bench">pjdurden/kv-exec-bench</a></p>
