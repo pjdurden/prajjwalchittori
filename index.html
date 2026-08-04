@@ -263,6 +263,14 @@
     #glow{display:none}
     .role .cursor{animation:none}
   }
+  /* Print without JS: never let the reveal animation hide content on paper. */
+  @media print{
+    .tile{opacity:1!important;transform:none!important;border-color:#999}
+    .tile>summary::after{display:none}
+    .tile>summary{cursor:auto}
+    #glow{display:none}
+    .role .cursor{animation:none}
+  }
 </style>
 </head>
 <body>
@@ -717,10 +725,14 @@
 
   /* ---- printing ---- */
   /* Collapsed <details> print blank, which would gut a PDF of this page.
-     Open everything before printing, then restore what the reader had open. */
+     Open everything before printing, then restore what the reader had open.
+     Also force the scroll-reveal class on: tiles below the fold still sit at
+     opacity:0 until the observer fires, so an un-scrolled page printed blank
+     rows. That predates the collapsible change and applied to the old cards too. */
   (function(){
     var reopened=[];
     window.addEventListener("beforeprint",function(){
+      $$(".tile").forEach(function(d){d.classList.add("in")});
       reopened=$$("details.tile").filter(function(d){return !d.open});
       reopened.forEach(function(d){d.open=true});
     });
