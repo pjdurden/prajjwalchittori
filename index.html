@@ -311,7 +311,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">19 contributions</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">21 contributions</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems.</p>
     <div class="grid two">
       <article class="card">
@@ -363,8 +363,8 @@
         <p>Two merged contributions to <strong>Envoy AI Gateway</strong>, the Envoy-based gateway for AI/LLM traffic: the MCP proxy failed <code>initialize</code> with a 500 when a backend's SSE response opened with a keep-alive / empty <code>data:</code> event before the JSON-RPC result (seen on some FastMCP backends), so the SSE parser now skips non-response events instead of treating them as a fatal parse error; and the Anthropic translator dropped the input/cache token usage reported on <code>message_delta</code>, leaving it out of the final usage totals, now fixed to merge it in. <a href="https://github.com/envoyproxy/ai-gateway/pull/2267">envoyproxy/ai-gateway #2267</a> &middot; <a href="https://github.com/envoyproxy/ai-gateway/pull/2292">#2292</a></p>
       </article>
       <article class="card">
-        <div class="head"><h3>Mooncake — master startup fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>. Fixed by pinning the dependency to a revision that parses numeric IP literals directly instead of handing them to the resolver. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a></p>
+        <div class="head"><h3>Mooncake — startup &amp; SSD-offload fixes</h3><span class="when">2026</span></div>
+        <p>Two merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>candle — Qwen3 batched-inference fix</h3><span class="when">2026</span></div>
@@ -377,6 +377,10 @@
       <article class="card">
         <div class="head"><h3>llguidance — constrained-decoding fixes</h3><span class="when">2026</span></div>
         <p>Two merged contributions to <strong>llguidance</strong>, the constrained-decoding engine behind structured / JSON-Schema output in vLLM, SGLang &amp; llama.cpp: fixed JSON-Schema <code>multipleOf</code> rejecting negative multiples, and made <code>max_tokens=0</code> rules compile to the empty string. <a href="https://github.com/guidance-ai/llguidance/pull/357">guidance-ai/llguidance #357</a> &middot; <a href="https://github.com/guidance-ai/llguidance/pull/356">#356</a></p>
+      </article>
+      <article class="card">
+        <div class="head"><h3>outlines-core — impossible-date regex fix</h3><span class="when">2026</span></div>
+        <p>Merged contribution to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation: the <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>. Fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a></p>
       </article>
       <article class="card">
         <div class="head"><h3>Meilisearch — ranking-rules fix</h3><span class="when">2026</span></div>
@@ -572,10 +576,12 @@
     {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2267",url:"https://github.com/envoyproxy/ai-gateway/pull/2267"},
     {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2292",url:"https://github.com/envoyproxy/ai-gateway/pull/2292"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2919",url:"https://github.com/kvcache-ai/Mooncake/pull/2919"},
+    {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2967",url:"https://github.com/kvcache-ai/Mooncake/pull/2967"},
     {label:"candle PR",hint:"merged · huggingface/candle #3586",url:"https://github.com/huggingface/candle/pull/3586"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
+    {label:"outlines-core PR",hint:"merged · dottxt-ai/outlines-core #258",url:"https://github.com/dottxt-ai/outlines-core/pull/258"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"alloy PR",hint:"merged · alloy-rs/core #1118",url:"https://github.com/alloy-rs/core/pull/1118"},
