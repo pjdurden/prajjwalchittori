@@ -171,6 +171,34 @@
   .card code{font-family:inherit;font-weight:600;color:var(--accent)}
   .card .stack{display:block;margin-top:9px;color:var(--muted);font-size:.82rem}
   .card .stack::before{content:"$ ";color:var(--accent2)}
+  /* Open-source tiles: one per repo, collapsed by default. 21 PRs across 16 repos
+     is too much prose to read as a flat list, so the bug detail lives behind the tile. */
+  .osgrid{display:grid;gap:10px;grid-template-columns:1fr}
+  @media(min-width:620px){.osgrid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.osgrid{grid-template-columns:1fr 1fr 1fr}}
+  .tile{border:1px solid var(--line);background:var(--panel);padding:10px 12px;
+    transition:border-color .15s ease}
+  .tile:hover{border-color:var(--accent)}
+  /* An open tile spans the full row so expanding never reflows its neighbours. */
+  .tile[open]{grid-column:1/-1;background:var(--panel2)}
+  .tile>summary{display:flex;align-items:center;gap:9px;cursor:pointer;list-style:none}
+  .tile>summary::-webkit-details-marker{display:none}
+  .tile>summary::after{content:"+";margin-left:auto;color:var(--muted);font-weight:700;
+    font-size:.95rem;line-height:1}
+  .tile[open]>summary::after{content:"\2212"}
+  .tile .lg{flex:0 0 auto;border-radius:50%;background:var(--pill)}
+  .tile .nm{color:var(--soft);font-weight:700;font-size:.92rem;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .tile .st{flex:0 0 auto;display:block}
+  .tile .np{color:var(--muted);font-size:.76rem;white-space:nowrap}
+  @media(max-width:420px){.tile .np{display:none}}
+  .tile p{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);
+    color:var(--text);font-size:.88rem;line-height:1.65}
+  .tile .tt{display:block;color:var(--muted);font-size:.78rem;margin-bottom:5px}
+  .tile code{font-family:inherit;font-weight:600;color:var(--accent)}
+  .tile strong{color:var(--soft)}
+  .lead.sub{margin-top:22px;color:var(--muted);font-size:.82rem;
+    text-transform:uppercase;letter-spacing:.08em}
 
   /* feature tile (Top-50 fintech, inside Creator) */
   .feature{display:block;margin:0 0 12px;padding:16px 18px;border:1px solid var(--accent);
@@ -311,29 +339,156 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">21 contributions</span></div>
-    <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems.</p>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">21 merged &middot; 16 projects</span></div>
+    <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
+    <div class="osgrid">
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/vllm-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">vLLM</span>
+          <img class="st" src="https://img.shields.io/github/stars/vllm-project/vllm?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">build-correctness fix</span>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/meilisearch.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Meilisearch</span>
+          <img class="st" src="https://img.shields.io/github/stars/meilisearch/meilisearch?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">ranking-rules fix</span>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine: fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/sgl-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">SGLang</span>
+          <img class="st" src="https://img.shields.io/github/stars/sgl-project/sglang?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">PD cache-aware routing fix</span>Merged contribution to <strong>SGLang</strong>, the high-throughput LLM/VLM serving engine: the prefill/decode router's cache-aware routing keyed chat requests on the first message only; routing on the full conversation lifted KV-cache hits from <strong>~69% to ~96%</strong> and output throughput from <strong>~678 to ~1078 TPS</strong>. <a href="https://github.com/sgl-project/sglang/pull/27430">sgl-project/sglang #27430</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/huggingface.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">candle</span>
+          <img class="st" src="https://img.shields.io/github/stars/huggingface/candle?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">Qwen3 batched-inference fix</span>Merged contribution to <strong>candle</strong>, Hugging Face's minimalist Rust ML framework: Qwen3 produced incorrect output for any batch size &gt; 1. The causal mask allocated a batch-independent buffer but shaped it <code>(b, 1, tgt, tgt + offset)</code>, and <code>Tensor::from_slice</code> doesn't validate element count against a fully-specified shape &mdash; so batch row 0 read the correct mask and every row after it read past the buffer. Fixed by shaping the mask <code>(1, 1, …)</code> and letting the existing <code>broadcast_add</code> apply it across the batch, with a regression test. <a href="https://github.com/huggingface/candle/pull/3586">huggingface/candle #3586</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/mark3labs.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">mcp-go</span>
+          <img class="st" src="https://img.shields.io/github/stars/mark3labs/mcp-go?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">OAuth error-handling fix</span>Merged contribution to <strong>mcp-go</strong>, the leading Go implementation of the Model Context Protocol (MCP): fixed <code>getServerMetadata</code> returning <code>(nil, nil)</code> on failure instead of an error, removing a silent-failure path for OAuth discovery. <a href="https://github.com/mark3labs/mcp-go/pull/904">mark3labs/mcp-go #904</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/EricLBuehler.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">mistral.rs</span>
+          <img class="st" src="https://img.shields.io/github/stars/EricLBuehler/mistral.rs?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">scheduler &amp; GGUF-loader fixes</span>Two merged contributions to <strong>mistral.rs</strong>, the Rust LLM inference &amp; serving engine: fixed reversed FCFS priority in the <code>PagedAttentionScheduler</code> preemption path so the oldest request is preempted last, and validated GGUF special-token ids against the vocab to prevent an out-of-bounds panic on model load. <a href="https://github.com/EricLBuehler/mistral.rs/pull/2250">EricLBuehler/mistral.rs #2250</a> &middot; <a href="https://github.com/EricLBuehler/mistral.rs/pull/2282">#2282</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/ethereum-optimism.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Optimism</span>
+          <img class="st" src="https://img.shields.io/github/stars/ethereum-optimism/optimism?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">op-wheel metrics fix</span>Merged contribution to <strong>Optimism</strong>, the OP Stack monorepo powering Ethereum L2s like Base &amp; OP Mainnet: fixed an <code>op-wheel</code> metrics bug where <code>RecordBlockStats</code> wrote block gas twice and left the base-fee gauge unset, and corrected the pre-block status log. <a href="https://github.com/ethereum-optimism/optimism/pull/21127">ethereum-optimism/optimism #21127</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/kvcache-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Mooncake</span>
+          <img class="st" src="https://img.shields.io/github/stars/kvcache-ai/Mooncake?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">startup &amp; SSD-offload fixes</span>Two merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/vllm-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">AIBrix</span>
+          <img class="st" src="https://img.shields.io/github/stars/vllm-project/aibrix?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">KV-event decoder &amp; eviction fixes</span>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models; and made the KV-event indexer purge a pod's cached prefixes on <code>AllBlocksCleared</code> so evicted blocks are no longer served as stale cache hits. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a> &middot; <a href="https://github.com/vllm-project/aibrix/pull/2385">#2385</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/bluealloy.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">revm</span>
+          <img class="st" src="https://img.shields.io/github/stars/bluealloy/revm?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">EVM interpreter fix</span>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth: reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/envoyproxy.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Envoy AI Gateway</span>
+          <img class="st" src="https://img.shields.io/github/stars/envoyproxy/ai-gateway?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">MCP proxy &amp; token-usage fixes</span>Two merged contributions to <strong>Envoy AI Gateway</strong>, the Envoy-based gateway for AI/LLM traffic: the MCP proxy failed <code>initialize</code> with a 500 when a backend's SSE response opened with a keep-alive / empty <code>data:</code> event before the JSON-RPC result (seen on some FastMCP backends), so the SSE parser now skips non-response events instead of treating them as a fatal parse error; and the Anthropic translator dropped the input/cache token usage reported on <code>message_delta</code>, leaving it out of the final usage totals, now fixed to merge it in. <a href="https://github.com/envoyproxy/ai-gateway/pull/2267">envoyproxy/ai-gateway #2267</a> &middot; <a href="https://github.com/envoyproxy/ai-gateway/pull/2292">#2292</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/celestiaorg.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">celestia-node</span>
+          <img class="st" src="https://img.shields.io/github/stars/celestiaorg/celestia-node?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">DA layer test-infra</span>Merged contribution to <strong>celestia-node</strong>, the Go node for the Celestia data-availability layer: unified the header <code>TestSuite</code> constructors behind functional options, cutting duplicated test setup. <a href="https://github.com/celestiaorg/celestia-node/pull/5041">celestiaorg/celestia-node #5041</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/alloy-rs.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">alloy</span>
+          <img class="st" src="https://img.shields.io/github/stars/alloy-rs/core?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">sol! macro derive fix</span>Merged contribution to <strong>alloy</strong>, the Rust Ethereum-types &amp; <code>sol!</code> toolkit used across Foundry, reth &amp; the wider Rust EVM ecosystem: the <code>sol!</code> macro silently dropped <code>Debug</code>/<code>PartialEq</code>/<code>Eq</code>/<code>Hash</code> derives on the event/error enums it generates for contracts with overloaded events (e.g. Uniswap V3's two <code>Swap</code> events), because synthetic <code>_N</code>-suffixed variant names didn't resolve; fixed it to compute derivability from the underlying parameter types. <a href="https://github.com/alloy-rs/core/pull/1118">alloy-rs/core #1118</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/lambdaclass.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">ethrex</span>
+          <img class="st" src="https://img.shields.io/github/stars/lambdaclass/ethrex?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">Ethereum client startup fix</span>Merged contribution to <strong>ethrex</strong>, the Rust Ethereum L1/L2 execution client by LambdaClass: replaced a too-broad <code>datadir non-empty</code> check with an actual-DB probe, so unrelated files (e.g. an EthDocker JWT secret in the same directory) no longer block a fresh node from booting. <a href="https://github.com/lambdaclass/ethrex/pull/6786">lambdaclass/ethrex #6786</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/guidance-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">llguidance</span>
+          <img class="st" src="https://img.shields.io/github/stars/guidance-ai/llguidance?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">constrained-decoding fixes</span>Two merged contributions to <strong>llguidance</strong>, the constrained-decoding engine behind structured / JSON-Schema output in vLLM, SGLang &amp; llama.cpp: fixed JSON-Schema <code>multipleOf</code> rejecting negative multiples, and made <code>max_tokens=0</code> rules compile to the empty string. <a href="https://github.com/guidance-ai/llguidance/pull/357">guidance-ai/llguidance #357</a> &middot; <a href="https://github.com/guidance-ai/llguidance/pull/356">#356</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/dottxt-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">outlines-core</span>
+          <img class="st" src="https://img.shields.io/github/stars/dottxt-ai/outlines-core?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">impossible-date regex fix</span>Merged contribution to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation: the <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>. Fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a></p>
+      </details>
+    </div>
+    <p class="lead sub">Earlier on-chain work</p>
     <div class="grid two">
-      <article class="card">
-        <div class="head"><h3>Optimism — op-wheel metrics fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>Optimism</strong>, the OP Stack monorepo powering Ethereum L2s like Base &amp; OP Mainnet: fixed an <code>op-wheel</code> metrics bug where <code>RecordBlockStats</code> wrote block gas twice and left the base-fee gauge unset, and corrected the pre-block status log. <a href="https://github.com/ethereum-optimism/optimism/pull/21127">ethereum-optimism/optimism #21127</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>revm — EVM interpreter fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth (2.2K&#9733;): reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>alloy — sol! macro derive fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>alloy</strong>, the Rust Ethereum-types &amp; <code>sol!</code> toolkit used across Foundry, reth &amp; the wider Rust EVM ecosystem: the <code>sol!</code> macro silently dropped <code>Debug</code>/<code>PartialEq</code>/<code>Eq</code>/<code>Hash</code> derives on the event/error enums it generates for contracts with overloaded events (e.g. Uniswap V3's two <code>Swap</code> events), because synthetic <code>_N</code>-suffixed variant names didn't resolve; fixed it to compute derivability from the underlying parameter types. <a href="https://github.com/alloy-rs/core/pull/1118">alloy-rs/core #1118</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>ethrex — Ethereum client startup fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>ethrex</strong>, the Rust Ethereum L1/L2 execution client by LambdaClass: replaced a too-broad <code>datadir non-empty</code> check with an actual-DB probe, so unrelated files (e.g. an EthDocker JWT secret in the same directory) no longer block a fresh node from booting. <a href="https://github.com/lambdaclass/ethrex/pull/6786">lambdaclass/ethrex #6786</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>celestia-node — DA layer test-infra</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>celestia-node</strong>, the Go node for the Celestia data-availability layer: unified the header <code>TestSuite</code> constructors behind functional options, cutting duplicated test setup. <a href="https://github.com/celestiaorg/celestia-node/pull/5041">celestiaorg/celestia-node #5041</a></p>
-      </article>
       <article class="card">
         <div class="head"><h3>CoinSwap — CosmWasm + Terraswap DEX</h3><span class="when">2022</span></div>
         <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
@@ -341,50 +496,6 @@
       <article class="card">
         <div class="head"><h3>Gas-Fee Benchmark — Terra/CosmWasm</h3><span class="when">2022</span></div>
         <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>mcp-go — OAuth error-handling fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>mcp-go</strong>, the leading Go implementation of the Model Context Protocol (MCP): fixed <code>getServerMetadata</code> returning <code>(nil, nil)</code> on failure instead of an error, removing a silent-failure path for OAuth discovery. <a href="https://github.com/mark3labs/mcp-go/pull/904">mark3labs/mcp-go #904</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>vLLM — build-correctness fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>SGLang — PD cache-aware routing fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>SGLang</strong>, the high-throughput LLM/VLM serving engine: the prefill/decode router's cache-aware routing keyed chat requests on the first message only; routing on the full conversation lifted KV-cache hits from <strong>~69% to ~96%</strong> and output throughput from <strong>~678 to ~1078 TPS</strong>. <a href="https://github.com/sgl-project/sglang/pull/27430">sgl-project/sglang #27430</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>AIBrix — KV-event decoder &amp; eviction fixes</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models; and made the KV-event indexer purge a pod's cached prefixes on <code>AllBlocksCleared</code> so evicted blocks are no longer served as stale cache hits. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a> &middot; <a href="https://github.com/vllm-project/aibrix/pull/2385">#2385</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Envoy AI Gateway — MCP proxy &amp; token-usage fixes</h3><span class="when">2026</span></div>
-        <p>Two merged contributions to <strong>Envoy AI Gateway</strong>, the Envoy-based gateway for AI/LLM traffic: the MCP proxy failed <code>initialize</code> with a 500 when a backend's SSE response opened with a keep-alive / empty <code>data:</code> event before the JSON-RPC result (seen on some FastMCP backends), so the SSE parser now skips non-response events instead of treating them as a fatal parse error; and the Anthropic translator dropped the input/cache token usage reported on <code>message_delta</code>, leaving it out of the final usage totals, now fixed to merge it in. <a href="https://github.com/envoyproxy/ai-gateway/pull/2267">envoyproxy/ai-gateway #2267</a> &middot; <a href="https://github.com/envoyproxy/ai-gateway/pull/2292">#2292</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Mooncake — startup &amp; SSD-offload fixes</h3><span class="when">2026</span></div>
-        <p>Two merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>candle — Qwen3 batched-inference fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>candle</strong>, Hugging Face's minimalist Rust ML framework: Qwen3 produced incorrect output for any batch size &gt; 1. The causal mask allocated a batch-independent buffer but shaped it <code>(b, 1, tgt, tgt + offset)</code>, and <code>Tensor::from_slice</code> doesn't validate element count against a fully-specified shape &mdash; so batch row 0 read the correct mask and every row after it read past the buffer. Fixed by shaping the mask <code>(1, 1, …)</code> and letting the existing <code>broadcast_add</code> apply it across the batch, with a regression test. <a href="https://github.com/huggingface/candle/pull/3586">huggingface/candle #3586</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>mistral.rs — scheduler &amp; GGUF-loader fixes</h3><span class="when">2026</span></div>
-        <p>Two merged contributions to <strong>mistral.rs</strong>, the Rust LLM inference &amp; serving engine: fixed reversed FCFS priority in the <code>PagedAttentionScheduler</code> preemption path so the oldest request is preempted last, and validated GGUF special-token ids against the vocab to prevent an out-of-bounds panic on model load. <a href="https://github.com/EricLBuehler/mistral.rs/pull/2250">EricLBuehler/mistral.rs #2250</a> &middot; <a href="https://github.com/EricLBuehler/mistral.rs/pull/2282">#2282</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>llguidance — constrained-decoding fixes</h3><span class="when">2026</span></div>
-        <p>Two merged contributions to <strong>llguidance</strong>, the constrained-decoding engine behind structured / JSON-Schema output in vLLM, SGLang &amp; llama.cpp: fixed JSON-Schema <code>multipleOf</code> rejecting negative multiples, and made <code>max_tokens=0</code> rules compile to the empty string. <a href="https://github.com/guidance-ai/llguidance/pull/357">guidance-ai/llguidance #357</a> &middot; <a href="https://github.com/guidance-ai/llguidance/pull/356">#356</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>outlines-core — impossible-date regex fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation: the <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>. Fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Meilisearch — ranking-rules fix</h3><span class="when">2026</span></div>
-        <p>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine (58K&#9733;): fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
       </article>
     </div>
   </section>
