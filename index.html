@@ -177,7 +177,9 @@
   @media(min-width:620px){.osgrid{grid-template-columns:1fr 1fr}}
   @media(min-width:980px){.osgrid{grid-template-columns:1fr 1fr 1fr}}
   .tile{border:1px solid var(--line);background:var(--panel);padding:10px 12px;
-    transition:border-color .15s ease}
+    opacity:0;transform:translateY(10px);
+    transition:opacity .45s ease,transform .45s ease,border-color .14s}
+  .tile.in{opacity:1;transform:none}
   .tile:hover{border-color:var(--accent)}
   /* An open tile spans the full row so expanding never reflows its neighbours. */
   .tile[open]{grid-column:1/-1;background:var(--panel2)}
@@ -199,6 +201,16 @@
   .tile strong{color:var(--soft)}
   .lead.sub{margin-top:22px;color:var(--muted);font-size:.82rem;
     text-transform:uppercase;letter-spacing:.08em}
+  /* Card tiles: same collapse behaviour as the OSS tiles, but the summary is a
+     title + date rather than a logo + star badge. */
+  .ctile>summary .nm{color:var(--soft);font-weight:700;font-size:.95rem;
+    white-space:normal;overflow:visible}
+  .ctile>summary .when{margin-left:auto;color:var(--muted);font-size:.78rem;
+    font-weight:500;white-space:nowrap}
+  .ctile>summary::after{margin-left:10px}
+  .tile .stack{display:block;margin-top:9px;color:var(--muted);font-size:.82rem}
+  .tile .stack::before{content:"$ ";color:var(--accent2)}
+  .tile em{color:var(--soft);font-style:normal}
 
   /* feature tile (Top-50 fintech, inside Creator) */
   .feature{display:block;margin:0 0 12px;padding:16px 18px;border:1px solid var(--accent);
@@ -247,7 +259,7 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
       transition-duration:.001ms!important}
-    .card{opacity:1;transform:none}
+    .card,.tile{opacity:1;transform:none}
     #glow{display:none}
     .role .cursor{animation:none}
   }
@@ -302,18 +314,27 @@
     <div class="eyebrow"><h2>Experience</h2><span class="rule"></span><span class="count">2021 &ndash; now</span></div>
     <p class="lead">Backend engineering across crypto and global payments.</p>
     <div class="grid">
-      <article class="card">
-        <div class="head"><h3>EtherFi — Senior Backend Engineer, Cash</h3><span class="when">2026 &ndash; now</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">EtherFi — Senior Backend Engineer, Cash</span>
+          <span class="when">2026 &ndash; now</span>
+        </summary>
         <p>Crypto / liquid restaking reconciled with Visa card settlement — real-time authorization, capture &amp; reconciliation, Borrow Mode, and an event-driven cashback pipeline on Kafka.<span class="stack">Go &middot; Solidity &middot; EigenLayer &middot; Kafka</span></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Visa — Senior Software Engineer</h3><span class="when">2022 &ndash; 2026</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Visa — Senior Software Engineer</span>
+          <span class="when">2022 &ndash; 2026</span>
+        </summary>
         <p>Cross-border payments: Visa Direct A2A, 100+ SWIFT message types, Treasury-as-a-Service across 15 currencies. Led an 8-engineer team on a real-time platform at 2,000+ TPS, 99.98% uptime.<span class="stack">Java &middot; Spring &middot; Hazelcast &middot; K8s</span></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Stader Labs — Founding Engineer</h3><span class="when">2021 &ndash; 2022</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Stader Labs — Founding Engineer</span>
+          <span class="when">2021 &ndash; 2022</span>
+        </summary>
         <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$500M+ in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes.<span class="stack">Rust &middot; CosmWasm &middot; TypeScript</span></p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -322,18 +343,27 @@
     <div class="eyebrow"><h2>Research</h2><span class="rule"></span><span class="count">3 papers</span></div>
     <p class="lead">Published, peer-citable work.</p>
     <div class="grid">
-      <article class="card">
-        <div class="head"><h3>Cache-aware request planning for black-box LLM APIs</h3><span class="when">2026 &middot; preprint</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Cache-aware request planning for black-box LLM APIs</span>
+          <span class="when">2026 &middot; preprint</span>
+        </summary>
         <p><strong>Cache-Aware Client-Side Request Planning for Black-Box LLM APIs.</strong> When you consume an LLM through a paid per-token API you pay for the tokens the server processes, so the only lossless lever a client has is re-ordering requests to hit the provider's prompt cache. Formalizes that design space and ships a <strong>greedy prefix-clustering scheduler</strong> that shapes request order to maximize cache hits — <strong>up to 60% billed-cost reduction</strong> on an agentic workload at zero quality loss, Pareto-dominating prompt compression and semantic caching. <a href="https://doi.org/10.5281/zenodo.21386594">DOI 10.5281/zenodo.21386594</a> &middot; <a href="https://github.com/pjdurden/cache-aware-request-planning">pjdurden/cache-aware-request-planning</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Executable correctness under KV-cache compression</h3><span class="when">2026 &middot; preprint</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Executable correctness under KV-cache compression</span>
+          <span class="when">2026 &middot; preprint</span>
+        </summary>
         <p><strong>Perplexity Holds, Programs Break: Executable Correctness as a Blind Spot of KV-Cache Compression.</strong> KV-cache compression is benchmarked almost entirely on token-overlap and retrieval metrics that never check whether generated code actually runs or a tool call is schema-valid. Introduces <strong>kv-exec-bench</strong>, an open benchmark measuring code unit-test pass@1 and tool-call JSON-Schema validity under compression, built on NVIDIA's <code>kvpress</code> so any press works unmodified. <a href="https://doi.org/10.5281/zenodo.20805562">DOI 10.5281/zenodo.20805562</a> &middot; <a href="https://github.com/pjdurden/kv-exec-bench">pjdurden/kv-exec-bench</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>StragglerPolicy — decentralized training</h3><span class="when">2026 &middot; paper</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">StragglerPolicy — decentralized training</span>
+          <span class="when">2026 &middot; paper</span>
+        </summary>
         <p><strong>Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a></p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -489,14 +519,20 @@
     </div>
     <p class="lead sub">Earlier on-chain work</p>
     <div class="grid two">
-      <article class="card">
-        <div class="head"><h3>CoinSwap — CosmWasm + Terraswap DEX</h3><span class="when">2022</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">CoinSwap — CosmWasm + Terraswap DEX</span>
+          <span class="when">2022</span>
+        </summary>
         <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Gas-Fee Benchmark — Terra/CosmWasm</h3><span class="when">2022</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Gas-Fee Benchmark — Terra/CosmWasm</span>
+          <span class="when">2022</span>
+        </summary>
         <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -505,14 +541,20 @@
     <div class="eyebrow"><h2>Companies Founded</h2><span class="rule"></span><span class="count">2 ventures</span></div>
     <p class="lead">Things I started from zero and shipped to real customers.</p>
     <div class="grid two">
-      <article class="card">
-        <div class="head"><h3>KuruX Enterprises</h3><span class="when">2025</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">KuruX Enterprises</span>
+          <span class="when">2025</span>
+        </summary>
         <p>A sustainable-cleaning consumer brand (<strong>NAMELESS / WipeZilla</strong>), built solo end to end — manufacturing, compliance, listings. <strong>&#8377;2L revenue in month one</strong>; now run by family. <a href="https://www.wipezilla.in">wipezilla.in</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Bizpedia</h3><span class="when">2024</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Bizpedia</span>
+          <span class="when">2024</span>
+        </summary>
         <p>A free, open-source wiki for the world of business — structured, contributor-driven reference. <a href="https://bizpedia.org">bizpedia.org</a></p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -526,10 +568,13 @@
       <span class="fsub">Vision over financials — 50 companies, what each got right and wrong, and the founders behind them. &rarr;</span>
     </a>
     <div class="grid">
-      <article class="card">
-        <div class="head"><h3>@prajjwalsinghchittori — philosophy, short-form</h3><span class="when">active</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">@prajjwalsinghchittori — philosophy, short-form</span>
+          <span class="when">active</span>
+        </summary>
         <p>An English quote, explained in Hindi. <strong>22K+ followers</strong> and <strong>20M+ views</strong> across Instagram &amp; YouTube — one format, run with relentless consistency. <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &middot; <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a></p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -538,18 +583,27 @@
     <div class="eyebrow"><h2>Side Projects</h2><span class="rule"></span><span class="count">3 builds</span></div>
     <p class="lead">Smaller things built to learn or to prove a point.</p>
     <div class="grid two">
-      <article class="card">
-        <div class="head"><h3>nanoserve &mdash; LLM inference engine</h3><span class="when">2026</span></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">nanoserve &mdash; LLM inference engine</span>
+          <span class="when">2026</span>
+        </summary>
         <p>A from-scratch LLM inference engine, built in public over 100 days. Paged KV cache, continuous batching, and a hand-written Triton paged-attention kernel &mdash; the core ideas behind vLLM in ~2k readable lines.<span class="stack">PyTorch &middot; Triton &middot; CUDA</span> <a href="https://github.com/pjdurden/nanoserve">pjdurden/nanoserve</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Veri5</h3><span class="when">2024 &ndash; 25</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Veri5</span>
+          <span class="when">2024 &ndash; 25</span>
+        </summary>
         <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability.<span class="stack">Spring &middot; Redis &middot; Hazelcast</span> <a href="https://github.com/pjdurden/veri5-mvp">pjdurden/veri5-mvp</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>KuruX — trading simulator</h3><span class="when">2023</span></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">KuruX — trading simulator</span>
+          <span class="when">2023</span>
+        </summary>
         <p>A private-equity trading simulator with a hand-built order book, <strong>featured by Y Combinator Startup School</strong>.</p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -557,14 +611,20 @@
   <section id="competitive">
     <div class="eyebrow"><h2>Competitive</h2><span class="rule"></span></div>
     <div class="grid two">
-      <article class="card">
-        <div class="head"><h3>Competitive programming</h3></div>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Competitive programming</span>
+          <span class="when"></span>
+        </summary>
         <p><strong>Codeforces Expert</strong>; ~8,000 problems solved across Codeforces, CodeChef, LeetCode, UVa and more. <a href="https://codeforces.com/profile/pjdurden">codeforces/pjdurden</a></p>
-      </article>
-      <article class="card">
-        <div class="head"><h3>Chess</h3></div>
+      </details>
+      <details class="tile ctile">
+        <summary>
+          <span class="nm">Chess</span>
+          <span class="when"></span>
+        </summary>
         <p>FIDE-registered player, 1600+ rating.</p>
-      </article>
+      </details>
     </div>
   </section>
 
@@ -652,8 +712,22 @@
     var io=new IntersectionObserver(function(ents){
       ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
     },{threshold:.12});
-    $$(".card").forEach(function(c){io.observe(c)});
-  } else { $$(".card").forEach(function(c){c.classList.add("in")}); }
+    $$(".tile").forEach(function(c){io.observe(c)});
+  } else { $$(".tile").forEach(function(c){c.classList.add("in")}); }
+
+  /* ---- printing ---- */
+  /* Collapsed <details> print blank, which would gut a PDF of this page.
+     Open everything before printing, then restore what the reader had open. */
+  (function(){
+    var reopened=[];
+    window.addEventListener("beforeprint",function(){
+      reopened=$$("details.tile").filter(function(d){return !d.open});
+      reopened.forEach(function(d){d.open=true});
+    });
+    window.addEventListener("afterprint",function(){
+      reopened.forEach(function(d){d.open=false}); reopened=[];
+    });
+  })();
 
   /* ---- section-nav scroll-spy ---- */
   var navlinks=$$(".secnav a");
