@@ -377,7 +377,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">21 merged &middot; 16 projects</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">22 merged &middot; 16 projects</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
     <div class="osgrid">
       <details class="tile">
@@ -520,9 +520,9 @@
           <img class="lg" src="https://github.com/dottxt-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
           <span class="nm">outlines-core</span>
           <img class="st" src="https://img.shields.io/github/stars/dottxt-ai/outlines-core?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
-          <span class="np">1 merged</span>
+          <span class="np">2 merged</span>
         </summary>
-        <p><span class="tt">impossible-date regex fix</span>Merged contribution to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation: the <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>. Fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a></p>
+        <p><span class="tt">RFC3339 regex fixes</span>Two merged contributions to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation. The <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>; fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. The <code>date-time</code> format failed the other way: it accepted only a <code>Z</code> suffix, so valid RFC3339 numeric offsets such as <code>2021-01-01T00:00:00+05:30</code> were rejected outright; added the <code>(+|-)HH:MM</code> offset and kept it optional so offset-less strings still match. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a> &middot; <a href="https://github.com/dottxt-ai/outlines-core/pull/257">#257</a></p>
       </details>
     </div>
     <p class="lead sub">Earlier on-chain work</p>
@@ -779,6 +779,7 @@
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
     {label:"outlines-core PR",hint:"merged · dottxt-ai/outlines-core #258",url:"https://github.com/dottxt-ai/outlines-core/pull/258"},
+    {label:"outlines-core PR",hint:"merged · dottxt-ai/outlines-core #257",url:"https://github.com/dottxt-ai/outlines-core/pull/257"},
     {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
     {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
     {label:"alloy PR",hint:"merged · alloy-rs/core #1118",url:"https://github.com/alloy-rs/core/pull/1118"},
