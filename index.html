@@ -377,7 +377,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">22 merged &middot; 16 projects</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">23 merged &middot; 16 projects</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
     <div class="osgrid">
       <details class="tile">
@@ -412,9 +412,9 @@
           <img class="lg" src="https://github.com/huggingface.png?size=80" alt="" width="26" height="26" loading="lazy">
           <span class="nm">candle</span>
           <img class="st" src="https://img.shields.io/github/stars/huggingface/candle?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
-          <span class="np">1 merged</span>
+          <span class="np">2 merged</span>
         </summary>
-        <p><span class="tt">Qwen3 batched-inference fix</span>Merged contribution to <strong>candle</strong>, Hugging Face's minimalist Rust ML framework: Qwen3 produced incorrect output for any batch size &gt; 1. The causal mask allocated a batch-independent buffer but shaped it <code>(b, 1, tgt, tgt + offset)</code>, and <code>Tensor::from_slice</code> doesn't validate element count against a fully-specified shape &mdash; so batch row 0 read the correct mask and every row after it read past the buffer. Fixed by shaping the mask <code>(1, 1, …)</code> and letting the existing <code>broadcast_add</code> apply it across the batch, with a regression test. <a href="https://github.com/huggingface/candle/pull/3586">huggingface/candle #3586</a></p>
+        <p><span class="tt">batched-inference mask fixes</span>Two merged contributions to <strong>candle</strong>, Hugging Face's minimalist Rust ML framework. Qwen3 produced incorrect output for any batch size &gt; 1: the causal mask allocated a batch-independent buffer but shaped it <code>(b, 1, tgt, tgt + offset)</code>, and <code>Tensor::from_slice</code> doesn't validate element count against a fully-specified shape &mdash; so batch row 0 read the correct mask and every row after it read past the buffer. Fixed by shaping the mask <code>(1, 1, …)</code> and letting the existing <code>broadcast_add</code> apply it across the batch. The follow-up swept the same defect out of the eight sibling models that carried it &mdash; <code>qwen3_moe</code>, the quantized Qwen3 pair, <code>glm4_new</code>, <code>quantized_glm4</code>, SmolLM3 and its quantized twin, and Z-Image's text encoder &mdash; where it was more exposed: Qwen3's mask path was gated to CPU under the <code>flash-attn</code> feature, while these build the broken mask on every multi-token forward on every backend. Rather than copy the corrected builder eight more times, it centralized <code>build_additive_causal_mask</code> in <code>crate::utils</code> and moved the regression tests there, deleting 306 lines against 189 added. <a href="https://github.com/huggingface/candle/pull/3586">huggingface/candle #3586</a> &middot; <a href="https://github.com/huggingface/candle/pull/3879">#3879</a></p>
       </details>
       <details class="tile">
         <summary>
@@ -775,6 +775,7 @@
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2919",url:"https://github.com/kvcache-ai/Mooncake/pull/2919"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2967",url:"https://github.com/kvcache-ai/Mooncake/pull/2967"},
     {label:"candle PR",hint:"merged · huggingface/candle #3586",url:"https://github.com/huggingface/candle/pull/3586"},
+    {label:"candle PR",hint:"merged · huggingface/candle #3879",url:"https://github.com/huggingface/candle/pull/3879"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
     {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
