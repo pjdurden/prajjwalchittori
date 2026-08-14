@@ -377,7 +377,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">23 merged &middot; 16 projects</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">24 merged &middot; 16 projects</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
     <div class="osgrid">
       <details class="tile">
@@ -448,9 +448,9 @@
           <img class="lg" src="https://github.com/kvcache-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
           <span class="nm">Mooncake</span>
           <img class="st" src="https://img.shields.io/github/stars/kvcache-ai/Mooncake?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
-          <span class="np">2 merged</span>
+          <span class="np">3 merged</span>
         </summary>
-        <p><span class="tt">startup &amp; SSD-offload fixes</span>Two merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a></p>
+        <p><span class="tt">startup, SSD-offload &amp; RDMA fixes</span>Three merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. The third fix stopped an endpoint rebuild storm: when a QP reported an <code>mlx5</code> local completion fault, the slice was handed to the other bonded RNIC, which had no endpoint for that peer NIC and so ran a full handshake with fresh QP numbers &mdash; and on recurrence handed it straight back, two RNICs ping-ponging the same slices at worker-loop speed. Neither brake applied: the local-failure branch deliberately never marked the rail failed, and the context-health counter is cleared by any concurrent healthy completion. The failing local-to-peer rail is now charged an error in the existing rail monitor, so the threshold that the remote-failure path already uses pauses it after five faults and auto-recovers. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/3387">#3387</a></p>
       </details>
       <details class="tile">
         <summary>
@@ -774,6 +774,7 @@
     {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2292",url:"https://github.com/envoyproxy/ai-gateway/pull/2292"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2919",url:"https://github.com/kvcache-ai/Mooncake/pull/2919"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2967",url:"https://github.com/kvcache-ai/Mooncake/pull/2967"},
+    {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #3387",url:"https://github.com/kvcache-ai/Mooncake/pull/3387"},
     {label:"candle PR",hint:"merged · huggingface/candle #3586",url:"https://github.com/huggingface/candle/pull/3586"},
     {label:"candle PR",hint:"merged · huggingface/candle #3879",url:"https://github.com/huggingface/candle/pull/3879"},
     {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
