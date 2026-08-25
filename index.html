@@ -171,7 +171,7 @@
   .card code{font-family:inherit;font-weight:600;color:var(--accent)}
   .card .stack{display:block;margin-top:9px;color:var(--muted);font-size:.82rem}
   .card .stack::before{content:"$ ";color:var(--accent2)}
-  /* Open-source tiles: one per repo, collapsed by default. 21 PRs across 16 repos
+  /* Open-source tiles: one per repo, collapsed by default. 25 PRs across 17 repos
      is too much prose to read as a flat list, so the bug detail lives behind the tile. */
   .osgrid{display:grid;gap:10px;grid-template-columns:1fr}
   @media(min-width:620px){.osgrid{grid-template-columns:1fr 1fr}}
@@ -377,7 +377,7 @@
 
   <!-- OPEN SOURCE -->
   <section id="oss">
-    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">24 merged &middot; 16 projects</span></div>
+    <div class="eyebrow"><h2>Open Source</h2><span class="rule"></span><span class="count">25 merged &middot; 17 projects</span></div>
     <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
     <div class="osgrid">
       <details class="tile">
@@ -523,6 +523,15 @@
           <span class="np">2 merged</span>
         </summary>
         <p><span class="tt">RFC3339 regex fixes</span>Two merged contributions to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation. The <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>; fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. The <code>date-time</code> format failed the other way: it accepted only a <code>Z</code> suffix, so valid RFC3339 numeric offsets such as <code>2021-01-01T00:00:00+05:30</code> were rejected outright; added the <code>(+|-)HH:MM</code> offset and kept it optional so offset-less strings still match. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a> &middot; <a href="https://github.com/dottxt-ai/outlines-core/pull/257">#257</a></p>
+      </details>
+      <details class="tile">
+        <summary>
+          <img class="lg" src="https://github.com/ray-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Ray</span>
+          <img class="st" src="https://img.shields.io/github/stars/ray-project/ray?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">autoscaler starvation fix</span>Merged contribution to <strong>Ray</strong>, the distributed compute framework underneath much of the ML training and serving stack: Autoscaler v2 silently lost launch errors whenever one launch request spanned more than one node type. The reconciler keyed its error lookup on the launch <code>request_id</code> alone, but a single request carries a whole shape, and both the node-provider and KubeRay paths fan that shape out into one <code>LaunchNodeError</code> per node type sharing that id. The sibling errors overwrote each other in the dict and only the last one survived, so every other node type never reached <code>ALLOCATION_FAILED</code>. Those instances sat in <code>REQUESTED</code> until the request timeout fired, holding <code>max_concurrent_launches</code> capacity, and stayed eligible for allocation in later reconcile passes, letting a stale instance claim a Pod that was launched for a different request. Fixed by keying on the pair that actually identifies a launch error, <code>(request_id, node_type)</code>, which also folds away the now-redundant node-type guard at the call site. <a href="https://github.com/ray-project/ray/pull/65299">ray-project/ray #65299</a></p>
       </details>
     </div>
     <p class="lead sub">Earlier on-chain work</p>
@@ -787,6 +796,7 @@
     {label:"alloy PR",hint:"merged · alloy-rs/core #1118",url:"https://github.com/alloy-rs/core/pull/1118"},
     {label:"celestia-node PR",hint:"merged · celestiaorg/celestia-node #5041",url:"https://github.com/celestiaorg/celestia-node/pull/5041"},
     {label:"ethrex PR",hint:"merged · lambdaclass/ethrex #6786",url:"https://github.com/lambdaclass/ethrex/pull/6786"},
+    {label:"Ray PR",hint:"merged · ray-project/ray #65299",url:"https://github.com/ray-project/ray/pull/65299"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"kv-exec-bench paper",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
     {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},
