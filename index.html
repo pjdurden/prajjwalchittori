@@ -58,7 +58,6 @@
   try{
     var t=localStorage.getItem("pc-theme");
     if(t==="light") t="";                       /* legacy value: light is the base now */
-    if(t===null&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches) t="dark";
     if(t) document.documentElement.setAttribute("data-theme",t);
   }catch(e){}
 })();
