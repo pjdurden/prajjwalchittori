@@ -28,6 +28,7 @@
   "publisher": { "@type": "Person", "name": "Prajjwal Chittori", "url": "https://prajj.com/" }
 }
 </script>
+<script>(function(){try{var t=localStorage.getItem("pc-theme");if(t==="light")t="";if(t===null&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <link rel="stylesheet" href="../article.css" />
 </head>
 <body>
@@ -68,12 +69,16 @@
 </main>
 <script>
 (function(){var r=document.documentElement,s=localStorage.getItem("pc-theme");
+if(s==="light")s="";
+if(s===null&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark";
 if(s)r.setAttribute("data-theme",s);
 var b=document.getElementById("themebtn");
+function paint(){if(b)b.textContent=(r.getAttribute("data-theme")==="dark"?"\u25D3":"\u25D2")+" Boxy";}
+paint();
 if(b)b.addEventListener("click",function(){
-var n=r.getAttribute("data-theme")==="light"?"":"light";
+var n=r.getAttribute("data-theme")==="dark"?"":"dark";
 if(n)r.setAttribute("data-theme",n);else r.removeAttribute("data-theme");
-localStorage.setItem("pc-theme",n);});})();
+localStorage.setItem("pc-theme",n);paint();});})();
 </script>
 </body>
 </html>
