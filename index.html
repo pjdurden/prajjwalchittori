@@ -168,14 +168,19 @@ code{font:500 .88em/1 var(--mono);background:var(--paper2);border:1px solid var(
 
 /* ── stats strip ──────────────────────────────────────────────────── */
 .stats{
-  display:grid;gap:1px;background:var(--rule);
+  display:grid;gap:1px;background:none;
   border-block:1px solid var(--rule);
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns:repeat(3,minmax(0,1fr));
 }
-.stat{background:var(--paper);padding:24px clamp(14px,2vw,24px) 22px}
+/* each cell draws its own hairline ring, so an odd count can never paint a
+   block of container colour through an empty grid cell */
+.stat{
+  background:var(--paper);padding:30px clamp(16px,2.2vw,28px) 26px;
+  box-shadow:0 0 0 1px var(--rule);
+}
 .stat .v{
   display:block;font-family:var(--serif);font-weight:400;
-  font-size:clamp(38px,5.4vw,60px);line-height:1;letter-spacing:-.03em;
+  font-size:clamp(46px,7vw,80px);line-height:1;letter-spacing:-.035em;
 }
 .num{counter-reset:n var(--n)}
 .num::after{content:counter(n)}
@@ -390,6 +395,7 @@ details.job p a:hover{border-bottom-color:var(--accent);color:var(--accent)}
 
 /* ── responsive ───────────────────────────────────────────────────── */
 @media (max-width:820px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .friends{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sec{grid-template-columns:1fr;gap:22px;padding:48px 0}
   .sec-head{position:static}
@@ -597,7 +603,7 @@ html.lenis{scroll-behavior:auto}
 
   <!-- ─── numbers ─── -->
   <section class="stats" aria-label="By the numbers">
-    <div class="stat"><span class="v num" style="--n:17"></span><span class="k">OSS projects</span><span class="s">contributed to</span></div>
+    <div class="stat"><span class="v num" style="--n:17"></span><span class="k">OSS projects</span><span class="s">contributed 25+ PRs</span></div>
     <div class="stat"><span class="v num" style="--n:3"></span><span class="k">Preprints</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:20"></span><em>M+</em></span><span class="k">Instagram views</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:22"></span><em>K+</em></span><span class="k">Instagram followers</span></div>
@@ -678,12 +684,12 @@ html.lenis{scroll-behavior:auto}
     <div class="sec-head">
       <span class="sec-num">03</span>
       <h2>Research</h2>
-      <span class="sec-meta">3 published</span>
+      <span class="sec-meta">3 preprints</span>
     </div>
     <div class="sec-body">
       <div class="rule"></div>
 
-    <p class="lead">Published, peer-citable work.</p>
+    <p class="lead">Preprints, each with a DOI and public code.</p>
     <div class="jobs">
       <details class="job">
         <summary>
@@ -702,7 +708,7 @@ html.lenis{scroll-behavior:auto}
       <details class="job">
         <summary>
           <span class="nm">StragglerPolicy — decentralized training</span>
-          <span class="when">2026 &middot; paper</span>
+          <span class="when">2026 &middot; preprint</span>
         </summary>
         <p><strong>Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a></p>
       </details>
@@ -1117,7 +1123,7 @@ html.lenis{scroll-behavior:auto}
 <!-- find dialog -->
 <div class="cmdk" id="cmdk">
   <div class="dlg">
-    <input id="cmdk-input" placeholder="Search this site: LinkedIn, GitHub, papers, PRs&hellip;" autocomplete="off" aria-label="Search this site" />
+    <input id="cmdk-input" placeholder="Search this site: LinkedIn, GitHub, preprints, PRs&hellip;" autocomplete="off" aria-label="Search this site" />
     <ul id="cmdk-list"></ul>
   </div>
 </div>
@@ -1197,8 +1203,8 @@ html.lenis{scroll-behavior:auto}
     {label:"celestia-node PR",hint:"merged · celestiaorg/celestia-node #5041",url:"https://github.com/celestiaorg/celestia-node/pull/5041"},
     {label:"ethrex PR",hint:"merged · lambdaclass/ethrex #6786",url:"https://github.com/lambdaclass/ethrex/pull/6786"},
     {label:"Ray PR",hint:"merged · ray-project/ray #65299",url:"https://github.com/ray-project/ray/pull/65299"},
-    {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
-    {label:"kv-exec-bench paper",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
+    {label:"StragglerPolicy preprint",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
+    {label:"kv-exec-bench preprint",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
     {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},
     {label:"churn",hint:"decentralized-training simulator · pjdurden/churn",url:"https://github.com/pjdurden/churn"},
     {label:"KuruX Enterprises",hint:"WipeZilla / NAMELESS brand",url:"https://www.wipezilla.in"},
