@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prajjwal Chittori — 1999 Edition</title>
+<meta name="description" content="Prajjwal Chittori — engineer, founder, and creator with 20M+ views. Senior backend engineer at the crypto x payments intersection (EtherFi, ex-Visa, ex-Stader Labs), founder of KuruX Enterprises and Bizpedia, and a 22K+ philosophy creator." />
+<meta name="author" content="Prajjwal Chittori" />
+<link rel="canonical" href="https://prajj.com/" />
+<meta name="robots" content="noindex,follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Prajjwal Chittori — Engineer, Founder &amp; Creator" />
+<meta property="og:description" content="Engineer, founder, and creator with 20M+ views. Senior backend engineer at the crypto x payments intersection — EtherFi, ex-Visa, ex-Stader Labs ($500M+ TVL). Founder of KuruX Enterprises and Bizpedia." />
+<meta property="og:url" content="https://prajj.com/" />
+<meta property="og:image" content="https://prajj.com/assets/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Prajjwal Chittori — Senior Backend Engineer, crypto x payments infra" />
+<meta property="profile:first_name" content="Prajjwal" />
+<meta property="profile:last_name" content="Chittori" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://prajj.com/assets/og-card.png" />
+
+<!-- Person structured data: highest-leverage thing for Google entity / knowledge panel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prajjwal Chittori",
+  "givenName": "Prajjwal",
+  "familyName": "Chittori",
+  "gender": "Male",
+  "jobTitle": "Senior Backend Engineer",
+  "description": "Engineer, founder, and creator with 20M+ views. Senior backend engineer working at the intersection of crypto and payments — liquid restaking, on-chain settlement, card and cross-border payment rails — and an active open-source contributor to blockchain and AI-inference infrastructure. Founder of KuruX Enterprises and Bizpedia.",
+  "url": "https://prajj.com/",
+  "image": "https://prajj.com/prajjwal.jpg",
+  "nationality": "Indian",
+  "worksFor": { "@type": "Organization", "name": "EtherFi" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Delhi Technological University" },
+  "homeLocation": { "@type": "Place", "name": "George Town, Cayman Islands" },
+  "knowsAbout": ["Backend Engineering","Cryptocurrency","DeFi","Liquid Staking","Liquid Restaking","Smart Contracts","Ethereum","EigenLayer","On-chain Settlement","Stablecoins","Cross-border Payments","Card & Payment Rails","Distributed Systems","Solidity","Rust","Go","AI Inference","LLM Inference","vLLM","Competitive Programming"],
+  "award": ["Codeforces Expert","Y Combinator Startup School feature (KuruX)"],
+  "sameAs": [
+    "https://www.linkedin.com/in/prajjwal-chittori",
+    "https://github.com/pjdurden",
+    "https://www.instagram.com/prajjwalsinghchittori",
+    "https://www.youtube.com/@prajjwalsinghchittori",
+    "https://doi.org/10.5281/zenodo.20574905",
+    "https://doi.org/10.5281/zenodo.20805562"
+  ]
+}
+</script>
+
+<script>
+(function(){ try{ var t=localStorage.getItem("pc-skin");
+  if(t==="myspace"||t==="win98"||t==="matrix") document.documentElement.setAttribute("data-skin",t); }catch(e){} })();
+</script>
+
+<style>
+@view-transition { navigation: auto; }
+/* ══════════════════════════════════════════════════════════════════════
+   prajj.com  ·  hand-coded  ·  best viewed at 1024x768  ·  © 1999-2026
+   ══════════════════════════════════════════════════════════════════ */
+
+:root{
+  --desk:#1a0b3d; --desk2:#3a0f6b; --desk3:#0d0522;
+  --face:#d4d0c8;            /* window face */
+  --face2:#c0c0c0;
+  --hi:#ffffff; --sh:#808080; --dk:#404040;
+  --paper:#ffffff;
+  --ink:#000000;
+  --t1:#0a246a; --t2:#3a7bd5;   /* title bar gradient */
+  --link:#0000ee; --vlink:#551a8b;
+  --lcd:#00ff41; --lcdoff:#0a3a12;
+  --amber:#ffb000;
+  --sans:Verdana,Geneva,Tahoma,"DejaVu Sans",sans-serif;
+  --comic:"Comic Sans MS","Comic Sans","Chalkboard SE","Segoe Print",cursive;
+  --mono:"Courier New",Courier,monospace;
+  --times:"Times New Roman",Times,Georgia,serif;
+  --impact:Impact,Haettenschweiler,"Arial Black","Franklin Gothic Bold",sans-serif;
+  --tile:radial-gradient(1.6px 1.6px at 14px 20px,rgba(255,255,255,.6),transparent),
+         radial-gradient(1.4px 1.4px at 74px 86px,rgba(255,255,255,.45),transparent),
+         radial-gradient(1px 1px at 108px 34px,rgba(255,255,255,.5),transparent),
+         radial-gradient(1px 1px at 40px 122px,rgba(255,255,255,.4),transparent),
+         radial-gradient(2px 2px at 132px 140px,rgba(255,240,180,.5),transparent);
+}
+:root[data-skin="myspace"]{
+  --desk:#dbe7f7; --desk2:#f4f8ff; --desk3:#c8dcf5;
+  --t1:#003399; --t2:#6ba2ff; --tile:none;
+}
+:root[data-skin="win98"]{ --desk:#008080; --desk2:#008080; --desk3:#006666; --tile:none; }
+:root[data-skin="matrix"]{
+  --desk:#000; --desk2:#031a06; --desk3:#000; --t1:#003b12; --t2:#00a838;
+  --face:#0d1a0f; --face2:#0a1a0c; --paper:#050d06; --ink:#b8ffc8;
+  --hi:#2f6b3a; --sh:#0a2410; --dk:#041008; --link:#39ff88; --vlink:#8affc0;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:10px 8px 24px;color:var(--ink);font:12px/1.65 var(--sans);
+  background-color:var(--desk);
+  background-image:var(--tile),linear-gradient(160deg,var(--desk3) 0%,var(--desk) 42%,var(--desk2) 100%);
+  background-size:160px 160px,160px 160px,160px 160px,160px 160px,160px 160px,auto;
+  background-attachment:scroll,scroll,scroll,scroll,scroll,fixed;
+}
+a{color:var(--link);text-decoration:underline}
+a:visited{color:var(--vlink)}
+a:hover{color:#d40000;background:#ffff66}
+:root[data-skin="matrix"] a:hover{color:#000;background:#39ff88}
+img{border:0}
+p{margin:0 0 9px}
+code{font-family:var(--mono);font-size:11px;background:#ffffcc;color:#553300;padding:0 3px;border:1px solid #ddd39a}
+:root[data-skin="matrix"] code{background:#08210c;color:#8fffae;border-color:#1d4a26}
+
+/* ── bevels ─────────────────────────────────────────────────────── */
+.out{border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.ins{border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+
+/* ══ THE BROWSER ══════════════════════════════════════════════════ */
+.ie{width:1000px;max-width:100%;margin:0 auto;background:var(--face);padding:2px;
+    border:2px solid;border-color:var(--hi) #000 #000 var(--hi);
+    box-shadow:0 0 0 1px #000, 6px 6px 0 rgba(0,0,0,.5), 0 0 40px rgba(120,60,255,.25)}
+
+.ie-title{display:flex;align-items:center;gap:7px;padding:3px 4px;
+  background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;font:bold 12px/1.5 var(--sans)}
+.ie-title .ico{width:15px;height:15px;flex:none;border-radius:2px;
+  background:radial-gradient(circle at 35% 30%,#8fd0ff,#1560bd 70%);border:1px solid #06306b}
+.ie-title .t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:1px 1px 0 rgba(0,0,0,.45)}
+.ie-title .wb{display:flex;gap:2px}
+.ie-title .wb b{width:18px;height:16px;background:var(--face);color:#000;text-align:center;
+  font:bold 10px/14px var(--sans);border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi);cursor:default}
+
+.ie-menu{display:flex;gap:1px;padding:2px 3px;font:11px/1.5 var(--sans);color:var(--ink);
+  border-bottom:1px solid var(--sh)}
+.ie-menu span{padding:1px 7px;cursor:default}
+.ie-menu span:hover{background:var(--t1);color:#fff}
+.ie-menu span u{text-decoration:underline}
+
+.ie-tools{display:flex;align-items:center;gap:2px;padding:3px;border-bottom:1px solid var(--sh)}
+.tbtn{display:flex;align-items:center;gap:4px;padding:3px 7px;background:transparent;color:var(--ink);
+  font:11px/1.4 var(--sans);cursor:pointer;border:2px solid transparent;text-decoration:none}
+.tbtn:hover{border-color:var(--hi) var(--dk) var(--dk) var(--hi);background:var(--face2);color:var(--ink)}
+.tbtn:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.tbtn .g{font-size:14px;line-height:1}
+.tsep{width:2px;height:22px;margin:0 3px;border-left:1px solid var(--sh);border-right:1px solid var(--hi)}
+.throb{margin-left:auto;width:32px;height:32px;flex:none;border-radius:50%;position:relative;
+  background:radial-gradient(circle at 34% 30%,#bfe4ff,#2b7fd4 55%,#0a3f80 100%);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk);overflow:hidden}
+.throb::after{content:"";position:absolute;inset:-30%;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.55) 0 12deg,transparent 12deg 30deg);
+  animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.ie-addr{display:flex;align-items:center;gap:6px;padding:3px 5px;font:11px/1.5 var(--sans);
+  border-bottom:1px solid var(--sh)}
+.ie-addr .lb{color:var(--ink);opacity:.75}
+.ie-addr .fld{flex:1;display:flex;align-items:center;gap:5px;background:var(--paper);padding:2px 4px;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.ie-addr .fld .pg{width:12px;height:14px;background:#fff;border:1px solid #999;flex:none;
+  box-shadow:inset -3px 3px 0 -2px #ccc}
+.ie-addr input{flex:1;border:0;outline:0;background:transparent;color:var(--ink);
+  font:11px/1.5 var(--sans);min-width:60px}
+.ie-addr .go{display:flex;align-items:center;gap:4px;padding:2px 8px;background:var(--face);cursor:pointer;
+  font:11px/1.4 var(--sans);color:var(--ink);text-decoration:none;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.ie-addr .go:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+
+.ie-view{padding:0;margin:2px;background:#dedbd2;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.5) 0 2px,rgba(0,0,0,.03) 2px 4px);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.viewpad{padding:5px}
+
+.ie-status{display:flex;align-items:center;gap:4px;padding:2px 3px;font:11px/1.5 var(--sans);color:var(--ink)}
+.ie-status .cell{padding:1px 6px;border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ie-status .s1{flex:1;min-width:0}
+.ie-status .bar{width:120px;height:14px;background:var(--face2);position:relative;overflow:hidden;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.ie-status .bar i{position:absolute;inset:1px auto 1px 1px;width:0;background:var(--t1);
+  animation:load 2.4s ease-out forwards}
+@keyframes load{to{width:calc(100% - 2px)}}
+.ie-status .zone{display:flex;align-items:center;gap:4px}
+
+/* ══ BANNER ═══════════════════════════════════════════════════════ */
+.banner{position:relative;overflow:hidden;padding:16px 10px 14px;text-align:center;background:#000;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.banner::before{content:"";position:absolute;inset:0;opacity:.85;
+  background:
+    radial-gradient(1.5px 1.5px at 30px 24px,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 140px 70px,#fff,transparent),
+    radial-gradient(1px 1px at 260px 30px,#cfe,transparent),
+    radial-gradient(1.5px 1.5px at 380px 88px,#fff,transparent),
+    radial-gradient(1px 1px at 470px 44px,#ffd,transparent),
+    radial-gradient(1.5px 1.5px at 590px 20px,#fff,transparent),
+    radial-gradient(1px 1px at 700px 74px,#cfe,transparent),
+    radial-gradient(1.5px 1.5px at 820px 40px,#fff,transparent),
+    radial-gradient(1px 1px at 910px 96px,#ffd,transparent),
+    radial-gradient(1.5px 1.5px at 80px 110px,#fff,transparent),
+    radial-gradient(1px 1px at 330px 128px,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 640px 120px,#fff,transparent);
+  animation:twinkle 3.4s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.35}to{opacity:1}}
+.banner > *{position:relative}
+.wordart{margin:0;font:400 62px/1 var(--impact);letter-spacing:.015em;text-transform:none;
+  background:linear-gradient(180deg,#fffdf0 0%,#ffe14d 22%,#ffab00 46%,#ff4d00 70%,#8f0000 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(1px 0 0 #2b0a00) drop-shadow(-1px 0 0 #2b0a00) drop-shadow(0 1px 0 #2b0a00)
+         drop-shadow(0 -1px 0 #2b0a00) drop-shadow(4px 5px 0 #6b0000) drop-shadow(0 0 24px rgba(255,150,0,.6));
+  transform:scaleY(1.08)}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  .wordart{color:#ffcc00}
+}
+.banner .stars{color:#ffe680;font:16px/1 var(--sans);letter-spacing:.3em;margin:0 0 6px}
+.banner .sub{margin:9px 0 0;color:var(--lcd);font:bold 12.5px/1.6 var(--mono);letter-spacing:.14em;
+  text-shadow:0 0 8px rgba(0,255,65,.6)}
+.banner .sub2{margin:3px 0 0;color:#9fd8ff;font:11px/1.6 var(--mono);letter-spacing:.06em}
+.rainbow{height:7px;
+  background:linear-gradient(90deg,#ff0000,#ff8a00,#ffee00,#00cc44,#00b3ff,#4b2fff,#ff00d4,#ff0000);
+  background-size:220% 100%;animation:slide 5s linear infinite}
+@keyframes slide{to{background-position:220% 0}}
+
+/* ── ticker ──────────────────────────────────────────────────────── */
+.ticker{display:flex;align-items:stretch;margin-top:4px;background:#000;color:#ffe14d;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.ticker .lbl{flex:none;display:flex;align-items:center;padding:4px 9px;color:#fff;
+  font:bold 11px/1.5 var(--sans);letter-spacing:.1em;
+  background:linear-gradient(180deg,#e00000,#7a0000);border-right:2px solid #ffcc00}
+.ticker .run{flex:1;min-width:0;padding:4px 0}
+.ticker .run{overflow:hidden}
+.tk{display:flex;width:max-content;animation:tick 46s linear infinite}
+.tk > span{white-space:nowrap;padding-right:40px;font:bold 12px/1.6 var(--sans)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker:hover .tk{animation-play-state:paused}
+.ticker b{color:#65f0ff}
+.ticker .hot{color:#ff5b7f}
+.blink{animation:blk 1.05s steps(1,end) infinite}
+@keyframes blk{50%{opacity:0}}
+
+/* ── nav ─────────────────────────────────────────────────────────── */
+.navbar{display:flex;flex-wrap:wrap;gap:3px;padding:4px;margin-top:4px;background:var(--face);
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.navbar a,.navbar button{display:inline-flex;align-items:center;gap:4px;padding:3px 7px;background:var(--face);
+  color:var(--ink);text-decoration:none;font:10.5px/1.45 var(--sans);cursor:pointer;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.navbar a:hover,.navbar button:hover{background:#ffffcc;color:#000}
+:root[data-skin="matrix"] .navbar a:hover{background:#123b19;color:#9fffbb}
+.navbar a:active,.navbar button:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.navbar .spacer{flex:1}
+
+/* ── construction ────────────────────────────────────────────────── */
+.construction{margin-top:4px;padding:5px 6px;text-align:center;font:bold 11px/1.6 var(--sans);
+  letter-spacing:.07em;color:#000;
+  background:repeating-linear-gradient(45deg,#ffd700 0 14px,#111 14px 28px);
+  background-size:39.6px 39.6px;animation:crawl 1.6s linear infinite;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.construction span{display:inline-block;background:#ffd700;color:#000;padding:2px 9px;margin:1px 2px;
+  border:1px solid #000;box-shadow:1px 1px 0 rgba(0,0,0,.5)}
+@keyframes crawl{to{background-position:39.6px 0}}
+
+/* ── divider ─────────────────────────────────────────────────────── */
+.divider{height:14px;margin:5px 0;overflow:hidden;position:relative;
+  background:linear-gradient(90deg,#ff0000,#ff8a00,#ffee00,#00cc44,#00b3ff,#4b2fff,#ff00d4,#ff0000);
+  background-size:220% 100%;animation:slide 5s linear infinite;
+  border-top:1px solid rgba(255,255,255,.65);border-bottom:1px solid rgba(0,0,0,.5)}
+.divider::after{content:"★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★";
+  position:absolute;inset:0;color:rgba(255,255,255,.85);font:9px/14px var(--sans);letter-spacing:1px;
+  text-align:center;text-shadow:0 1px 0 rgba(0,0,0,.5)}
+
+/* ══ SCOREBOARD ═══════════════════════════════════════════════════ */
+.scores{margin-top:4px;padding:8px;background:linear-gradient(180deg,#2b2b2b,#111);
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.scores > h2{margin:0 0 8px;text-align:center;font:400 21px/1.2 var(--impact);letter-spacing:.06em;
+  color:#ffd700;text-shadow:2px 2px 0 #000,0 0 12px rgba(255,200,0,.55)}
+.scores > h2 em{font-style:normal;color:#fff}
+.numgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.stat{background:var(--face);padding:0 0 5px;text-align:center;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.stat .brand{padding:4px 3px;color:#fff;font:bold 11px/1.4 var(--sans);letter-spacing:.1em;
+  text-shadow:1px 1px 0 rgba(0,0,0,.55);border-bottom:1px solid rgba(0,0,0,.35)}
+.s-ig  .brand{background:linear-gradient(90deg,#f9ce34,#ee2a7b 55%,#6228d7)}
+.s-yt  .brand{background:linear-gradient(180deg,#ff4e45,#c00)}
+.s-li  .brand{background:linear-gradient(180deg,#1d7fc4,#0a4d7a)}
+.s-gh  .brand{background:linear-gradient(180deg,#4a4a4a,#111)}
+.bezel{margin:7px 5px 5px;padding:5px 4px;background:#000;
+  border:3px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk);
+  box-shadow:inset 0 0 12px rgba(0,255,65,.28)}
+.odo{display:flex;justify-content:center;gap:2px}
+.odo .d{display:block;width:20px;height:31px;background:linear-gradient(180deg,#0d0d0d,#000 45%,#141414);
+  color:var(--lcd);font:bold 21px/31px var(--mono);text-align:center;
+  border:1px solid #2a2a2a;text-shadow:0 0 7px var(--lcd)}
+.odo .d.z{color:var(--lcdoff);text-shadow:none}
+.stat .cap{font:bold 10px/1.4 var(--sans);letter-spacing:.12em;color:#333;text-transform:uppercase}
+:root[data-skin="matrix"] .stat .cap{color:#89d99b}
+.stat .sub{margin-top:2px;font:10px/1.4 var(--sans);word-break:break-word;padding:0 3px}
+.totalviews{margin-top:7px;padding:7px 6px;text-align:center;background:#000;color:var(--amber);
+  font:bold 15px/1.4 var(--mono);letter-spacing:.12em;text-shadow:0 0 10px rgba(255,176,0,.75);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.totalviews b{color:#fff;text-shadow:0 0 10px #fff}
+.totalviews .sm{display:block;margin-top:3px;font:10px/1.5 var(--sans);letter-spacing:.06em;color:#9a9a9a;
+  text-shadow:none}
+
+/* ══ LAYOUT ═══════════════════════════════════════════════════════ */
+.cols{display:flex;gap:5px;margin-top:4px;align-items:flex-start}
+.side{width:252px;flex:0 0 252px}
+.main{flex:1;min-width:0}
+
+/* ══ WINDOWS ══════════════════════════════════════════════════════ */
+.win{background:var(--face);margin-bottom:5px;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.win > h2,.win > h3{margin:0;padding:5px 11px 5px 8px;color:#fff;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;font:bold 12.5px/1.5 var(--sans);letter-spacing:.02em;
+  text-shadow:1px 1px 0 rgba(0,0,0,.5);
+  background:linear-gradient(90deg,var(--t1),var(--t2))}
+.win > h2 .n,.win > h3 .n{font:10px/1.4 var(--mono);color:#ffe14d;font-weight:normal;white-space:nowrap;
+  text-shadow:1px 1px 0 rgba(0,0,0,.6)}
+.win[data-c="1"] > h2{background:linear-gradient(90deg,#0a246a,#4a86e8)}
+.win[data-c="2"] > h2{background:linear-gradient(90deg,#0b5c1e,#4ec26a)}
+.win[data-c="3"] > h2{background:linear-gradient(90deg,#4b0b7a,#b45ce8)}
+.win[data-c="4"] > h2{background:linear-gradient(90deg,#7a1206,#f0641a)}
+.win[data-c="5"] > h2{background:linear-gradient(90deg,#064f57,#28bccd)}
+.win[data-c="6"] > h2{background:linear-gradient(90deg,#8a0a52,#ff7ab8)}
+.win[data-c="7"] > h2{background:linear-gradient(90deg,#6b5300,#e5c02c)}
+.win[data-c="8"] > h2{background:linear-gradient(90deg,#241a6b,#7b6cf0)}
+.win[data-c="9"] > h2{background:linear-gradient(90deg,#5a3210,#c98a3e)}
+/* the matrix skin takes the per-section colours down to one hue */
+:root[data-skin="matrix"] .win > h2,
+:root[data-skin="matrix"] .win > h3{background:linear-gradient(90deg,#062d10,#12a03f)}
+:root[data-skin="matrix"] .win > h2 .n,
+:root[data-skin="matrix"] .win > h3 .n{color:#d8ffe4}
+:root[data-skin="matrix"] details.job > summary::before{background:#0a1c0e;color:#4dff8f;border-color:#2f7a3f;
+  box-shadow:inset 1px 1px 0 #1d4a26}
+:root[data-skin="matrix"] .friend .rk{background:#12a03f;border-color:#062d10}
+:root[data-skin="matrix"] .contact .hd{background:linear-gradient(90deg,#062d10,#12a03f)}
+.body{background:var(--paper);margin:4px;padding:9px;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.lead{font:italic 11.5px/1.65 var(--times);color:#555;margin:0 0 9px;padding-bottom:6px;
+  border-bottom:1px dotted #bbb}
+:root[data-skin="matrix"] .lead{color:#79c489}
+.lead.sub{margin-top:10px}
+
+/* profile */
+.picwrap{margin:4px;padding:4px;background:var(--paper);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.pic{display:block;width:100%;height:auto}
+.piccap{margin-top:3px;padding:2px 4px;background:var(--face2);color:#222;font:9px/1.5 var(--mono);
+  display:flex;justify-content:space-between;border-top:1px solid var(--sh)}
+:root[data-skin="matrix"] .piccap{color:#9fdcae}
+.online{display:block;text-align:center;margin:5px 0 1px;font:bold 11px/1.5 var(--sans);color:#00a000}
+.online .dot{display:inline-block;width:8px;height:8px;background:#0c0;border:1px solid #050;
+  border-radius:50%;margin-right:5px;animation:blk 1.6s steps(1,end) infinite}
+.whereis{margin:4px;padding:5px;text-align:center;background:#ffffcc;color:#8a0000;
+  font:bold 11px/1.5 var(--comic);border:2px dashed #d40000}
+:root[data-skin="matrix"] .whereis{background:#0d2411;color:#9fffbb;border-color:#2f7a3f}
+
+/* contact grid */
+.contact{margin:4px;padding:5px;background:var(--paper);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.contact .hd{margin-bottom:5px;padding:3px;text-align:center;color:#fff;
+  font:bold 11px/1.5 var(--comic);background:linear-gradient(90deg,var(--t1),var(--t2))}
+.contact ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.contact li a,.contact li button{display:flex;align-items:center;gap:5px;width:100%;text-align:left;
+  padding:5px 6px;background:var(--face);color:var(--ink);text-decoration:none;font:10px/1.35 var(--sans);
+  cursor:pointer;border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.contact li a:hover,.contact li button:hover{background:#ffff99;color:#000}
+:root[data-skin="matrix"] .contact li a:hover{background:#12401d;color:#b6ffc9}
+.contact li a:active,.contact li button:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+
+/* detail tables */
+table.dt{width:100%;border-collapse:collapse;font:11px/1.6 var(--sans)}
+table.dt th{width:40%;text-align:left;vertical-align:top;padding:4px 7px 4px 4px;color:#0a246a;
+  font-weight:bold;white-space:nowrap;background:#eef2fa;border-bottom:1px solid #fff}
+:root[data-skin="matrix"] table.dt th{color:#7dffa6;background:#0a1c0e}
+table.dt td{vertical-align:top;padding:4px 4px;border-bottom:1px dotted #c8c8c8}
+table.dt tr:last-child th,table.dt tr:last-child td{border-bottom:0}
+
+/* quote of the day */
+.qotd{font:italic 12.5px/1.7 var(--times);color:#222;text-align:center;padding:4px 2px}
+:root[data-skin="matrix"] .qotd{color:#c9ffd6}
+.qotd .who{display:block;margin-top:6px;font:bold 10.5px/1.5 var(--sans);font-style:normal;color:#7a1206}
+:root[data-skin="matrix"] .qotd .who{color:#5fd685}
+
+/* what's new */
+.news{list-style:none;margin:0;padding:0;font:11px/1.55 var(--sans)}
+.news li{padding:5px 4px;border-bottom:1px dotted #c8c8c8;display:flex;gap:6px;align-items:flex-start}
+.news li:last-child{border-bottom:0}
+.news .tag{flex:none;min-width:56px;text-align:center;padding:1px 5px;font:bold 8.5px/1.6 var(--sans);
+  letter-spacing:.08em;color:#fff;background:#c00;border:1px solid #700}
+.news .tag.ok{background:#0b7a25;border-color:#054d17}
+.news .tag.pp{background:#4b0b7a;border-color:#2d0749}
+
+/* ══ RÉSUMÉ ENTRIES ═══════════════════════════════════════════════ */
+details.job{background:var(--paper);margin:0 0 5px;
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+details.job:last-child{margin-bottom:0}
+details.job > summary{list-style:none;cursor:pointer;padding:6px 8px;display:flex;align-items:center;
+  gap:8px;flex-wrap:wrap;background:linear-gradient(180deg,#f4f4f4,#dcdcdc);border-bottom:1px solid #a8a8a8}
+:root[data-skin="matrix"] details.job > summary{background:linear-gradient(180deg,#0e2413,#081a0c)}
+details.job > summary::-webkit-details-marker{display:none}
+details.job > summary::before{content:"+";flex:none;width:14px;height:14px;background:var(--face);
+  color:#0b5c1e;font:bold 12px/12px var(--mono);text-align:center;
+  border:1px solid var(--sh);box-shadow:inset 1px 1px 0 #fff}
+details.job[open] > summary::before{content:"\2212";color:#a80000}
+details.job > summary:hover{background:linear-gradient(180deg,#fffde0,#ffef9e)}
+:root[data-skin="matrix"] details.job > summary:hover{background:linear-gradient(180deg,#12401d,#0a2612)}
+details.job .nm{font:bold 12px/1.5 var(--sans);color:#0a246a;flex:1;min-width:140px}
+:root[data-skin="matrix"] details.job .nm{color:#7dffa6}
+details.job .when{font:10px/1.45 var(--mono);color:#666;white-space:nowrap}
+:root[data-skin="matrix"] details.job .when{color:#6fb87f}
+details.job .np{font:bold 9.5px/1.5 var(--sans);letter-spacing:.05em;color:#fff;
+  background:linear-gradient(180deg,#2aa54a,#0b7a25);padding:1px 6px;border:1px solid #054d17}
+details.job > p,details.job > div{margin:0;padding:9px 10px;font:11.5px/1.75 var(--sans)}
+details.job .stack{display:block;margin-top:7px;padding-top:5px;font:10px/1.5 var(--mono);color:#0b5c1e;
+  border-top:1px dotted #c8c8c8}
+:root[data-skin="matrix"] details.job .stack{color:#5fd685}
+details.job .tt{display:inline-block;margin:0 7px 3px 0;padding:1px 6px;background:#fff2a8;color:#7a1206;
+  font:bold 9.5px/1.6 var(--mono);letter-spacing:.04em;border:1px solid #d4b93a}
+:root[data-skin="matrix"] details.job .tt{background:#2a2408;color:#ffd766;border-color:#5c4f12}
+details.job img.lg{width:20px;height:20px;flex:none;vertical-align:middle;background:#fff;
+  border:1px solid var(--sh)}
+details.job img.st{vertical-align:middle}
+
+/* top 8 */
+.friends{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.friend{position:relative;display:block;text-align:center;text-decoration:none;color:#0a246a;
+  background:linear-gradient(180deg,#fff,#eaeaea);padding:7px 3px 5px;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+:root[data-skin="matrix"] .friend{background:linear-gradient(180deg,#0e2413,#081a0c);color:#7dffa6}
+.friend:hover{background:linear-gradient(180deg,#fffde0,#ffef9e);color:#a80000}
+.friend .rk{position:absolute;top:2px;left:2px;width:15px;height:15px;background:#c00;color:#fff;
+  font:bold 9px/15px var(--sans);border:1px solid #700}
+.friend img{width:54px;height:54px;background:#fff;border:1px solid var(--sh)}
+.friend b{display:block;margin-top:4px;font:bold 10.5px/1.4 var(--sans);word-break:break-word}
+.friend span{display:block;font:9px/1.4 var(--mono);color:#666}
+:root[data-skin="matrix"] .friend span{color:#6fb87f}
+
+/* writing */
+.writing a{display:block;padding:6px 7px;font:11.5px/1.6 var(--sans);border-bottom:1px dotted #c8c8c8}
+.writing a::before{content:"\1F4C4\00a0"}
+.writing a span{color:#666;font-style:italic}
+.writing a.all{border-bottom:0;font-weight:bold;background:#ffffcc;margin-top:5px;
+  border:1px solid #d4b93a}
+.writing a.all::before{content:"\1F4C1\00a0"}
+:root[data-skin="matrix"] .writing a.all{background:#12401d;border-color:#2f7a3f}
+
+.feature{display:block;padding:10px 12px;margin-bottom:9px;text-decoration:none;color:var(--ink);
+  background:linear-gradient(135deg,#fffbe0,#ffe9a8);border:3px ridge #e0a800}
+.feature .fbadge{display:inline-block;margin-bottom:5px;padding:2px 7px;background:#c00;color:#fff;
+  font:bold 9px/1.5 var(--sans);letter-spacing:.14em;border:1px solid #700}
+.feature strong{display:block;font:bold 14px/1.45 var(--comic);color:#0a246a}
+.feature .fsub{display:block;margin-top:4px;font:11px/1.6 var(--sans);color:#444}
+.feature:hover{background:linear-gradient(135deg,#fff,#ffdf80)}
+:root[data-skin="matrix"] .feature{background:linear-gradient(135deg,#132b18,#0a1c0e);border-color:#2f7a3f}
+:root[data-skin="matrix"] .feature strong{color:#9fffbb}
+:root[data-skin="matrix"] .feature .fsub{color:#79c489}
+
+/* ══ AWARDS / COUNTER / FOOTER ════════════════════════════════════ */
+.btnrow{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:4px 0 10px}
+.b88{width:88px;height:31px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;text-decoration:none;font:bold 8px/1.25 var(--sans);letter-spacing:.02em;
+  border:1px solid #000;box-shadow:1px 1px 0 rgba(0,0,0,.45);padding:1px}
+.b88:hover{filter:brightness(1.2);background-image:none}
+.b88 i{font-style:normal;font-size:7px;font-weight:normal;opacity:.92}
+.b1{background:linear-gradient(180deg,#2a4bd7,#0a1a6a);color:#fff}
+.b2{background:linear-gradient(180deg,#1a1a1a,#000);color:#0f0}
+.b3{background:linear-gradient(180deg,#ffab00,#c02000);color:#fff}
+.b4{background:linear-gradient(180deg,#e8e8e8,#8a8a8a);color:#000}
+.b5{background:linear-gradient(180deg,#8e24c9,#43006e);color:#fff}
+.b6{background:linear-gradient(180deg,#17a84a,#03501f);color:#fff}
+.awtext{text-align:center;font:11px/1.75 var(--sans)}
+.guest{display:inline-block;margin-top:8px;padding:7px 16px;color:#5a2b00;text-decoration:none;
+  font:bold 14px/1.4 var(--comic);background:linear-gradient(180deg,#ffe680,#ffab00);
+  border:3px outset #ffcc33;box-shadow:2px 2px 0 rgba(0,0,0,.4)}
+.guest:hover{background:linear-gradient(180deg,#fff5c0,#ffc94d);color:#a80000}
+.guest:active{border-style:inset}
+
+.hits{text-align:center}
+.hits .lbl{font:bold 11px/1.7 var(--sans);letter-spacing:.1em;color:#0a246a}
+:root[data-skin="matrix"] .hits .lbl{color:#7dffa6}
+.hitframe{display:inline-block;margin:7px 0 5px;padding:5px;background:#000;
+  border:3px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk);
+  box-shadow:inset 0 0 12px rgba(255,176,0,.3)}
+.hits .odo .d{width:22px;height:33px;font-size:23px;line-height:33px;color:var(--amber);
+  text-shadow:0 0 8px var(--amber)}
+.hits .odo .d.z{color:#3d2600;text-shadow:none}
+.hits .fine{font:10px/1.6 var(--sans);color:#666}
+:root[data-skin="matrix"] .hits .fine{color:#6fb87f}
+
+.footer{text-align:center;font:11px/1.8 var(--sans)}
+.sig{font:bold 20px/1.4 var(--comic);color:#0a246a;text-shadow:1px 1px 0 #fff,2px 2px 0 rgba(0,0,0,.18)}
+:root[data-skin="matrix"] .sig{color:#9fffbb;text-shadow:0 0 10px rgba(57,255,136,.5)}
+.footer .fine{display:block;margin-top:8px;font:italic 11px/1.7 var(--times);color:#555}
+:root[data-skin="matrix"] .footer .fine{color:#79c489}
+
+/* player */
+.player{margin:4px;padding:6px;background:#000;color:var(--lcd);font:10px/1.6 var(--mono);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.player .np{color:#ffe14d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player .eq{display:flex;gap:2px;align-items:flex-end;height:18px;margin:5px 0}
+.player .eq i{display:block;flex:1;background:linear-gradient(180deg,#b6ff00,var(--lcd));height:3px}
+.player.on .eq i{animation:eq .85s ease-in-out infinite alternate}
+.player .eq i:nth-child(2n){animation-delay:.12s}
+.player .eq i:nth-child(3n){animation-delay:.26s}
+.player .eq i:nth-child(5n){animation-delay:.4s}
+@keyframes eq{from{height:3px}to{height:18px}}
+.player .ctl{display:flex;gap:3px}
+.player .ctl button{flex:1;padding:3px 0;background:var(--face);color:#000;cursor:pointer;
+  font:10px/1.3 var(--mono);border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.player .ctl button:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+
+/* sparkles */
+#trail{position:fixed;inset:0;pointer-events:none;z-index:9998;overflow:hidden}
+#trail i{position:absolute;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;
+  background:radial-gradient(circle,#fff 0 28%,#ffd24d 42%,rgba(255,110,0,0) 72%);
+  animation:spark .75s linear forwards}
+@keyframes spark{to{opacity:0;transform:translateY(18px) scale(.25)}}
+
+/* find dialog */
+.cmdk{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:9999;
+  padding:70px 12px 12px;justify-content:center;align-items:flex-start}
+.cmdk.open{display:flex}
+.cmdk .dlg{width:540px;max-width:100%;background:var(--face);padding:3px;
+  border:2px solid;border-color:var(--hi) #000 #000 var(--hi);box-shadow:5px 5px 0 rgba(0,0,0,.55)}
+.cmdk .dlgtitle{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:3px 4px;
+  background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;font:bold 12px/1.5 var(--sans)}
+.cmdk .dlgtitle b{width:18px;height:16px;background:var(--face);color:#000;text-align:center;
+  font:bold 10px/14px var(--sans);cursor:pointer;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.cmdk .fld{padding:9px 7px 7px;font:11px/1.6 var(--sans)}
+.cmdk input{width:100%;margin-top:3px;padding:4px;background:var(--paper);color:var(--ink);
+  font:12px/1.5 var(--sans);border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.cmdk ul{list-style:none;margin:7px 0 0;padding:2px;max-height:44vh;overflow:auto;background:var(--paper);
+  border:2px solid;border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.cmdk li{display:flex;justify-content:space-between;gap:10px;padding:3px 6px;cursor:pointer;
+  font:11px/1.6 var(--sans)}
+.cmdk li .hint{color:#666;font-size:10px;text-align:right;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;max-width:52%}
+.cmdk li.sel{background:var(--t1);color:#fff}
+.cmdk li.sel .hint{color:#cfe0ff}
+
+.skinbar{text-align:center;font:11px/1.8 var(--sans)}
+.skinbar .tomodern{text-decoration:none;font-weight:bold;color:#0a246a}
+.skinbar .tomodern:hover{background:#0a246a;color:#fff}
+.skinbar .tomodern,
+.skinbar button{margin:0 3px;padding:4px 11px;background:var(--face);color:var(--ink);cursor:pointer;
+  font:bold 10px/1.4 var(--sans);letter-spacing:.06em;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.skinbar button:hover{background:#ffffcc}
+.skinbar button:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+
+/* ── smaller CRTs ────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .cols{display:block}.side{width:auto;flex:none}
+  .numgrid{grid-template-columns:repeat(2,1fr)}
+  .friends{grid-template-columns:repeat(2,1fr)}
+  .contact ul{grid-template-columns:1fr}
+  .wordart{font-size:40px}
+  .ie-menu,.ie-addr .lb,.tbtn .lbl{display:none}
+  .ie-tools{flex-wrap:wrap}
+}
+@media(max-width:430px){
+  .wordart{font-size:27px}
+  .odo .d{width:15px;height:24px;font-size:16px;line-height:24px}
+  .hits .odo .d{width:17px;height:26px;font-size:18px;line-height:26px}
+  .banner .stars{letter-spacing:.15em}
+  .totalviews{font-size:12px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .ie{width:auto;border:0;box-shadow:none;padding:0}
+  .ie-menu,.ie-tools,.ie-addr,.ie-status,.construction,.ticker,.divider,#trail,.player,.btnrow,
+  .skinbar,.navbar,.throb{display:none}
+  .win{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){ *{animation:none !important} }
+</style>
+</head>
+<body>
+<div id="trail" aria-hidden="true"></div>
+
+<div class="ie">
+
+  <!-- ══ browser title bar ══ -->
+  <div class="ie-title">
+    <span class="ico" aria-hidden="true"></span>
+    <span class="t">Prajjwal Chittori's Home Page &mdash; Microsoft Internet Explorer</span>
+    <span class="wb" aria-hidden="true"><b>_</b><b>&#9633;</b><b>&times;</b></span>
+  </div>
+
+  <!-- ══ menu bar ══ -->
+  <div class="ie-menu" aria-hidden="true">
+    <span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span>
+    <span>F<u>a</u>vorites</span><span><u>T</u>ools</span><span><u>H</u>elp</span>
+  </div>
+
+  <!-- ══ toolbar ══ -->
+  <div class="ie-tools">
+    <button class="tbtn" type="button" id="tb-back"><span class="g">&#11013;</span><span class="lbl">Back</span></button>
+    <button class="tbtn" type="button" id="tb-fwd"><span class="g">&#10145;</span><span class="lbl">Forward</span></button>
+    <button class="tbtn" type="button" id="tb-stop"><span class="g" style="color:#c00">&#10006;</span><span class="lbl">Stop</span></button>
+    <button class="tbtn" type="button" id="tb-refresh"><span class="g" style="color:#0b5c1e">&#8635;</span><span class="lbl">Refresh</span></button>
+    <a class="tbtn" href="#top" id="tb-home"><span class="g">&#127968;</span><span class="lbl">Home</span></a>
+    <span class="tsep" aria-hidden="true"></span>
+    <button class="tbtn" type="button" id="tb-search"><span class="g">&#128269;</span><span class="lbl">Search</span></button>
+    <a class="tbtn" href="https://github.com/pjdurden"><span class="g">&#11088;</span><span class="lbl">Favorites</span></a>
+    <button class="tbtn" type="button" id="tb-print"><span class="g">&#128424;</span><span class="lbl">Print</span></button>
+    <a class="tbtn" href="mailto:prajjwalchittoriwork@gmail.com"><span class="g">&#9993;</span><span class="lbl">Mail</span></a>
+    <span class="throb" aria-hidden="true"></span>
+  </div>
+
+  <!-- ══ address bar ══ -->
+  <div class="ie-addr">
+    <span class="lb">Address</span>
+    <span class="fld"><span class="pg" aria-hidden="true"></span>
+      <input id="addr" value="http://www.prajj.com/index.html" spellcheck="false" aria-label="Address" />
+    </span>
+    <a class="go" href="#top">&#9654; Go</a>
+  </div>
+
+  <!-- ══ the page itself ══ -->
+  <div class="ie-view" id="top">
+  <div class="viewpad">
+
+  <!-- ─── banner ─── -->
+  <div class="banner">
+    <p class="stars">&#10022; &#10022; &#10022; &#10022; &#10022; &#10022; &#10022; &#10022; &#10022;</p>
+    <h1 class="wordart">Prajjwal Chittori</h1>
+    <p class="sub">BACKEND ENGiNEER &nbsp;::&nbsp; CRYPTO x PAYMENTS &nbsp;::&nbsp; CREATOR</p>
+    <p class="sub2">EtherFi &middot; ex-Visa &middot; ex-Stader Labs &nbsp;|&nbsp; George Town, Cayman Islands</p>
+  </div>
+  <div class="rainbow"></div>
+
+  <div class="ticker">
+    <span class="lbl">&#128226; NEWS FLASH</span>
+    <span class="run"><span class="tk"><span>&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>25 open-source PRs merged across 17 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span><span aria-hidden="true">&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>25 open-source PRs merged across 17 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span></span></span>
+  </div>
+
+  <!-- ─── nav ─── -->
+  <div class="navbar">
+    <a href="#about">&#127968; Home</a>
+    <a href="#experience">&#128188; Experience</a>
+    <a href="#research">&#128300; Research</a>
+    <a href="#oss">&#128187; Open Source</a>
+    <a href="#companies">&#127970; Companies</a>
+    <a href="#creator">&#127909; Creator</a>
+    <a href="#projects">&#128296; Projects</a>
+    <a href="#writing">&#128221; Writing</a>
+    <a href="articles/">&#128218; Articles</a>
+    <a href="fintech/">&#128176; Fintech 50</a>
+    <span class="spacer"></span>
+    <button id="open-cmdk" type="button">&#128269; Find&hellip;</button>
+  </div>
+
+  <div class="construction">
+    <span>&#9888; UNDER CONSTRUCTION &#9888;</span><span>THIS PAGE IS PERPETUALLY UNFINISHED, SO IS ITS AUTHOR</span><span>&#9888; SINCE 1999 &#9888;</span>
+  </div>
+
+  <!-- ─── THE NUMBERS ─── -->
+  <div class="scores">
+    <h2>&#9733;&#9733;&#9733; THE <em>NUMBERS</em> &#9733;&#9733;&#9733;</h2>
+    <div class="numgrid">
+      <div class="stat s-ig">
+        <div class="brand">INSTAGRAM</div>
+        <div class="bezel"><div class="odo" data-n="22000" data-pad="6"></div></div>
+        <div class="cap">Followers</div>
+        <div class="sub"><a href="https://www.instagram.com/prajjwalsinghchittori">@prajjwalsinghchittori</a></div>
+      </div>
+      <div class="stat s-yt">
+        <div class="brand">YOUTUBE</div>
+        <div class="bezel"><div class="odo" data-n="8000" data-pad="6"></div></div>
+        <div class="cap">Subscribers</div>
+        <div class="sub"><a href="https://www.youtube.com/@prajjwalsinghchittori">@prajjwalsinghchittori</a></div>
+      </div>
+      <div class="stat s-li">
+        <div class="brand">LINKEDIN</div>
+        <div class="bezel"><div class="odo" data-n="5000" data-pad="6"></div></div>
+        <div class="cap">Followers</div>
+        <div class="sub"><a href="https://www.linkedin.com/in/prajjwal-chittori">in/prajjwal-chittori</a></div>
+      </div>
+      <div class="stat s-gh">
+        <div class="brand">GITHUB</div>
+        <div class="bezel"><div class="odo" id="odo-gh" data-n="141" data-pad="6"></div></div>
+        <div class="cap">Followers &middot; live</div>
+        <div class="sub"><a href="https://github.com/pjdurden">@pjdurden</a></div>
+      </div>
+    </div>
+    <div class="totalviews">
+      &#9654;&#9654; <b>20,000,000+</b> TOTAL VIEWS &#9664;&#9664;
+      <span class="sm">across Instagram &amp; YouTube &middot; one format, run with relentless consistency</span>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ─── two columns ─── -->
+  <div class="cols">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <div class="side">
+
+    <div class="win">
+      <h3>Prajjwal <span class="n">26 / M / KY</span></h3>
+      <div class="picwrap">
+        <img class="pic" src="https://github.com/pjdurden.png?size=460" alt="Prajjwal Chittori" width="460" height="460" loading="lazy">
+        <div class="piccap"><span>prajjwal.jpg</span><span>460x460</span></div>
+        <span class="online"><span class="dot"></span>ONLINE NOW!</span>
+      </div>
+      <div class="whereis">&#9992; Currently in George Town,<br>Cayman Islands &#127958;</div>
+      <div class="player" id="player">
+        <div>&#9835; NOW PLAYING &#9835;</div>
+        <div class="np" id="np">nothing.mid</div>
+        <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ctl">
+          <button type="button" id="playbtn">&#9654; PLAY</button>
+          <button type="button" id="stopbtn">&#9632; STOP</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>Contacting Prajjwal</h3>
+      <div class="contact">
+        <div class="hd">&#9993; Contacting Prajjwal &#9993;</div>
+        <ul>
+          <li><button type="button" id="copy" data-email="prajjwalchittoriwork@gmail.com">&#9993; Send Message</button></li>
+          <li><a href="https://www.linkedin.com/in/prajjwal-chittori">&#128101; Add to Friends</a></li>
+          <li><a href="https://github.com/pjdurden">&#128187; View My Code</a></li>
+          <li><a href="https://www.instagram.com/prajjwalsinghchittori">&#128247; My Pictures</a></li>
+          <li><a href="https://www.youtube.com/@prajjwalsinghchittori">&#128250; My Videos</a></li>
+          <li><a href="https://codeforces.com/profile/pjdurden">&#127942; Rank Me</a></li>
+          <li><a href="articles/">&#128221; Read My Blog</a></li>
+          <li><a href="mailto:prajjwalchittoriwork@gmail.com?subject=Guestbook">&#9997; Guestbook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>What's New <span class="n">&#128293; hot</span></h3>
+      <div class="body">
+        <ul class="news">
+          <li><span class="tag blink">NEW!</span><span>Merged an autoscaler starvation fix in <a href="https://github.com/ray-project/ray/pull/65299">Ray #65299</a></span></li>
+          <li><span class="tag blink">NEW!</span><span>Swept a batched-inference mask bug out of 8 models in <a href="https://github.com/huggingface/candle/pull/3879">candle #3879</a></span></li>
+          <li><span class="tag ok">MERGED</span><span>Stopped an RDMA endpoint-rebuild storm in <a href="https://github.com/kvcache-ai/Mooncake/pull/3387">Mooncake #3387</a></span></li>
+          <li><span class="tag pp">PAPER</span><span>Cache-aware request planning for black-box LLM APIs &mdash; <a href="https://doi.org/10.5281/zenodo.21386594">DOI</a></span></li>
+          <li><span class="tag pp">PAPER</span><span>Executable correctness under KV-cache compression &mdash; <a href="https://doi.org/10.5281/zenodo.20805562">DOI</a></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>Quote of the Day</h3>
+      <div class="body">
+        <div class="qotd" id="qotd">
+          <span id="q-text">You have power over your mind, not outside events. Realize this, and you will find strength.</span>
+          <span class="who" id="q-who">&mdash; Marcus Aurelius</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>Prajjwal's Details</h3>
+      <div class="body">
+        <table class="dt">
+          <tr><th>Status:</th><td>Employed &amp; building</td></tr>
+          <tr><th>Here for:</th><td>Serious infrastructure, Networking</td></tr>
+          <tr><th>Age:</th><td>26</td></tr>
+          <tr><th>Location:</th><td>George Town, Cayman Islands</td></tr>
+          <tr><th>Hometown:</th><td>Delhi, India</td></tr>
+          <tr><th>Occupation:</th><td>Senior Backend Engineer, EtherFi</td></tr>
+          <tr><th>Education:</th><td>Delhi Technological University, B.Tech CSE</td></tr>
+          <tr><th>Languages:</th><td>Go, Rust, Java, Solidity, Python, TypeScript</td></tr>
+          <tr><th>Chess:</th><td>FIDE-registered, 1600+</td></tr>
+          <tr><th>Codeforces:</th><td>Expert &middot; ~8,000 problems</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>Prajjwal's Interests</h3>
+      <div class="body">
+        <table class="dt">
+          <tr><th>General</th><td>Liquid restaking, payment rails, LLM inference engines, KV caches, order books</td></tr>
+          <tr><th>Music</th><td>The fan curve of a GPU under load</td></tr>
+          <tr><th>Books</th><td>Philosophy, mostly. Then business biographies.</td></tr>
+          <tr><th>Heroes</th><td>People who ship the boring layer everyone else builds on</td></tr>
+          <tr><th>Movies</th><td>Anything with a heist and a spreadsheet</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="win">
+      <h3>Web Rings</h3>
+      <div class="body" style="text-align:center;font:11px/1.9 var(--sans)">
+        &laquo; <a href="https://github.com/pjdurden">prev</a> &nbsp;|&nbsp;
+        <b>THE AI-INFRA WEBRING</b> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/prajjwal-chittori">next</a> &raquo;
+        <br><span class="blink" style="color:#c00;font-weight:bold">JOIN TODAY!!</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ MAIN COLUMN ═══ -->
+  <div class="main">
+
+    <div class="win" data-c="1" id="about">
+      <h2>&#128100; Prajjwal's Blurbs <span class="n">read me first</span></h2>
+      <div class="body">
+        <p style="margin:0 0 4px"><b style="font:bold 14px/1.5 var(--comic);color:#0a246a">About me:</b></p>
+        <p><b>Crypto &amp; payments backend engineer.</b> ex-Stader Labs (founding engineer &rarr; <b>$500M+ TVL</b>
+        liquid staking), ex-Visa cross-border payments &amp; stablecoins, now Senior Backend Engineer at
+        <b>EtherFi</b> building the bridge between a Visa card and on-chain settlement. I fix bugs in the
+        infrastructure everybody else builds on &mdash; blockchain (Optimism, revm, alloy, celestia-node, ethrex)
+        and AI inference (vLLM, SGLang, candle, mistral.rs, Mooncake, Ray). On the side I explain philosophy to
+        <b>22,000+ people</b> in 45-second videos.</p>
+        <p style="margin:10px 0 4px"><b style="font:bold 14px/1.5 var(--comic);color:#0a246a">Who I'd like to meet:</b></p>
+        <p>People building inference engines, payment rails, and anything with a hard correctness invariant in it.
+        Also anyone who still remembers what a page like this used to look like.</p>
+        <p style="margin:0"><i>&#9997; Tip: press <code>/</code> or <code>Ctrl+K</code> to search this whole site.</i></p>
+      </div>
+    </div>
+
+    <div class="win" data-c="2" id="experience">
+      <h2>&#128188; Work Experience <span class="n">2021 &ndash; now</span></h2>
+      <div class="body">
+    <p class="lead">Backend engineering across crypto and global payments.</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">EtherFi — Senior Backend Engineer, Cash</span>
+          <span class="when">2026 &ndash; now</span>
+        </summary>
+        <p>Crypto / liquid restaking reconciled with Visa card settlement — real-time authorization, capture &amp; reconciliation, Borrow Mode, and an event-driven cashback pipeline on Kafka.<span class="stack">Go &middot; Solidity &middot; EigenLayer &middot; Kafka</span></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Visa — Senior Software Engineer</span>
+          <span class="when">2022 &ndash; 2026</span>
+        </summary>
+        <p>Cross-border payments: Visa Direct A2A, 100+ SWIFT message types, Treasury-as-a-Service across 15 currencies. Led an 8-engineer team on a real-time platform at 2,000+ TPS, 99.98% uptime.<span class="stack">Java &middot; Spring &middot; Hazelcast &middot; K8s</span></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Stader Labs — Founding Engineer</span>
+          <span class="when">2021 &ndash; 2022</span>
+        </summary>
+        <p>Rust / CosmWasm smart contracts powering liquidity pools past <strong>$500M+ in total value locked</strong> across multiple chains; validator analytics over 1M+ nodes.<span class="stack">Rust &middot; CosmWasm &middot; TypeScript</span></p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="3" id="research">
+      <h2>&#128300; Research Papers <span class="n">3 published</span></h2>
+      <div class="body">
+    <p class="lead">Published, peer-citable work.</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">Cache-aware request planning for black-box LLM APIs</span>
+          <span class="when">2026 &middot; preprint</span>
+        </summary>
+        <p><strong>Cache-Aware Client-Side Request Planning for Black-Box LLM APIs.</strong> When you consume an LLM through a paid per-token API you pay for the tokens the server processes, so the only lossless lever a client has is re-ordering requests to hit the provider's prompt cache. Formalizes that design space and ships a <strong>greedy prefix-clustering scheduler</strong> that shapes request order to maximize cache hits — <strong>up to 60% billed-cost reduction</strong> on an agentic workload at zero quality loss, Pareto-dominating prompt compression and semantic caching. <a href="https://doi.org/10.5281/zenodo.21386594">DOI 10.5281/zenodo.21386594</a> &middot; <a href="https://github.com/pjdurden/cache-aware-request-planning">pjdurden/cache-aware-request-planning</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Executable correctness under KV-cache compression</span>
+          <span class="when">2026 &middot; preprint</span>
+        </summary>
+        <p><strong>Perplexity Holds, Programs Break: Executable Correctness as a Blind Spot of KV-Cache Compression.</strong> KV-cache compression is benchmarked almost entirely on token-overlap and retrieval metrics that never check whether generated code actually runs or a tool call is schema-valid. Introduces <strong>kv-exec-bench</strong>, an open benchmark measuring code unit-test pass@1 and tool-call JSON-Schema validity under compression, built on NVIDIA's <code>kvpress</code> so any press works unmodified. <a href="https://doi.org/10.5281/zenodo.20805562">DOI 10.5281/zenodo.20805562</a> &middot; <a href="https://github.com/pjdurden/kv-exec-bench">pjdurden/kv-exec-bench</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">StragglerPolicy — decentralized training</span>
+          <span class="when">2026 &middot; paper</span>
+        </summary>
+        <p><strong>Straggler-Aware Elastic Membership for Decentralized Training.</strong> A zero-GPU discrete-event simulator of DiLoCo-style decentralized ML training plus a straggler-aware membership policy for slow-but-alive nodes — <strong>4.59&times; faster</strong> on a persistent-straggler scenario. Published on Zenodo. <a href="https://doi.org/10.5281/zenodo.20574905">DOI 10.5281/zenodo.20574905</a> &middot; <a href="https://github.com/pjdurden/churn">pjdurden/churn</a></p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="4" id="oss">
+      <h2>&#128187; Open Source <span class="n">25 merged &middot; 17 projects</span></h2>
+      <div class="body">
+        <p style="margin:0 0 7px;font:bold 13px/1.5 var(--comic);color:#7a1206">&#11088; Prajjwal's Top 8 Repos &#11088;</p>
+        <div class="friends">
+          <a class="friend" href="https://github.com/vllm-project/vllm"><span class="rk">1</span><img src="https://github.com/vllm-project.png?size=108" alt="" width="54" height="54" loading="lazy"><b>vLLM</b><span>1 merged</span></a>
+          <a class="friend" href="https://github.com/kvcache-ai/Mooncake"><span class="rk">2</span><img src="https://github.com/kvcache-ai.png?size=108" alt="" width="54" height="54" loading="lazy"><b>Mooncake</b><span>3 merged</span></a>
+          <a class="friend" href="https://github.com/huggingface/candle"><span class="rk">3</span><img src="https://github.com/huggingface.png?size=108" alt="" width="54" height="54" loading="lazy"><b>candle</b><span>2 merged</span></a>
+          <a class="friend" href="https://github.com/sgl-project/sglang"><span class="rk">4</span><img src="https://github.com/sgl-project.png?size=108" alt="" width="54" height="54" loading="lazy"><b>SGLang</b><span>1 merged</span></a>
+          <a class="friend" href="https://github.com/ray-project/ray"><span class="rk">5</span><img src="https://github.com/ray-project.png?size=108" alt="" width="54" height="54" loading="lazy"><b>Ray</b><span>1 merged</span></a>
+          <a class="friend" href="https://github.com/ethereum-optimism/optimism"><span class="rk">6</span><img src="https://github.com/ethereum-optimism.png?size=108" alt="" width="54" height="54" loading="lazy"><b>Optimism</b><span>1 merged</span></a>
+          <a class="friend" href="https://github.com/bluealloy/revm"><span class="rk">7</span><img src="https://github.com/bluealloy.png?size=108" alt="" width="54" height="54" loading="lazy"><b>revm</b><span>1 merged</span></a>
+          <a class="friend" href="https://github.com/meilisearch/meilisearch"><span class="rk">8</span><img src="https://github.com/meilisearch.png?size=108" alt="" width="54" height="54" loading="lazy"><b>Meilisearch</b><span>1 merged</span></a>
+        </div>
+    <p class="lead">Merged work on the infrastructure other people build on &mdash; blockchain &amp; crypto infra first, plus AI inference and ML systems. Star counts are live; open a tile for the actual bug.</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/vllm-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">vLLM</span>
+          <img class="st" src="https://img.shields.io/github/stars/vllm-project/vllm?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">build-correctness fix</span>Merged contribution to <strong>vLLM</strong>, the standard high-throughput LLM inference &amp; serving engine: fixed a self-contradictory precompiled-flag orthogonality test in the build system. <a href="https://github.com/vllm-project/vllm/pull/44942">vllm-project/vllm #44942</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/meilisearch.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Meilisearch</span>
+          <img class="st" src="https://img.shields.io/github/stars/meilisearch/meilisearch?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">ranking-rules fix</span>Merged contribution to <strong>Meilisearch</strong>, the Rust search engine: fixed a ranking-rules ordering bug where placing <code>attributeRank</code>/<code>wordPosition</code> before the <code>words</code> rule silently dropped matching hits. <a href="https://github.com/meilisearch/meilisearch/pull/6437">meilisearch/meilisearch #6437</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/sgl-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">SGLang</span>
+          <img class="st" src="https://img.shields.io/github/stars/sgl-project/sglang?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">PD cache-aware routing fix</span>Merged contribution to <strong>SGLang</strong>, the high-throughput LLM/VLM serving engine: the prefill/decode router's cache-aware routing keyed chat requests on the first message only; routing on the full conversation lifted KV-cache hits from <strong>~69% to ~96%</strong> and output throughput from <strong>~678 to ~1078 TPS</strong>. <a href="https://github.com/sgl-project/sglang/pull/27430">sgl-project/sglang #27430</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/huggingface.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">candle</span>
+          <img class="st" src="https://img.shields.io/github/stars/huggingface/candle?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">batched-inference mask fixes</span>Two merged contributions to <strong>candle</strong>, Hugging Face's minimalist Rust ML framework. Qwen3 produced incorrect output for any batch size &gt; 1: the causal mask allocated a batch-independent buffer but shaped it <code>(b, 1, tgt, tgt + offset)</code>, and <code>Tensor::from_slice</code> doesn't validate element count against a fully-specified shape &mdash; so batch row 0 read the correct mask and every row after it read past the buffer. Fixed by shaping the mask <code>(1, 1, …)</code> and letting the existing <code>broadcast_add</code> apply it across the batch. The follow-up swept the same defect out of the eight sibling models that carried it &mdash; <code>qwen3_moe</code>, the quantized Qwen3 pair, <code>glm4_new</code>, <code>quantized_glm4</code>, SmolLM3 and its quantized twin, and Z-Image's text encoder &mdash; where it was more exposed: Qwen3's mask path was gated to CPU under the <code>flash-attn</code> feature, while these build the broken mask on every multi-token forward on every backend. Rather than copy the corrected builder eight more times, it centralized <code>build_additive_causal_mask</code> in <code>crate::utils</code> and moved the regression tests there, deleting 306 lines against 189 added. <a href="https://github.com/huggingface/candle/pull/3586">huggingface/candle #3586</a> &middot; <a href="https://github.com/huggingface/candle/pull/3879">#3879</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/mark3labs.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">mcp-go</span>
+          <img class="st" src="https://img.shields.io/github/stars/mark3labs/mcp-go?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">OAuth error-handling fix</span>Merged contribution to <strong>mcp-go</strong>, the leading Go implementation of the Model Context Protocol (MCP): fixed <code>getServerMetadata</code> returning <code>(nil, nil)</code> on failure instead of an error, removing a silent-failure path for OAuth discovery. <a href="https://github.com/mark3labs/mcp-go/pull/904">mark3labs/mcp-go #904</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/EricLBuehler.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">mistral.rs</span>
+          <img class="st" src="https://img.shields.io/github/stars/EricLBuehler/mistral.rs?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">scheduler &amp; GGUF-loader fixes</span>Two merged contributions to <strong>mistral.rs</strong>, the Rust LLM inference &amp; serving engine: fixed reversed FCFS priority in the <code>PagedAttentionScheduler</code> preemption path so the oldest request is preempted last, and validated GGUF special-token ids against the vocab to prevent an out-of-bounds panic on model load. <a href="https://github.com/EricLBuehler/mistral.rs/pull/2250">EricLBuehler/mistral.rs #2250</a> &middot; <a href="https://github.com/EricLBuehler/mistral.rs/pull/2282">#2282</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/ethereum-optimism.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Optimism</span>
+          <img class="st" src="https://img.shields.io/github/stars/ethereum-optimism/optimism?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">op-wheel metrics fix</span>Merged contribution to <strong>Optimism</strong>, the OP Stack monorepo powering Ethereum L2s like Base &amp; OP Mainnet: fixed an <code>op-wheel</code> metrics bug where <code>RecordBlockStats</code> wrote block gas twice and left the base-fee gauge unset, and corrected the pre-block status log. <a href="https://github.com/ethereum-optimism/optimism/pull/21127">ethereum-optimism/optimism #21127</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/kvcache-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Mooncake</span>
+          <img class="st" src="https://img.shields.io/github/stars/kvcache-ai/Mooncake?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">3 merged</span>
+        </summary>
+        <p><span class="tt">startup, SSD-offload &amp; RDMA fixes</span>Three merged contributions to <strong>Mooncake</strong>, the KV-cache store &amp; transfer engine behind Kimi and used as a disaggregated KV backend by vLLM and SGLang: <code>mooncake_master</code> bound its RPC and HTTP servers to the numeric wildcard <code>0.0.0.0</code>, which the acceptors resolved through <code>getaddrinfo()</code> &mdash; environments that answer <code>EAI_NONAME</code> for numeric literals killed startup with <em>bad address: 0.0.0.0</em>, fixed by pinning the dependency to a revision that parses numeric IP literals directly. And under 32-concurrency SSD offload, two flows sharing a KV prefix block hit the bucket backend's deliberate single-writer-per-key <code>OBJECT_ALREADY_EXISTS</code> rejection, which <code>FileStorage::OffloadObjects</code> treated as fatal &mdash; aborting the whole offload and leaving the decode node with <code>INVALID_KEY</code> floods; duplicate-key rejection is now a recoverable per-bucket condition. The third fix stopped an endpoint rebuild storm: when a QP reported an <code>mlx5</code> local completion fault, the slice was handed to the other bonded RNIC, which had no endpoint for that peer NIC and so ran a full handshake with fresh QP numbers &mdash; and on recurrence handed it straight back, two RNICs ping-ponging the same slices at worker-loop speed. Neither brake applied: the local-failure branch deliberately never marked the rail failed, and the context-health counter is cleared by any concurrent healthy completion. The failing local-to-peer rail is now charged an error in the existing rail monitor, so the threshold that the remote-failure path already uses pauses it after five faults and auto-recovers. <a href="https://github.com/kvcache-ai/Mooncake/pull/2919">kvcache-ai/Mooncake #2919</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/2967">#2967</a> &middot; <a href="https://github.com/kvcache-ai/Mooncake/pull/3387">#3387</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/vllm-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">AIBrix</span>
+          <img class="st" src="https://img.shields.io/github/stars/vllm-project/aibrix?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">KV-event decoder &amp; eviction fixes</span>Merged contribution to <strong>AIBrix</strong>, the vLLM project's Kubernetes-native LLM-serving control plane: the ZMQ KV-event decoder dropped <code>group_idx</code>/<code>medium</code>/<code>lora_name</code> from vLLM's <code>BlockStored</code> event, causing false prefix-cache matches on hybrid-attention models; and made the KV-event indexer purge a pod's cached prefixes on <code>AllBlocksCleared</code> so evicted blocks are no longer served as stale cache hits. <a href="https://github.com/vllm-project/aibrix/pull/2384">vllm-project/aibrix #2384</a> &middot; <a href="https://github.com/vllm-project/aibrix/pull/2385">#2385</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/bluealloy.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">revm</span>
+          <img class="st" src="https://img.shields.io/github/stars/bluealloy/revm?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">EVM interpreter fix</span>Merged contribution to <strong>revm</strong>, the Rust EVM behind Foundry &amp; reth: reworked <code>pop_address</code> to use <code>IntoAddress</code>, removing a const-eval panic path in the stack interpreter. <a href="https://github.com/bluealloy/revm/pull/3735">bluealloy/revm #3735</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/envoyproxy.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Envoy AI Gateway</span>
+          <img class="st" src="https://img.shields.io/github/stars/envoyproxy/ai-gateway?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">MCP proxy &amp; token-usage fixes</span>Two merged contributions to <strong>Envoy AI Gateway</strong>, the Envoy-based gateway for AI/LLM traffic: the MCP proxy failed <code>initialize</code> with a 500 when a backend's SSE response opened with a keep-alive / empty <code>data:</code> event before the JSON-RPC result (seen on some FastMCP backends), so the SSE parser now skips non-response events instead of treating them as a fatal parse error; and the Anthropic translator dropped the input/cache token usage reported on <code>message_delta</code>, leaving it out of the final usage totals, now fixed to merge it in. <a href="https://github.com/envoyproxy/ai-gateway/pull/2267">envoyproxy/ai-gateway #2267</a> &middot; <a href="https://github.com/envoyproxy/ai-gateway/pull/2292">#2292</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/celestiaorg.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">celestia-node</span>
+          <img class="st" src="https://img.shields.io/github/stars/celestiaorg/celestia-node?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">DA layer test-infra</span>Merged contribution to <strong>celestia-node</strong>, the Go node for the Celestia data-availability layer: unified the header <code>TestSuite</code> constructors behind functional options, cutting duplicated test setup. <a href="https://github.com/celestiaorg/celestia-node/pull/5041">celestiaorg/celestia-node #5041</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/alloy-rs.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">alloy</span>
+          <img class="st" src="https://img.shields.io/github/stars/alloy-rs/core?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">sol! macro derive fix</span>Merged contribution to <strong>alloy</strong>, the Rust Ethereum-types &amp; <code>sol!</code> toolkit used across Foundry, reth &amp; the wider Rust EVM ecosystem: the <code>sol!</code> macro silently dropped <code>Debug</code>/<code>PartialEq</code>/<code>Eq</code>/<code>Hash</code> derives on the event/error enums it generates for contracts with overloaded events (e.g. Uniswap V3's two <code>Swap</code> events), because synthetic <code>_N</code>-suffixed variant names didn't resolve; fixed it to compute derivability from the underlying parameter types. <a href="https://github.com/alloy-rs/core/pull/1118">alloy-rs/core #1118</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/lambdaclass.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">ethrex</span>
+          <img class="st" src="https://img.shields.io/github/stars/lambdaclass/ethrex?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">Ethereum client startup fix</span>Merged contribution to <strong>ethrex</strong>, the Rust Ethereum L1/L2 execution client by LambdaClass: replaced a too-broad <code>datadir non-empty</code> check with an actual-DB probe, so unrelated files (e.g. an EthDocker JWT secret in the same directory) no longer block a fresh node from booting. <a href="https://github.com/lambdaclass/ethrex/pull/6786">lambdaclass/ethrex #6786</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/guidance-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">llguidance</span>
+          <img class="st" src="https://img.shields.io/github/stars/guidance-ai/llguidance?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">constrained-decoding fixes</span>Two merged contributions to <strong>llguidance</strong>, the constrained-decoding engine behind structured / JSON-Schema output in vLLM, SGLang &amp; llama.cpp: fixed JSON-Schema <code>multipleOf</code> rejecting negative multiples, and made <code>max_tokens=0</code> rules compile to the empty string. <a href="https://github.com/guidance-ai/llguidance/pull/357">guidance-ai/llguidance #357</a> &middot; <a href="https://github.com/guidance-ai/llguidance/pull/356">#356</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/dottxt-ai.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">outlines-core</span>
+          <img class="st" src="https://img.shields.io/github/stars/dottxt-ai/outlines-core?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">2 merged</span>
+        </summary>
+        <p><span class="tt">RFC3339 regex fixes</span>Two merged contributions to <strong>outlines-core</strong>, the Rust JSON-Schema to regex core behind Outlines' structured generation. The <code>date</code> format regex applied a uniform 01&ndash;31 day range regardless of month, so constrained decoding could emit dates that do not exist, such as <code>2022-02-31</code> and <code>2022-04-31</code>; fixed by making the day range month-aware &mdash; 30-day months cap at 30 and February at 29 &mdash; deliberately leaving leap years unvalidated to keep the compiled regex bounded. The <code>date-time</code> format failed the other way: it accepted only a <code>Z</code> suffix, so valid RFC3339 numeric offsets such as <code>2021-01-01T00:00:00+05:30</code> were rejected outright; added the <code>(+|-)HH:MM</code> offset and kept it optional so offset-less strings still match. <a href="https://github.com/dottxt-ai/outlines-core/pull/258">dottxt-ai/outlines-core #258</a> &middot; <a href="https://github.com/dottxt-ai/outlines-core/pull/257">#257</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/ray-project.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">Ray</span>
+          <img class="st" src="https://img.shields.io/github/stars/ray-project/ray?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">autoscaler starvation fix</span>Merged contribution to <strong>Ray</strong>, the distributed compute framework underneath much of the ML training and serving stack: Autoscaler v2 silently lost launch errors whenever one launch request spanned more than one node type. The reconciler keyed its error lookup on the launch <code>request_id</code> alone, but a single request carries a whole shape, and both the node-provider and KubeRay paths fan that shape out into one <code>LaunchNodeError</code> per node type sharing that id. The sibling errors overwrote each other in the dict and only the last one survived, so every other node type never reached <code>ALLOCATION_FAILED</code>. Those instances sat in <code>REQUESTED</code> until the request timeout fired, holding <code>max_concurrent_launches</code> capacity, and stayed eligible for allocation in later reconcile passes, letting a stale instance claim a Pod that was launched for a different request. Fixed by keying on the pair that actually identifies a launch error, <code>(request_id, node_type)</code>, which also folds away the now-redundant node-type guard at the call site. <a href="https://github.com/ray-project/ray/pull/65299">ray-project/ray #65299</a></p>
+      </details>
+    </div>
+    <p class="lead sub">Earlier on-chain work</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">CoinSwap — CosmWasm + Terraswap DEX</span>
+          <span class="when">2022</span>
+        </summary>
+        <p>DEX swap contract for LUNA/UST/CW20 tokens, with a gas-fee analysis tool for the Terra blockchain. <a href="https://github.com/pjdurden/CoinSwap-using-Cosmwasm-and-Terraswap">pjdurden/CoinSwap</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Gas-Fee Benchmark — Terra/CosmWasm</span>
+          <span class="when">2022</span>
+        </summary>
+        <p>Benchmarking contract measuring the gas cost of storage patterns on Terra/CosmWasm — the analysis behind Stader's on-chain gas optimization. <a href="https://github.com/pjdurden/Gas_analysis_cw_storage_plus_terraswap">pjdurden/Gas_analysis</a></p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="5" id="companies">
+      <h2>&#127970; Companies I Founded <span class="n">2 ventures</span></h2>
+      <div class="body">
+    <p class="lead">Things I started from zero and shipped to real customers.</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">KuruX Enterprises</span>
+          <span class="when">2025</span>
+        </summary>
+        <p>A sustainable-cleaning consumer brand (<strong>NAMELESS / WipeZilla</strong>), built solo end to end — manufacturing, compliance, listings. <strong>&#8377;2L revenue in month one</strong>; now run by family. <a href="https://www.wipezilla.in">wipezilla.in</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Bizpedia</span>
+          <span class="when">2024</span>
+        </summary>
+        <p>A free, open-source wiki for the world of business — structured, contributor-driven reference. <a href="https://bizpedia.org">bizpedia.org</a></p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="6" id="creator">
+      <h2>&#127909; Creator <span class="n">22K+ following &middot; 20M+ views</span></h2>
+      <div class="body">
+    <p class="lead">Short-form philosophy and long-form takes — an audience built on one consistent format.</p>
+    <a class="feature" href="fintech/">
+      <span class="fbadge">Series</span>
+      <strong>What I Think About the Top 50 Fintech Companies of All Time</strong>
+      <span class="fsub">Vision over financials — 50 companies, what each got right and wrong, and the founders behind them. &rarr;</span>
+    </a>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">@prajjwalsinghchittori — philosophy, short-form</span>
+          <span class="when">active</span>
+        </summary>
+        <p>An English quote, explained in Hindi. <strong>22K+ followers</strong> and <strong>20M+ views</strong> across Instagram &amp; YouTube — one format, run with relentless consistency. <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &middot; <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a></p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="7" id="projects">
+      <h2>&#128296; Side Projects <span class="n">3 builds</span></h2>
+      <div class="body">
+    <p class="lead">Smaller things built to learn or to prove a point.</p>
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">nanoserve &mdash; LLM inference engine</span>
+          <span class="when">2026</span>
+        </summary>
+        <p>A from-scratch LLM inference engine, built in public over 100 days. Paged KV cache, continuous batching, and a hand-written Triton paged-attention kernel &mdash; the core ideas behind vLLM in ~2k readable lines.<span class="stack">PyTorch &middot; Triton &middot; CUDA</span> <a href="https://github.com/pjdurden/nanoserve">pjdurden/nanoserve</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Veri5</span>
+          <span class="when">2024 &ndash; 25</span>
+        </summary>
+        <p>Real-time identity &amp; account-verification API for EU cross-border payments — distributed caching at 1,000+ req/sec, full observability.<span class="stack">Spring &middot; Redis &middot; Hazelcast</span> <a href="https://github.com/pjdurden/veri5-mvp">pjdurden/veri5-mvp</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">KuruX — trading simulator</span>
+          <span class="when">2023</span>
+        </summary>
+        <p>A private-equity trading simulator with a hand-built order book, <strong>featured by Y Combinator Startup School</strong>.</p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="8" id="competitive">
+      <h2>&#127942; Competitive <span class="n">CF Expert &middot; FIDE 1600+</span></h2>
+      <div class="body">
+    <div class="jobs">
+      <details class="job">
+        <summary>
+          <span class="nm">Competitive programming</span>
+          <span class="when"></span>
+        </summary>
+        <p><strong>Codeforces Expert</strong>; ~8,000 problems solved across Codeforces, CodeChef, LeetCode, UVa and more. <a href="https://codeforces.com/profile/pjdurden">codeforces/pjdurden</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <span class="nm">Chess</span>
+          <span class="when"></span>
+        </summary>
+        <p>FIDE-registered player, 1600+ rating.</p>
+      </details>
+    </div>
+      </div>
+    </div>
+
+    <div class="win" data-c="9" id="writing">
+      <h2>&#128221; My Writing <span class="n">106 essays</span></h2>
+      <div class="body">
+    <div class="writing">
+      <a href="articles/founding-engineer-1b-tvl/">Taking a Liquid-Staking Protocol Past $500M+ TVL <span>— founding-engineer lessons</span></a>
+      <a href="articles/solo-amazon-brand/">&#8377;2 Lakh in Month One <span>— building a physical brand solo</span></a>
+      <a href="articles/8000-problems-practice-system/">From Codeforces Expert to ~8,000 Problems <span>— a practice system</span></a>
+      <a href="articles/22k-one-format/">How I Built a 22K Audience With One Format <span>— consistency over creativity</span></a>
+      <a class="all" href="articles/">All writing &rarr;</a>
+    </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /cols -->
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ─── awards ─── -->
+  <div class="win" data-c="7">
+    <h2>&#127894; Awards &amp; Affiliations <span class="n">88x31 forever</span></h2>
+    <div class="body">
+      <div class="btnrow">
+        <a class="b88 b1" href="https://github.com/pjdurden">HAND-CODED<i>in a text editor</i></a>
+        <span class="b88 b2">BEST VIEWED AT<i>1024 x 768</i></span>
+        <span class="b88 b3">NO COOKIES<i>no trackers</i></span>
+        <a class="b88 b4" href="https://codeforces.com/profile/pjdurden">CODEFORCES<i>EXPERT</i></a>
+        <a class="b88 b5" href="https://www.wipezilla.in">KURUX<i>ENTERPRISES</i></a>
+        <a class="b88 b6" href="https://bizpedia.org">BIZPEDIA<i>.org</i></a>
+      </div>
+      <div class="awtext">
+        &#11088; Featured by <b>Y Combinator Startup School</b> (KuruX) &#11088;<br>
+        &#127908; Guest on <a href="https://open.spotify.com/show/43eA4ooJjiFTIGf62ykedI">The Irusha Podcast</a>
+        &mdash; &ldquo;Blockchain startup ecosystem in India&rdquo; (2022)<br>
+        <a class="guest" href="mailto:prajjwalchittoriwork@gmail.com?subject=Guestbook">&#9997; SiGN MY GUESTBOOK! &#9997;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── counter ─── -->
+  <div class="win" data-c="4">
+    <h2>&#128200; Visitor Counter <span class="n">since 1999*</span></h2>
+    <div class="body hits">
+      <div class="lbl">YOU ARE VISITOR NUMBER</div>
+      <div class="hitframe"><div class="odo" id="odo-hits" data-n="0" data-pad="7"></div></div>
+      <div class="fine">*counter actually installed in 2026. thanks for stopping by!!</div>
+    </div>
+  </div>
+
+  <!-- ─── skins ─── -->
+  <div class="win" data-c="3">
+    <h2>&#127912; Page Skin <span class="n">pick one</span></h2>
+    <div class="body skinbar">
+      <a class="tomodern" href="/">&#8594; MODERN</a>
+      <button type="button" data-skin="geocities">GEOCiTiES</button>
+      <button type="button" data-skin="myspace">MYSPACE</button>
+      <button type="button" data-skin="win98">WiNDOWS 98</button>
+      <button type="button" data-skin="matrix">MATRiX</button>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ─── footer ─── -->
+  <div class="win" data-c="1">
+    <div class="body footer">
+      <div class="sig">~ Prajjwal Chittori ~</div>
+      engineer &middot; founder of KuruX Enterprises and Bizpedia &middot; philosophy creator with 20M+ views
+      <br>
+      <a href="mailto:prajjwalchittoriwork@gmail.com">prajjwalchittoriwork@gmail.com</a> &nbsp;|&nbsp;
+      <a href="https://github.com/pjdurden">GitHub</a> &nbsp;|&nbsp;
+      <a href="https://www.linkedin.com/in/prajjwal-chittori">LinkedIn</a> &nbsp;|&nbsp;
+      <a href="https://www.instagram.com/prajjwalsinghchittori">Instagram</a> &nbsp;|&nbsp;
+      <a href="https://www.youtube.com/@prajjwalsinghchittori">YouTube</a> &nbsp;|&nbsp;
+      <a href="articles/">Articles</a> &nbsp;|&nbsp;
+      <a href="fintech/">Top 50 Fintech</a>
+      <span class="fine">
+        This page is best viewed in Netscape Navigator 4.7 or Internet Explorer 6 at 1024&times;768 on a 56k modem.<br>
+        Last updated: 07-SEP-2026 &middot; &copy; 1999&ndash;2026 Prajjwal Chittori. All rights reserved, obviously.
+      </span>
+      <br>
+      <span class="blink" style="color:#c00;font-weight:bold;font-size:11px">&#9660; THANKS FOR VISITING &#9660;</span>
+    </div>
+  </div>
+
+  </div><!-- /viewpad -->
+  </div><!-- /ie-view -->
+
+  <!-- ══ status bar ══ -->
+  <div class="ie-status">
+    <span class="cell s1" id="statustext">Done</span>
+    <span class="bar" aria-hidden="true"><i></i></span>
+    <span class="cell zone">&#127760; Internet</span>
+  </div>
+
+</div><!-- /ie -->
+
+<!-- find dialog -->
+<div class="cmdk" id="cmdk">
+  <div class="dlg">
+    <div class="dlgtitle"><span>&#128269; Find on this site</span><b id="cmdk-x">&times;</b></div>
+    <div class="fld">
+      <label for="cmdk-input"><b>Find what:</b></label>
+      <input id="cmdk-input" placeholder="LinkedIn, GitHub, email, projects&hellip;" autocomplete="off" />
+      <ul id="cmdk-list"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $  = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* ── odometer digits ──────────────────────────────────────────
+     Fixed width, leading zeros dimmed, one cell per digit, like
+     every hit counter on every page in 1999. */
+  function odo(el,n){
+    var pad=parseInt(el.getAttribute("data-pad"),10)||6;
+    var s=String(Math.max(0,Math.round(n)));
+    while(s.length<pad) s="0"+s;
+    var lead=true,html="";
+    for(var i=0;i<s.length;i++){
+      if(s[i]!=="0"||i===s.length-1) lead=false;
+      html+='<span class="d'+(lead?" z":"")+'">'+s[i]+'</span>';
+    }
+    el.innerHTML=html;
+  }
+  $$(".odo").forEach(function(el){ odo(el,parseInt(el.getAttribute("data-n"),10)||0) });
+
+  /* GitHub followers: the one number here that updates itself */
+  fetch("https://api.github.com/users/pjdurden")
+    .then(function(r){ return r.ok?r.json():null })
+    .then(function(d){ if(d&&typeof d.followers==="number"){var e=$("#odo-gh"); if(e) odo(e,d.followers);} })
+    .catch(function(){});
+
+  /* ── browser chrome buttons (they actually work) ───────────── */
+  var stopped=false;
+  function on(id,fn){ var e=$(id); if(e) e.addEventListener("click",fn) }
+  on("#tb-back",function(){history.back()});
+  on("#tb-fwd",function(){history.forward()});
+  on("#tb-refresh",function(){location.reload()});
+  on("#tb-print",function(){window.print()});
+  on("#tb-stop",function(){
+    stopped=true;
+    $$(".tk,.rainbow,.divider,.construction,.throb").forEach(function(m){
+      m.style.animationPlayState="paused";
+    });
+    document.documentElement.style.setProperty("scroll-behavior","auto");
+    setStatus("Stopped");
+  });
+  var addr=$("#addr");
+  if(addr){
+    addr.addEventListener("keydown",function(e){
+      if(e.key==="Enter"){ e.preventDefault(); setStatus("Cannot find server or DNS Error"); addr.blur(); }
+    });
+  }
+
+  /* ── status bar ─────────────────────────────────────────────── */
+  var statusEl=$("#statustext"), statusTimer;
+  function setStatus(t){ if(statusEl) statusEl.textContent=t; }
+  var IDLE=["Done","Done — 47 items remaining","Opening page http://www.prajj.com/index.html...",
+            "Done","Transferring data from prajj.com...","Done"];
+  var idx=0;
+  setTimeout(function(){
+    statusTimer=setInterval(function(){ if(!stopped) setStatus(IDLE[idx++%IDLE.length]) },5200);
+  },2600);
+  $$("a[href]").forEach(function(a){
+    a.addEventListener("mouseenter",function(){ setStatus(a.href) });
+    a.addEventListener("mouseleave",function(){ setStatus("Done") });
+  });
+
+  /* ── quote of the day ───────────────────────────────────────── */
+  var QUOTES=[
+    ["You have power over your mind, not outside events. Realize this, and you will find strength.","Marcus Aurelius"],
+    ["We suffer more often in imagination than in reality.","Seneca"],
+    ["He who has a why to live can bear almost any how.","Friedrich Nietzsche"],
+    ["In the depth of winter, I finally learned that within me there lay an invincible summer.","Albert Camus"],
+    ["It is not that we have a short time to live, but that we waste a lot of it.","Seneca"],
+    ["The impediment to action advances action. What stands in the way becomes the way.","Marcus Aurelius"],
+    ["A man is what he thinks about all day long.","Ralph Waldo Emerson"]
+  ];
+  (function(){
+    var qt=$("#q-text"),qw=$("#q-who"); if(!qt) return;
+    var day=Math.floor(Date.now()/864e5)%QUOTES.length;
+    qt.textContent=QUOTES[day][0]; qw.innerHTML="&mdash; "+QUOTES[day][1];
+    var box=$("#qotd");
+    if(box){ box.style.cursor="pointer"; box.title="Click for another";
+      box.addEventListener("click",function(){
+        day=(day+1)%QUOTES.length;
+        qt.textContent=QUOTES[day][0]; qw.innerHTML="&mdash; "+QUOTES[day][1];
+      });
+    }
+  })();
+
+  /* ── copy email ─────────────────────────────────────────────── */
+  var copy=$("#copy");
+  if(copy){
+    copy.addEventListener("click",function(){
+      var mail=copy.getAttribute("data-email"),old=copy.innerHTML;
+      function done(){ copy.innerHTML="&#9989; Copied!"; setStatus("Copied "+mail);
+                       setTimeout(function(){copy.innerHTML=old},1500) }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(mail).then(done,function(){location.href="mailto:"+mail});
+      } else { location.href="mailto:"+mail; }
+    });
+  }
+
+  /* ── the obligatory autoplaying MIDI, except it asks first ───
+     A square-wave loop through WebAudio: no .mid to host, and
+     nothing makes a sound until you press PLAY. */
+  var ctx,timer,player=$("#player"),np=$("#np");
+  var TUNE=[392,0,523,0,659,0,587,523,440,0,494,0,523,0,0,0];
+  function play(){
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+      if(!ctx) ctx=new AC();
+      if(ctx.state==="suspended") ctx.resume();
+      stop(true);
+      var step=0; player.classList.add("on");
+      if(np) np.textContent="canon_in_d_REMIX.mid";
+      setStatus("Playing canon_in_d_REMIX.mid");
+      timer=setInterval(function(){
+        var f=TUNE[step++%TUNE.length]; if(!f) return;
+        var o=ctx.createOscillator(),g=ctx.createGain();
+        o.type="square"; o.frequency.value=f;
+        g.gain.setValueAtTime(.05,ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.28);
+        o.connect(g); g.connect(ctx.destination);
+        o.start(); o.stop(ctx.currentTime+.3);
+      },180);
+    }catch(e){}
+  }
+  function stop(quiet){
+    if(timer){clearInterval(timer);timer=null}
+    if(!quiet){ player.classList.remove("on"); if(np) np.textContent="nothing.mid" }
+  }
+  if($("#playbtn")) $("#playbtn").addEventListener("click",play);
+  if($("#stopbtn")) $("#stopbtn").addEventListener("click",function(){stop()});
+
+  /* ── sparkle cursor trail ───────────────────────────────────── */
+  (function(){
+    var layer=$("#trail"); if(!layer) return;
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if(window.matchMedia("(pointer: coarse)").matches) return;
+    var last=0;
+    document.addEventListener("mousemove",function(e){
+      var now=Date.now(); if(now-last<42) return; last=now;
+      var s=document.createElement("i");
+      s.style.left=e.clientX+"px"; s.style.top=e.clientY+"px";
+      layer.appendChild(s);
+      setTimeout(function(){ if(s.parentNode) s.parentNode.removeChild(s) },760);
+    },{passive:true});
+  })();
+
+  /* ── skins ──────────────────────────────────────────────────── */
+  $$(".skinbar button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var s=b.getAttribute("data-skin");
+      if(s==="geocities") document.documentElement.removeAttribute("data-skin");
+      else document.documentElement.setAttribute("data-skin",s);
+      try{ localStorage.setItem("pc-skin",s) }catch(e){}
+      setStatus("Applied skin: "+s);
+    });
+  });
+
+  /* ── printing: collapsed <details> print blank, so open them ── */
+  (function(){
+    var reopened=[];
+    window.addEventListener("beforeprint",function(){
+      reopened=$$("details.job").filter(function(d){return !d.open});
+      reopened.forEach(function(d){d.open=true});
+    });
+    window.addEventListener("afterprint",function(){
+      reopened.forEach(function(d){d.open=false}); reopened=[];
+    });
+  })();
+
+  /* ── find dialog (Ctrl+K or /) ──────────────────────────────── */
+  var items=[
+    {label:"All Writing",hint:"106 essays · philosophy & building",url:"/articles/"},
+    {label:"Top 50 Fintech",hint:"the full series",url:"/fintech/"},
+    {label:"EtherFi",hint:"Senior Backend Engineer, Cash",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"nanoserve",hint:"LLM inference engine from scratch · pjdurden/nanoserve",url:"https://github.com/pjdurden/nanoserve"},
+    {label:"Optimism PR",hint:"merged · ethereum-optimism/optimism #21127",url:"https://github.com/ethereum-optimism/optimism/pull/21127"},
+    {label:"mcp-go PR",hint:"merged · mark3labs/mcp-go #904",url:"https://github.com/mark3labs/mcp-go/pull/904"},
+    {label:"vLLM PR",hint:"merged · vllm-project/vllm #44942",url:"https://github.com/vllm-project/vllm/pull/44942"},
+    {label:"SGLang PR",hint:"merged · sgl-project/sglang #27430",url:"https://github.com/sgl-project/sglang/pull/27430"},
+    {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2384",url:"https://github.com/vllm-project/aibrix/pull/2384"},
+    {label:"AIBrix PR",hint:"merged · vllm-project/aibrix #2385",url:"https://github.com/vllm-project/aibrix/pull/2385"},
+    {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2267",url:"https://github.com/envoyproxy/ai-gateway/pull/2267"},
+    {label:"Envoy AI Gateway PR",hint:"merged · envoyproxy/ai-gateway #2292",url:"https://github.com/envoyproxy/ai-gateway/pull/2292"},
+    {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2919",url:"https://github.com/kvcache-ai/Mooncake/pull/2919"},
+    {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #2967",url:"https://github.com/kvcache-ai/Mooncake/pull/2967"},
+    {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #3387",url:"https://github.com/kvcache-ai/Mooncake/pull/3387"},
+    {label:"candle PR",hint:"merged · huggingface/candle #3586",url:"https://github.com/huggingface/candle/pull/3586"},
+    {label:"candle PR",hint:"merged · huggingface/candle #3879",url:"https://github.com/huggingface/candle/pull/3879"},
+    {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2250",url:"https://github.com/EricLBuehler/mistral.rs/pull/2250"},
+    {label:"mistral.rs PR",hint:"merged · EricLBuehler/mistral.rs #2282",url:"https://github.com/EricLBuehler/mistral.rs/pull/2282"},
+    {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #357",url:"https://github.com/guidance-ai/llguidance/pull/357"},
+    {label:"llguidance PR",hint:"merged · guidance-ai/llguidance #356",url:"https://github.com/guidance-ai/llguidance/pull/356"},
+    {label:"outlines-core PR",hint:"merged · dottxt-ai/outlines-core #258",url:"https://github.com/dottxt-ai/outlines-core/pull/258"},
+    {label:"outlines-core PR",hint:"merged · dottxt-ai/outlines-core #257",url:"https://github.com/dottxt-ai/outlines-core/pull/257"},
+    {label:"Meilisearch PR",hint:"merged · meilisearch/meilisearch #6437",url:"https://github.com/meilisearch/meilisearch/pull/6437"},
+    {label:"revm PR",hint:"merged · bluealloy/revm #3735",url:"https://github.com/bluealloy/revm/pull/3735"},
+    {label:"alloy PR",hint:"merged · alloy-rs/core #1118",url:"https://github.com/alloy-rs/core/pull/1118"},
+    {label:"celestia-node PR",hint:"merged · celestiaorg/celestia-node #5041",url:"https://github.com/celestiaorg/celestia-node/pull/5041"},
+    {label:"ethrex PR",hint:"merged · lambdaclass/ethrex #6786",url:"https://github.com/lambdaclass/ethrex/pull/6786"},
+    {label:"Ray PR",hint:"merged · ray-project/ray #65299",url:"https://github.com/ray-project/ray/pull/65299"},
+    {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
+    {label:"kv-exec-bench paper",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
+    {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},
+    {label:"churn",hint:"decentralized-training simulator · pjdurden/churn",url:"https://github.com/pjdurden/churn"},
+    {label:"KuruX Enterprises",hint:"WipeZilla / NAMELESS brand",url:"https://www.wipezilla.in"},
+    {label:"Bizpedia",hint:"business wiki",url:"https://bizpedia.org"},
+    {label:"Instagram",hint:"@prajjwalsinghchittori · 20M+ views",url:"https://www.instagram.com/prajjwalsinghchittori"},
+    {label:"YouTube",hint:"channel",url:"https://www.youtube.com/@prajjwalsinghchittori"},
+    {label:"The Irusha Podcast",hint:"guest · Blockchain startup ecosystem in India",url:"https://open.spotify.com/show/43eA4ooJjiFTIGf62ykedI"},
+    {label:"LinkedIn",hint:"profile",url:"https://www.linkedin.com/in/prajjwal-chittori"},
+    {label:"GitHub",hint:"@pjdurden",url:"https://github.com/pjdurden"},
+    {label:"Email",hint:"prajjwalchittoriwork@gmail.com",url:"mailto:prajjwalchittoriwork@gmail.com"},
+    {label:"Codeforces",hint:"Expert",url:"https://codeforces.com/profile/pjdurden"}
+  ];
+  var modal=$("#cmdk"),input=$("#cmdk-input"),list=$("#cmdk-list"),sel=0,view=items.slice();
+  function render(){
+    list.innerHTML="";
+    view.forEach(function(it,i){
+      var li=document.createElement("li");
+      if(i===sel) li.className="sel";
+      li.innerHTML='<span>'+it.label+'</span><span class="hint">'+it.hint+'</span>';
+      li.addEventListener("click",function(){go(it)});
+      list.appendChild(li);
+    });
+  }
+  function openDlg(){modal.classList.add("open");input.value="";view=items.slice();sel=0;render();
+    setTimeout(function(){input.focus()},30);}
+  function closeDlg(){modal.classList.remove("open")}
+  function go(it){closeDlg();
+    if(it.url.indexOf("mailto:")===0||it.url.indexOf("/")===0)location.href=it.url;
+    else window.open(it.url,"_blank","noopener");}
+  $("#open-cmdk").addEventListener("click",openDlg);
+  $("#tb-search").addEventListener("click",openDlg);
+  $("#cmdk-x").addEventListener("click",closeDlg);
+  modal.addEventListener("click",function(e){if(e.target===modal)closeDlg()});
+  input.addEventListener("input",function(){
+    var q=input.value.toLowerCase();
+    view=items.filter(function(it){return (it.label+" "+it.hint).toLowerCase().indexOf(q)>=0});
+    sel=0;render();
+  });
+  document.addEventListener("keydown",function(e){
+    var typing=document.activeElement&&document.activeElement.tagName==="INPUT";
+    if((e.key==="k"&&(e.metaKey||e.ctrlKey))||(e.key==="/"&&!modal.classList.contains("open")&&!typing)){
+      e.preventDefault();openDlg();return;
+    }
+    if(!modal.classList.contains("open"))return;
+    if(e.key==="Escape")closeDlg();
+    else if(e.key==="ArrowDown"){e.preventDefault();sel=Math.min(sel+1,view.length-1);render();}
+    else if(e.key==="ArrowUp"){e.preventDefault();sel=Math.max(sel-1,0);render();}
+    else if(e.key==="Enter"&&view[sel]){go(view[sel]);}
+  });
+
+  /* ── GoatCounter: privacy-friendly analytics, feeding the counter ── */
+  (function(){
+    var CODE="pjdurden", base="https://"+CODE+".goatcounter.com";
+    var s=document.createElement("script");
+    s.async=true; s.src="//gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter",base+"/count");
+    document.head.appendChild(s);
+    var el=$("#odo-hits");
+    fetch(base+"/counter/TOTAL.json")
+      .then(function(r){ return r.ok?r.json():null })
+      .then(function(d){ if(d&&el) odo(el,parseInt(d.count_unique||d.count,10)||0) })
+      .catch(function(){});
+  })();
+})();
+</script>
+</body>
+</html>
