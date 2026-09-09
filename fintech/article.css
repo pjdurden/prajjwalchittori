@@ -333,6 +333,86 @@ footer .more a{
   article{max-width:none;color:#000}
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════
+   SHOWPIECE MOTION LAYER
+   Matches the home page. Scroll-linked work runs on CSS timelines; the
+   cursor, magnetics and inertial scrolling come from /motion.js, which
+   retro.js loads. All of it is decorative and all of it switches off
+   under prefers-reduced-motion.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── wordmark lifts in ────────────────────────────────────────────── */
+@keyframes lift{from{translate:0 .16em}to{translate:0 0}}
+@keyframes rise{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+/* position-only on the wordmark: it can be the LCP element on an index
+   page, and an element painted at opacity 0 does not count toward LCP */
+.sitehead .wordart{animation:lift .72s cubic-bezier(.22,1,.36,1) both}
+.sitehead .sub{animation:rise .8s cubic-bezier(.22,1,.36,1) .12s both}
+.crumbs,.back{animation:rise .7s cubic-bezier(.22,1,.36,1) .18s both}
+
+@supports (animation-timeline: view()){
+  /* headings wipe in behind a moving edge */
+  h1,h2.grp{
+    animation:wipe linear both;
+    animation-timeline:view();
+    animation-range:entry 0% cover 22%;
+  }
+  @keyframes wipe{
+    from{clip-path:inset(0 100% -22% 0);translate:0 6px}
+    to{clip-path:inset(0 -5% -22% 0);translate:0 0}
+  }
+  /* an article's own h1 sits above the fold, so let it through intact */
+  article h1{animation:none}
+
+  /* neighbouring cards cascade rather than arriving together */
+  a.card:nth-child(3n+2){animation-range:entry 0% cover 30%}
+  a.card:nth-child(3n+3){animation-range:entry 0% cover 36%}
+}
+
+/* ── film grain ───────────────────────────────────────────────────── */
+body::after{
+  content:"";position:fixed;inset:0;z-index:95;pointer-events:none;
+  opacity:.34;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+
+/* ── cursor (elements are created by retro.js) ────────────────────── */
+.cursor{
+  position:fixed;top:0;left:0;z-index:99;pointer-events:none;
+  width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;
+  border:1px solid var(--ink);opacity:0;
+  transition:width .26s cubic-bezier(.22,1,.36,1),height .26s cubic-bezier(.22,1,.36,1),
+             margin .26s cubic-bezier(.22,1,.36,1),background .26s,border-color .26s,opacity .3s;
+}
+.cursor.on{opacity:1}
+.cursor.hot{
+  width:58px;height:58px;margin:-29px 0 0 -29px;
+  background:color-mix(in srgb,var(--accent) 12%,transparent);
+  border-color:var(--accent);
+}
+.cursor-dot{
+  position:fixed;top:0;left:0;z-index:99;pointer-events:none;
+  width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;
+  background:var(--accent);opacity:0;transition:opacity .3s;
+}
+.cursor-dot.on{opacity:1}
+@media (hover:none),(pointer:coarse){.cursor,.cursor-dot{display:none}}
+
+.magnetic{transition:translate .35s cubic-bezier(.22,1,.36,1)}
+.magnetic:active{transition:none}
+
+/* Lenis owns the scrolling once it is running. Keyed on .lenis, not
+   .lenis-smooth: the latter is only present while a smooth scroll is in
+   flight, so native scroll-behavior would fight Lenis everywhere else. */
+html.lenis{scroll-behavior:auto}
+
+@media (prefers-reduced-motion: reduce){
+  .cursor,.cursor-dot{display:none!important}
+  body::after{display:none}
+  .sitehead .wordart,.sitehead .sub,.crumbs,.back{animation:none!important}
+}
+
 /* ── reduced motion ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}

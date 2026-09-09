@@ -108,3 +108,30 @@
   s.setAttribute("data-goatcounter","https://pjdurden.goatcounter.com/count");
   document.head.appendChild(s);
 })();
+
+/* ══════════════════════════════════════════════════════════════════
+   Pointer-driven motion for these pages.
+
+   Only /articles/ and /fintech/ load this file — the home page has its
+   own script tags and /retro.html carries its own inline script — so
+   no guard is needed here. The cursor elements do not exist in the
+   page source, so they are created on the fly rather than editing 158
+   files to add two empty divs.
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  ["cursor","cursor-dot"].forEach(function(id){
+    if(document.getElementById(id)) return;
+    var el = document.createElement("div");
+    el.id = id;
+    el.className = id;
+    el.setAttribute("aria-hidden","true");
+    document.body.appendChild(el);
+  });
+
+  var m = document.createElement("script");
+  m.src = "/motion.js";
+  m.defer = true;
+  document.head.appendChild(m);
+})();
