@@ -565,6 +565,24 @@ html.lenis{scroll-behavior:auto}
   .progress{display:none}
   html{scroll-behavior:auto}
 }
+
+/* published packages */
+.pkgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:10px;margin:0 0 26px}
+.pkg{border:1px solid var(--rule);border-radius:4px;padding:11px 12px;background:var(--paper)}
+.pkg:hover{background:var(--paper2)}
+.pkg-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.pkg-top b{font-size:13.5px;font-weight:600}
+.pkg-dl{font:500 10px/1 var(--mono);letter-spacing:.06em;color:var(--mute);white-space:nowrap}
+.pkg-desc{margin:5px 0 9px;font-size:12.5px;line-height:1.45;color:var(--mute)}
+.pkg-links{display:flex;gap:7px}
+.pkg-links a{
+  font:500 10px/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:var(--ink);
+  border:1px solid var(--rule);border-radius:3px;padding:4px 7px;white-space:nowrap;
+}
+.pkg-links a:hover{border-color:var(--ink);background:var(--paper2)}
+.pkg-links a span{color:var(--mute)}
+.pkg-note .pkg-sum{white-space:nowrap}
+.pkg-note b[data-grand]{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -894,6 +912,54 @@ html.lenis{scroll-behavior:auto}
         <p><span class="tt">autoscaler starvation fix</span>Merged contribution to <strong>Ray</strong>, the distributed compute framework underneath much of the ML training and serving stack: Autoscaler v2 silently lost launch errors whenever one launch request spanned more than one node type. The reconciler keyed its error lookup on the launch <code>request_id</code> alone, but a single request carries a whole shape, and both the node-provider and KubeRay paths fan that shape out into one <code>LaunchNodeError</code> per node type sharing that id. The sibling errors overwrote each other in the dict and only the last one survived, so every other node type never reached <code>ALLOCATION_FAILED</code>. Those instances sat in <code>REQUESTED</code> until the request timeout fired, holding <code>max_concurrent_launches</code> capacity, and stayed eligible for allocation in later reconcile passes, letting a stale instance claim a Pod that was launched for a different request. Fixed by keying on the pair that actually identifies a launch error, <code>(request_id, node_type)</code>, which also folds away the now-redundant node-type guard at the call site. <a href="https://github.com/ray-project/ray/pull/65299">ray-project/ray #65299</a></p>
       </details>
     </div>
+
+        <p class="kicker">Published packages</p>
+        <p class="note pkg-note">Five packages I wrote and published to both registries, each from one repo.
+        Download counts are fetched live from npm and PyPI when this page loads.
+        <span class="pkg-sum">Combined: <b data-grand>&middot;&middot;&middot;</b></span></p>
+        <div class="pkgs">
+        <div class="pkg" data-pkg="cmd-risk">
+          <div class="pkg-top"><b>cmd-risk</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Advisory risk classifier for shell commands</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/cmd-risk">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/cmd-risk/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="cassette-fn">
+          <div class="pkg-top"><b>cassette-fn</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Record and replay LLM tool calls</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/cassette-fn">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/cassette-fn/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="apply-edit-block">
+          <div class="pkg-top"><b>apply-edit-block</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Apply search/replace edit blocks to files</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/apply-edit-block">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/apply-edit-block/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="ctx-compact">
+          <div class="pkg-top"><b>ctx-compact</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Compact an agent context window</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/ctx-compact">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/ctx-compact/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="prompt-cache-fit">
+          <div class="pkg-top"><b>prompt-cache-fit</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Shape prompts to fit a provider prefix cache</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/prompt-cache-fit">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/prompt-cache-fit/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        </div>
+
     <p class="lead sub">Earlier on-chain work</p>
     <div class="jobs">
       <details class="job">
@@ -1264,6 +1330,67 @@ html.lenis{scroll-behavior:auto}
     document.head.appendChild(s);
   })();
 })();
+
+  /* Live package downloads. npm's own API and shields' pepy proxy both send
+     CORS headers; pypistats does not, which is why PyPI goes through shields.
+     Every number degrades to an en dash on its own rather than failing the
+     block, so one dead endpoint never blanks the section. */
+  (function () {
+    var cards = document.querySelectorAll('.pkg[data-pkg]');
+    if (!cards.length) return;
+    var grandEl = document.querySelector('[data-grand]');
+    var grand = 0, settled = 0, need = cards.length * 2;
+
+    var fmt = function (n) { return n.toLocaleString('en-US'); };
+    var done = function () {
+      if (++settled < need || !grandEl) return;
+      grandEl.textContent = grand ? fmt(grand) + ' downloads' : 'unavailable';
+    };
+    var addTotal = function (card, n) {
+      var el = card.querySelector('[data-total]');
+      var cur = parseInt(el.getAttribute('data-n') || '0', 10) + n;
+      el.setAttribute('data-n', String(cur));
+      el.textContent = fmt(cur);
+      grand += n;
+    };
+    var num = function (v) {
+      if (typeof v === 'number') return v;
+      if (typeof v !== 'string') return null;
+      var m = v.replace(/,/g, '').match(/^([\d.]+)\s*([kKmM])?/);
+      if (!m) return null;
+      var n = parseFloat(m[1]);
+      if (!isFinite(n)) return null;
+      var s = (m[2] || '').toLowerCase();
+      return Math.round(s === 'k' ? n * 1e3 : s === 'm' ? n * 1e6 : n);
+    };
+
+    cards.forEach(function (card) {
+      var name = card.getAttribute('data-pkg');
+      var npmEl = card.querySelector('[data-npm]');
+      var pyEl = card.querySelector('[data-pypi]');
+
+      fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + new Date().toISOString().slice(0, 10) + '/' + name)
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          var n = (d.downloads || []).reduce(function (a, x) { return a + x.downloads; }, 0);
+          npmEl.textContent = fmt(n);
+          addTotal(card, n);
+        })
+        .catch(function () { npmEl.textContent = '\u2013'; })
+        .then(done, done);
+
+      fetch('https://img.shields.io/pepy/dt/' + name + '.json')
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          var n = num(d && d.value);
+          if (n === null) { pyEl.textContent = '\u2013'; return; }
+          pyEl.textContent = fmt(n);
+          addTotal(card, n);
+        })
+        .catch(function () { pyEl.textContent = '\u2013'; })
+        .then(done, done);
+    });
+  })();
 </script>
 </body>
 </html>

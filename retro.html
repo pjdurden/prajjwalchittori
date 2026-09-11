@@ -575,6 +575,30 @@ details.job img.st{vertical-align:middle}
   .win{break-inside:avoid}
 }
 @media (prefers-reduced-motion:reduce){ *{animation:none !important} }
+
+/* published packages */
+.pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:6px 0 10px}
+.pkg{background:linear-gradient(180deg,#fff,#eaeaea);padding:7px 8px 6px;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+:root[data-skin="matrix"] .pkg{background:linear-gradient(180deg,#0e2413,#081a0c)}
+.pkg-top{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+.pkg-top b{font:bold 11px/1.4 var(--sans);color:#0a246a;word-break:break-word}
+:root[data-skin="matrix"] .pkg-top b{color:#7dffa6}
+.pkg-dl{font:9px/1.4 var(--mono);color:#666;white-space:nowrap}
+:root[data-skin="matrix"] .pkg-dl{color:#6fb87f}
+.pkg-desc{margin:4px 0 6px;font:10px/1.5 var(--sans);color:#444}
+:root[data-skin="matrix"] .pkg-desc{color:#79c489}
+.pkg-links{display:flex;gap:4px}
+.pkg-links a{flex:1;text-align:center;text-decoration:none;color:var(--ink);background:var(--face);
+  padding:3px 4px;font:bold 9px/1.3 var(--sans);letter-spacing:.04em;
+  border:2px solid;border-color:var(--hi) var(--dk) var(--dk) var(--hi)}
+.pkg-links a:hover{background:#ffffcc;color:#a80000}
+.pkg-links a:active{border-color:var(--dk) var(--hi) var(--hi) var(--dk)}
+.pkg-links a span{font-weight:normal;color:#666}
+.pkg-note{font:11px/1.7 var(--sans);margin:0 0 6px}
+.pkg-note .pkg-sum{white-space:nowrap;font-weight:bold;color:#0a246a}
+:root[data-skin="matrix"] .pkg-note .pkg-sum{color:#7dffa6}
+@media(max-width:900px){.pkgs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1052,6 +1076,54 @@ details.job img.st{vertical-align:middle}
         <p><span class="tt">autoscaler starvation fix</span>Merged contribution to <strong>Ray</strong>, the distributed compute framework underneath much of the ML training and serving stack: Autoscaler v2 silently lost launch errors whenever one launch request spanned more than one node type. The reconciler keyed its error lookup on the launch <code>request_id</code> alone, but a single request carries a whole shape, and both the node-provider and KubeRay paths fan that shape out into one <code>LaunchNodeError</code> per node type sharing that id. The sibling errors overwrote each other in the dict and only the last one survived, so every other node type never reached <code>ALLOCATION_FAILED</code>. Those instances sat in <code>REQUESTED</code> until the request timeout fired, holding <code>max_concurrent_launches</code> capacity, and stayed eligible for allocation in later reconcile passes, letting a stale instance claim a Pod that was launched for a different request. Fixed by keying on the pair that actually identifies a launch error, <code>(request_id, node_type)</code>, which also folds away the now-redundant node-type guard at the call site. <a href="https://github.com/ray-project/ray/pull/65299">ray-project/ray #65299</a></p>
       </details>
     </div>
+
+        <p style="margin:0 0 5px;font:bold 11px/1.7 var(--sans);letter-spacing:.1em;color:#0a246a">&#128230; PUBLISHED PACKAGES</p>
+        <p class="pkg-note">Five packages I wrote and published to both registries, each from one repo.
+        Download counts are fetched live from npm and PyPI when this page loads.
+        <span class="pkg-sum">Combined: <b data-grand>&middot;&middot;&middot;</b></span></p>
+        <div class="pkgs">
+        <div class="pkg" data-pkg="cmd-risk">
+          <div class="pkg-top"><b>cmd-risk</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Advisory risk classifier for shell commands</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/cmd-risk">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/cmd-risk/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="cassette-fn">
+          <div class="pkg-top"><b>cassette-fn</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Record and replay LLM tool calls</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/cassette-fn">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/cassette-fn/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="apply-edit-block">
+          <div class="pkg-top"><b>apply-edit-block</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Apply search/replace edit blocks to files</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/apply-edit-block">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/apply-edit-block/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="ctx-compact">
+          <div class="pkg-top"><b>ctx-compact</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Compact an agent context window</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/ctx-compact">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/ctx-compact/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="prompt-cache-fit">
+          <div class="pkg-top"><b>prompt-cache-fit</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Shape prompts to fit a provider prefix cache</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/package/prompt-cache-fit">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/project/prompt-cache-fit/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        </div>
+
     <p class="lead sub">Earlier on-chain work</p>
     <div class="jobs">
       <details class="job">
@@ -1543,6 +1615,67 @@ details.job img.st{vertical-align:middle}
       .catch(function(){});
   })();
 })();
+
+  /* Live package downloads. npm's own API and shields' pepy proxy both send
+     CORS headers; pypistats does not, which is why PyPI goes through shields.
+     Every number degrades to an en dash on its own rather than failing the
+     block, so one dead endpoint never blanks the section. */
+  (function () {
+    var cards = document.querySelectorAll('.pkg[data-pkg]');
+    if (!cards.length) return;
+    var grandEl = document.querySelector('[data-grand]');
+    var grand = 0, settled = 0, need = cards.length * 2;
+
+    var fmt = function (n) { return n.toLocaleString('en-US'); };
+    var done = function () {
+      if (++settled < need || !grandEl) return;
+      grandEl.textContent = grand ? fmt(grand) + ' downloads' : 'unavailable';
+    };
+    var addTotal = function (card, n) {
+      var el = card.querySelector('[data-total]');
+      var cur = parseInt(el.getAttribute('data-n') || '0', 10) + n;
+      el.setAttribute('data-n', String(cur));
+      el.textContent = fmt(cur);
+      grand += n;
+    };
+    var num = function (v) {
+      if (typeof v === 'number') return v;
+      if (typeof v !== 'string') return null;
+      var m = v.replace(/,/g, '').match(/^([\d.]+)\s*([kKmM])?/);
+      if (!m) return null;
+      var n = parseFloat(m[1]);
+      if (!isFinite(n)) return null;
+      var s = (m[2] || '').toLowerCase();
+      return Math.round(s === 'k' ? n * 1e3 : s === 'm' ? n * 1e6 : n);
+    };
+
+    cards.forEach(function (card) {
+      var name = card.getAttribute('data-pkg');
+      var npmEl = card.querySelector('[data-npm]');
+      var pyEl = card.querySelector('[data-pypi]');
+
+      fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + new Date().toISOString().slice(0, 10) + '/' + name)
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          var n = (d.downloads || []).reduce(function (a, x) { return a + x.downloads; }, 0);
+          npmEl.textContent = fmt(n);
+          addTotal(card, n);
+        })
+        .catch(function () { npmEl.textContent = '\u2013'; })
+        .then(done, done);
+
+      fetch('https://img.shields.io/pepy/dt/' + name + '.json')
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) {
+          var n = num(d && d.value);
+          if (n === null) { pyEl.textContent = '\u2013'; return; }
+          pyEl.textContent = fmt(n);
+          addTotal(card, n);
+        })
+        .catch(function () { pyEl.textContent = '\u2013'; })
+        .then(done, done);
+    });
+  })();
 </script>
 </body>
 </html>
