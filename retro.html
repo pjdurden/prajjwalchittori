@@ -714,6 +714,10 @@ details.job img.st{vertical-align:middle}
       &#9654;&#9654; <b>20,000,000+</b> TOTAL VIEWS &#9664;&#9664;
       <span class="sm">across Instagram &amp; YouTube &middot; one format, run with relentless consistency</span>
     </div>
+    <div class="totalviews">
+      &#9654;&#9654; <b id="pkg-downloads">&middot;&middot;&middot;</b> PACKAGE DOWNLOADS &#9664;&#9664;
+      <span class="sm">5 packages across npm &amp; PyPI &middot; counted live, straight off the registries</span>
+    </div>
   </div>
 
   <div class="divider" aria-hidden="true"></div>
@@ -1630,6 +1634,8 @@ details.job img.st{vertical-align:middle}
     var done = function () {
       if (++settled < need || !grandEl) return;
       grandEl.textContent = grand ? fmt(grand) + ' downloads' : 'unavailable';
+      var head = document.getElementById('pkg-downloads');
+      if (head) head.textContent = grand ? fmt(grand) : '\u2013';
     };
     var addTotal = function (card, n) {
       var el = card.querySelector('[data-total]');

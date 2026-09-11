@@ -621,12 +621,13 @@ html.lenis{scroll-behavior:auto}
 
   <!-- ─── numbers ─── -->
   <section class="stats" aria-label="By the numbers">
-    <div class="stat"><span class="v num" style="--n:17"></span><span class="k">OSS projects</span><span class="s">contributed 25+ PRs</span></div>
+    <div class="stat"><span class="v num" style="--n:17"></span><span class="k">OSS projects</span><span class="s">contributed 26+ PRs</span></div>
     <div class="stat"><span class="v num" style="--n:3"></span><span class="k">Preprints</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:20"></span><em>M+</em></span><span class="k">Instagram views</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:22"></span><em>K+</em></span><span class="k">Instagram followers</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:5"></span><em>K+</em></span><span class="k">LinkedIn followers</span></div>
     <div class="stat"><span class="v" id="gh-followers">141</span><span class="k">GitHub followers</span><span class="s">live</span></div>
+    <div class="stat"><span class="v" id="pkg-downloads">&middot;&middot;&middot;</span><span class="k">Package downloads</span><span class="s">live &middot; npm + PyPI</span></div>
   </section>
 
 
@@ -1345,6 +1346,8 @@ html.lenis{scroll-behavior:auto}
     var done = function () {
       if (++settled < need || !grandEl) return;
       grandEl.textContent = grand ? fmt(grand) + ' downloads' : 'unavailable';
+      var head = document.getElementById('pkg-downloads');
+      if (head) head.textContent = grand ? fmt(grand) : '\u2013';
     };
     var addTotal = function (card, n) {
       var el = card.querySelector('[data-total]');
