@@ -1620,67 +1620,80 @@ details.job img.st{vertical-align:middle}
   })();
 })();
 
-  /* Live package downloads. npm's own API and shields' pepy proxy both send
-     CORS headers; pypistats does not, which is why PyPI goes through shields.
-     Every number degrades to an en dash on its own rather than failing the
-     block, so one dead endpoint never blanks the section. */
+  /* Live package downloads.
+     One cross-origin read of packages.json (raw.githubusercontent sends
+     access-control-allow-origin:*) gives a complete, internally consistent set
+     of npm and PyPI figures refreshed daily by a job in that repo. npm is then
+     topped up live from its own API, but only if every package answers: a
+     partial sum must never be rendered as if it were the total, which is the
+     bug this replaces. The previous version asked shields for each PyPI number
+     separately, and when it throttled some of those five calls the headline
+     silently under-reported. */
   (function () {
     var cards = document.querySelectorAll('.pkg[data-pkg]');
     if (!cards.length) return;
     var grandEl = document.querySelector('[data-grand]');
-    var grand = 0, settled = 0, need = cards.length * 2;
-
+    var headEl = document.getElementById('pkg-downloads');
+    var DASH = '–';
+    var names = Array.prototype.map.call(cards, function (c) { return c.getAttribute('data-pkg'); });
     var fmt = function (n) { return n.toLocaleString('en-US'); };
-    var done = function () {
-      if (++settled < need || !grandEl) return;
-      grandEl.textContent = grand ? fmt(grand) + ' downloads' : 'unavailable';
-      var head = document.getElementById('pkg-downloads');
-      if (head) head.textContent = grand ? fmt(grand) : '\u2013';
-    };
-    var addTotal = function (card, n) {
-      var el = card.querySelector('[data-total]');
-      var cur = parseInt(el.getAttribute('data-n') || '0', 10) + n;
-      el.setAttribute('data-n', String(cur));
-      el.textContent = fmt(cur);
-      grand += n;
-    };
-    var num = function (v) {
-      if (typeof v === 'number') return v;
-      if (typeof v !== 'string') return null;
-      var m = v.replace(/,/g, '').match(/^([\d.]+)\s*([kKmM])?/);
-      if (!m) return null;
-      var n = parseFloat(m[1]);
-      if (!isFinite(n)) return null;
-      var s = (m[2] || '').toLowerCase();
-      return Math.round(s === 'k' ? n * 1e3 : s === 'm' ? n * 1e6 : n);
+
+    var paint = function (npm, pypi) {
+      var grand = 0;
+      Array.prototype.forEach.call(cards, function (card) {
+        var name = card.getAttribute('data-pkg');
+        var a = npm[name], b = pypi[name];
+        var tot = (a || 0) + (b || 0);
+        grand += tot;
+        card.querySelector('[data-npm]').textContent = a == null ? DASH : fmt(a);
+        card.querySelector('[data-pypi]').textContent = b == null ? DASH : fmt(b);
+        card.querySelector('[data-total]').textContent = fmt(tot);
+      });
+      if (grandEl) grandEl.textContent = fmt(grand) + ' downloads';
+      if (headEl) headEl.textContent = fmt(grand);
+      return grand;
     };
 
-    cards.forEach(function (card) {
-      var name = card.getAttribute('data-pkg');
-      var npmEl = card.querySelector('[data-npm]');
-      var pyEl = card.querySelector('[data-pypi]');
+    var fail = function () {
+      Array.prototype.forEach.call(cards, function (card) {
+        card.querySelector('[data-npm]').textContent = DASH;
+        card.querySelector('[data-pypi]').textContent = DASH;
+        card.querySelector('[data-total]').textContent = DASH;
+      });
+      if (grandEl) grandEl.textContent = 'unavailable';
+      if (headEl) headEl.textContent = DASH;
+    };
 
-      fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + new Date().toISOString().slice(0, 10) + '/' + name)
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-        .then(function (d) {
-          var n = (d.downloads || []).reduce(function (a, x) { return a + x.downloads; }, 0);
-          npmEl.textContent = fmt(n);
-          addTotal(card, n);
-        })
-        .catch(function () { npmEl.textContent = '\u2013'; })
-        .then(done, done);
+    fetch('https://raw.githubusercontent.com/pjdurden/pjdurden/main/packages.json')
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (d) {
+        var npm = {}, pypi = {};
+        names.forEach(function (n) {
+          var e = (d.packages || {})[n] || {};
+          npm[n] = typeof e.npm === 'number' ? e.npm : null;
+          pypi[n] = typeof e.pypi === 'number' ? e.pypi : null;
+        });
+        paint(npm, pypi);
 
-      fetch('https://img.shields.io/pepy/dt/' + name + '.json')
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-        .then(function (d) {
-          var n = num(d && d.value);
-          if (n === null) { pyEl.textContent = '\u2013'; return; }
-          pyEl.textContent = fmt(n);
-          addTotal(card, n);
-        })
-        .catch(function () { pyEl.textContent = '\u2013'; })
-        .then(done, done);
-    });
+        /* Intra-day npm top-up in ONE request: npm's range endpoint takes a
+           comma-separated package list, so there is no concurrency to be
+           throttled. Applied only if every package came back, so a partial
+           answer cannot drag the headline below the baseline just painted. */
+        var today = new Date().toISOString().slice(0, 10);
+        fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + today + '/' + names.join(','))
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+          .then(function (j) {
+            var fresh = {};
+            names.forEach(function (n) {
+              var e = j[n];
+              if (!e || !e.downloads) throw new Error('incomplete');
+              fresh[n] = e.downloads.reduce(function (a, x) { return a + x.downloads; }, 0);
+            });
+            paint(fresh, pypi);
+          })
+          .catch(function () { /* keep the baseline */ });
+      })
+      .catch(fail);
   })();
 </script>
 </body>
