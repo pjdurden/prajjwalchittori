@@ -915,7 +915,7 @@ html.lenis{scroll-behavior:auto}
     </div>
 
         <p class="kicker">Published packages</p>
-        <p class="note pkg-note">Five packages I wrote and published to both registries, each from one repo.
+        <p class="note pkg-note">Five standalone packages and jevkit, a six-package toolkit, published to both registries.
         Download counts are fetched live from npm and PyPI when this page loads.
         <span class="pkg-sum">Combined: <b data-grand>&middot;&middot;&middot;</b></span></p>
         <div class="pkgs">
@@ -957,6 +957,16 @@ html.lenis{scroll-behavior:auto}
           <div class="pkg-links">
             <a href="https://www.npmjs.com/package/prompt-cache-fit">npm <span data-npm>&middot;&middot;&middot;</span></a>
             <a href="https://pypi.org/project/prompt-cache-fit/">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
+          </div>
+        </div>
+        <div class="pkg" data-pkg="jevkit"
+             data-npm-pkgs="jevkit-core,jevkit-lint,jevkit-drift,jevkit-bench,jevkit-calibrate,jevkit-vitest"
+             data-pypi-pkgs="jevkit-core,jevkit-lint,jevkit-drift,jevkit-bench,jevkit-calibrate,jevkit-pytest">
+          <div class="pkg-top"><b>jevkit</b><span class="pkg-dl" data-total>&middot;&middot;&middot;</span></div>
+          <p class="pkg-desc">Six-package toolkit for TypeSafe&rsquo;s Jev: linting, drift, benchmarking, calibration</p>
+          <div class="pkg-links">
+            <a href="https://www.npmjs.com/search?q=jevkit">npm <span data-npm>&middot;&middot;&middot;</span></a>
+            <a href="https://pypi.org/search/?q=jevkit">PyPI <span data-pypi>&middot;&middot;&middot;</span></a>
           </div>
         </div>
         </div>
@@ -1348,6 +1358,16 @@ html.lenis{scroll-behavior:auto}
     var headEl = document.getElementById('pkg-downloads');
     var DASH = '–';
     var names = Array.prototype.map.call(cards, function (c) { return c.getAttribute('data-pkg'); });
+    /* A card may stand for a suite rather than one published name, and the two
+       registries need not carry the same members: jevkit ships vitest on npm and
+       pytest on PyPI. Absent the attribute, the card is its own single name. */
+    var npmMembers = {};
+    Array.prototype.forEach.call(cards, function (c) {
+      var k = c.getAttribute('data-pkg');
+      var a = c.getAttribute('data-npm-pkgs');
+      npmMembers[k] = a ? a.split(',') : [k];
+    });
+    var allNpm = names.reduce(function (acc, n) { return acc.concat(npmMembers[n]); }, []);
     var fmt = function (n) { return n.toLocaleString('en-US'); };
 
     var paint = function (npm, pypi) {
@@ -1392,14 +1412,16 @@ html.lenis{scroll-behavior:auto}
            throttled. Applied only if every package came back, so a partial
            answer cannot drag the headline below the baseline just painted. */
         var today = new Date().toISOString().slice(0, 10);
-        fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + today + '/' + names.join(','))
+        fetch('https://api.npmjs.org/downloads/range/2026-09-01:' + today + '/' + allNpm.join(','))
           .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
           .then(function (j) {
             var fresh = {};
             names.forEach(function (n) {
-              var e = j[n];
-              if (!e || !e.downloads) throw new Error('incomplete');
-              fresh[n] = e.downloads.reduce(function (a, x) { return a + x.downloads; }, 0);
+              fresh[n] = npmMembers[n].reduce(function (sum, m) {
+                var e = j[m];
+                if (!e || !e.downloads) throw new Error('incomplete');
+                return sum + e.downloads.reduce(function (a, x) { return a + x.downloads; }, 0);
+              }, 0);
             });
             paint(fresh, pypi);
           })
