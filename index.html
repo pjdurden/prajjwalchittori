@@ -621,7 +621,7 @@ html.lenis{scroll-behavior:auto}
 
   <!-- ─── numbers ─── -->
   <section class="stats" aria-label="By the numbers">
-    <div class="stat"><span class="v num" style="--n:18"></span><span class="k">OSS projects</span><span class="s">contributed 29+ PRs</span></div>
+    <div class="stat"><span class="v num" style="--n:19"></span><span class="k">OSS projects</span><span class="s">contributed 30+ PRs</span></div>
     <div class="stat"><span class="v num" style="--n:3"></span><span class="k">Preprints</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:20"></span><em>M+</em></span><span class="k">Instagram views</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:22"></span><em>K+</em></span><span class="k">Instagram followers</span></div>
@@ -741,7 +741,7 @@ html.lenis{scroll-behavior:auto}
     <div class="sec-head">
       <span class="sec-num">04</span>
       <h2>Open&nbsp;Source</h2>
-      <span class="sec-meta">29 merged &middot; 18 projects</span>
+      <span class="sec-meta">30 merged &middot; 19 projects</span>
     </div>
     <div class="sec-body">
       <div class="rule"></div>
@@ -920,6 +920,15 @@ html.lenis{scroll-behavior:auto}
           <span class="np">1 merged</span>
         </summary>
         <p><span class="tt">ingress header-spoofing fix</span>Merged contribution to <strong>Restate</strong>, the durable-execution engine for resilient services and agents: the HTTP ingress forwarded every incoming header to the service, including caller-supplied <code>x-restate-*</code> headers. That namespace is reserved for metadata the ingress sets itself, such as <code>x-restate-ingress-path</code>, so any caller could inject or override it. The ingress now drops incoming <code>x-restate-*</code> headers before forwarding, with a regression test that sends spoofed ones and asserts they never reach the service while normal headers still do. <a href="https://github.com/restatedev/restate/pull/4896">restatedev/restate #4896</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/LMCache.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">LMCache</span>
+          <img class="st" src="https://img.shields.io/github/stars/LMCache/LMCache?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">async-lookup crash fix</span>Merged contribution to <strong>LMCache</strong>, the KV-cache layer that plugs into vLLM to store and reuse prefix caches across requests and nodes: when an async lookup timed out, <code>lookup_cache()</code> returned a miss and dropped the request&#39;s <code>first_lookup_time</code> entry but left its status pending. When vLLM asked again for the same id, which it does with nixl and async loading enabled, the pending branch indexed the deleted entry and the <code>KeyError</code> took the vLLM worker down. A missing entry is now treated like an expired one, so the request reports a cache miss and vLLM recomputes instead of crashing, with a regression test that drives the timeout then re-query sequence through the public interface. <a href="https://github.com/LMCache/LMCache/pull/3766">LMCache/LMCache #3766</a></p>
       </details>
     </div>
 
@@ -1292,6 +1301,7 @@ html.lenis{scroll-behavior:auto}
     {label:"Ray PR",hint:"merged · ray-project/ray #65299",url:"https://github.com/ray-project/ray/pull/65299"},
     {label:"Ray PR",hint:"merged · ray-project/ray #65446",url:"https://github.com/ray-project/ray/pull/65446"},
     {label:"Restate PR",hint:"merged · restatedev/restate #4896",url:"https://github.com/restatedev/restate/pull/4896"},
+    {label:"LMCache PR",hint:"merged · LMCache/LMCache #3766",url:"https://github.com/LMCache/LMCache/pull/3766"},
     {label:"StragglerPolicy preprint",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"kv-exec-bench preprint",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
     {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},
