@@ -622,7 +622,7 @@ html.lenis{scroll-behavior:auto}
 
   <!-- ─── numbers ─── -->
   <section class="stats" aria-label="By the numbers">
-    <div class="stat"><span class="v num" style="--n:20"></span><span class="k">OSS projects</span><span class="s">contributed 35+ PRs</span></div>
+    <div class="stat"><span class="v num" style="--n:21"></span><span class="k">OSS projects</span><span class="s">contributed 36+ PRs</span></div>
     <div class="stat"><span class="v num" style="--n:3"></span><span class="k">Preprints</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:20"></span><em>M+</em></span><span class="k">Instagram views</span></div>
     <div class="stat"><span class="v"><span class="num" style="--n:22"></span><em>K+</em></span><span class="k">Instagram followers</span></div>
@@ -635,8 +635,8 @@ html.lenis{scroll-behavior:auto}
   <!-- ─── marquee ─── -->
   <div class="marquee" aria-hidden="true">
     <div class="mq-track">
-      <span class="mq-set"><span><b>vLLM</b></span><span><b>Mooncake</b></span><span><b>candle</b></span><span><b>SGLang</b></span><span><b>Ray</b></span><span><b>Optimism</b></span><span><b>revm</b></span><span><b>Meilisearch</b></span><span><b>mistral.rs</b></span><span><b>AIBrix</b></span><span><b>Envoy AI Gateway</b></span><span><b>celestia-node</b></span><span><b>alloy</b></span><span><b>ethrex</b></span><span><b>llguidance</b></span><span><b>outlines-core</b></span><span><b>mcp-go</b></span><span><b>Lance</b></span></span>
-      <span class="mq-set"><span><b>vLLM</b></span><span><b>Mooncake</b></span><span><b>candle</b></span><span><b>SGLang</b></span><span><b>Ray</b></span><span><b>Optimism</b></span><span><b>revm</b></span><span><b>Meilisearch</b></span><span><b>mistral.rs</b></span><span><b>AIBrix</b></span><span><b>Envoy AI Gateway</b></span><span><b>celestia-node</b></span><span><b>alloy</b></span><span><b>ethrex</b></span><span><b>llguidance</b></span><span><b>outlines-core</b></span><span><b>mcp-go</b></span><span><b>Lance</b></span></span>
+      <span class="mq-set"><span><b>vLLM</b></span><span><b>Mooncake</b></span><span><b>candle</b></span><span><b>SGLang</b></span><span><b>Ray</b></span><span><b>Optimism</b></span><span><b>revm</b></span><span><b>Meilisearch</b></span><span><b>mistral.rs</b></span><span><b>AIBrix</b></span><span><b>Envoy AI Gateway</b></span><span><b>celestia-node</b></span><span><b>alloy</b></span><span><b>ethrex</b></span><span><b>llguidance</b></span><span><b>outlines-core</b></span><span><b>mcp-go</b></span><span><b>Lance</b></span><span><b>x402</b></span></span>
+      <span class="mq-set"><span><b>vLLM</b></span><span><b>Mooncake</b></span><span><b>candle</b></span><span><b>SGLang</b></span><span><b>Ray</b></span><span><b>Optimism</b></span><span><b>revm</b></span><span><b>Meilisearch</b></span><span><b>mistral.rs</b></span><span><b>AIBrix</b></span><span><b>Envoy AI Gateway</b></span><span><b>celestia-node</b></span><span><b>alloy</b></span><span><b>ethrex</b></span><span><b>llguidance</b></span><span><b>outlines-core</b></span><span><b>mcp-go</b></span><span><b>Lance</b></span><span><b>x402</b></span></span>
     </div>
   </div>
 
@@ -746,7 +746,7 @@ html.lenis{scroll-behavior:auto}
     <div class="sec-head">
       <span class="sec-num">04</span>
       <h2>Open&nbsp;Source</h2>
-      <span class="sec-meta">35 merged &middot; 20 projects</span>
+      <span class="sec-meta">36 merged &middot; 21 projects</span>
     </div>
     <div class="sec-body">
       <div class="rule"></div>
@@ -943,6 +943,15 @@ html.lenis{scroll-behavior:auto}
           <span class="np">1 merged</span>
         </summary>
         <p><span class="tt">compaction schema-evolution coverage</span>Merged contribution to <strong>Lance</strong>, the open lakehouse format for multimodal AI data: after a metadata-only column addition, where a new all-null column exists in the schema but not in the existing data files, compaction&#39;s binary-copy path must not copy files whose physical column mapping no longer matches the evolved schema. The PR adds regression coverage across Lance file versions V2.0 through V2.3, asserting that <code>ForceBinaryCopy</code> rejects those source files while <code>TryBinaryCopy</code> falls back to re-encoding, persists the full field and column mapping, and keeps every row and existing column intact with the new column reading as null. It also updates the Python scalar-index compatibility matrix so <code>15.0.0b2</code> is the first reader expected to use the row-address index instead of a full scan. <a href="https://github.com/lance-format/lance/pull/8479">lance-format/lance #8479</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/x402-foundation.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">x402</span>
+          <img class="st" src="https://img.shields.io/github/stars/x402-foundation/x402?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">settlement-failure receipt fix</span>Merged contribution to <strong>x402</strong>, the open payments protocol built on the HTTP <code>402 Payment Required</code> status code: the Python MCP payment wrappers match an incoming payment against the server&#39;s <code>accepts</code> list with <code>find_matching_requirements()</code> and verify and settle against the matched requirement, but the sync and async helpers that build the settlement-failure receipt, <code>_create_settlement_failed_result_sync</code> and <code>_create_settlement_failed_result_async</code>, still wrote <code>config.accepts[0].network</code> whenever there was no facilitator <code>SettleResponse</code> to report: a settlement exception or a metering failure. So a payment that matched the second entry on <code>eip155:1</code> and then failed settlement came back in <code>x402/payment-response</code> as a failure on <code>eip155:84532</code>, and a client reading the receipt saw the wrong chain. Both helpers now take a keyword-only <code>network</code> argument and every call site without a settle response passes <code>payment_requirements.network</code>, which is what the FastMCP wrapper already did. The first-entry fallback stays for callers that pass nothing, and sync and async regression tests fail settlement on a non-first entry and assert the receipt names its network. <a href="https://github.com/x402-foundation/x402/pull/4261">x402-foundation/x402 #4261</a></p>
       </details>
     </div>
 
@@ -1322,6 +1331,7 @@ html.lenis{scroll-behavior:auto}
     {label:"Lance PR",hint:"merged · lance-format/lance #8479",url:"https://github.com/lance-format/lance/pull/8479"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #4402",url:"https://github.com/kvcache-ai/Mooncake/pull/4402"},
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #49539",url:"https://github.com/vllm-project/vllm/pull/49539"},
+    {label:"x402 PR",hint:"merged · x402-foundation/x402 #4261",url:"https://github.com/x402-foundation/x402/pull/4261"},
     {label:"StragglerPolicy preprint",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"kv-exec-bench preprint",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
     {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},

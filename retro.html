@@ -658,7 +658,7 @@ details.job img.st{vertical-align:middle}
 
   <div class="ticker">
     <span class="lbl">&#128226; NEWS FLASH</span>
-    <span class="run"><span class="tk"><span>&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>35 open-source PRs merged across 20 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span><span aria-hidden="true">&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>35 open-source PRs merged across 20 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span></span></span>
+    <span class="run"><span class="tk"><span>&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>36 open-source PRs merged across 21 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span><span aria-hidden="true">&#9733;&#9733;&#9733; WELCOME 2 MY HOMEPAGE &#9733;&#9733;&#9733; &nbsp;&nbsp;<b>36 open-source PRs merged across 21 projects</b> &nbsp;&#9679;&nbsp; shipped a liquid-staking protocol past <b>$500M+ TVL</b> &nbsp;&#9679;&nbsp; ran cross-border payments at <b>2,000+ TPS</b> at 99.98% uptime &nbsp;&#9679;&nbsp; <b>20,000,000+ views</b> on the internet &nbsp;&#9679;&nbsp; 3 published papers &nbsp;&#9679;&nbsp; Codeforces Expert, ~8,000 problems &nbsp;&#9679;&nbsp; <span class="hot">SiGN MY GUESTBOOK!!!</span> &nbsp;&#9733;&#9733;&#9733;</span></span></span>
   </div>
 
   <!-- ─── nav ─── -->
@@ -768,9 +768,9 @@ details.job img.st{vertical-align:middle}
       <h3>What's New <span class="n">&#128293; hot</span></h3>
       <div class="body">
         <ul class="news">
+          <li><span class="tag blink">NEW!</span><span>Reported the matched network in settlement-failure receipts in <a href="https://github.com/x402-foundation/x402/pull/4261">x402 #4261</a></span></li>
           <li><span class="tag blink">NEW!</span><span>Kept bf16 MTP experts unquantized under AutoGPTQ in <a href="https://github.com/vllm-project/vllm/pull/49539">vLLM #49539</a></span></li>
           <li><span class="tag blink">NEW!</span><span>Synced the HA applied-sequence gauge with recovered standby state in <a href="https://github.com/kvcache-ai/Mooncake/pull/4402">Mooncake #4402</a></span></li>
-          <li><span class="tag blink">NEW!</span><span>Rejected unaligned HCCS device memory at registration in <a href="https://github.com/kvcache-ai/Mooncake/pull/4903">Mooncake #4903</a></span></li>
           <li><span class="tag pp">PAPER</span><span>Cache-aware request planning for black-box LLM APIs &mdash; <a href="https://doi.org/10.5281/zenodo.21386594">DOI</a></span></li>
           <li><span class="tag pp">PAPER</span><span>Executable correctness under KV-cache compression &mdash; <a href="https://doi.org/10.5281/zenodo.20805562">DOI</a></span></li>
         </ul>
@@ -911,7 +911,7 @@ details.job img.st{vertical-align:middle}
     </div>
 
     <div class="win" data-c="4" id="oss">
-      <h2>&#128187; Open Source <span class="n">35 merged &middot; 20 projects</span></h2>
+      <h2>&#128187; Open Source <span class="n">36 merged &middot; 21 projects</span></h2>
       <div class="body">
         <p style="margin:0 0 7px;font:bold 13px/1.5 var(--comic);color:#7a1206">&#11088; Prajjwal's Top 8 Repos &#11088;</p>
         <div class="friends">
@@ -1105,6 +1105,15 @@ details.job img.st{vertical-align:middle}
           <span class="np">1 merged</span>
         </summary>
         <p><span class="tt">compaction schema-evolution coverage</span>Merged contribution to <strong>Lance</strong>, the open lakehouse format for multimodal AI data: after a metadata-only column addition, where a new all-null column exists in the schema but not in the existing data files, compaction&#39;s binary-copy path must not copy files whose physical column mapping no longer matches the evolved schema. The PR adds regression coverage across Lance file versions V2.0 through V2.3, asserting that <code>ForceBinaryCopy</code> rejects those source files while <code>TryBinaryCopy</code> falls back to re-encoding, persists the full field and column mapping, and keeps every row and existing column intact with the new column reading as null. It also updates the Python scalar-index compatibility matrix so <code>15.0.0b2</code> is the first reader expected to use the row-address index instead of a full scan. <a href="https://github.com/lance-format/lance/pull/8479">lance-format/lance #8479</a></p>
+      </details>
+      <details class="job">
+        <summary>
+          <img class="lg" src="https://github.com/x402-foundation.png?size=80" alt="" width="26" height="26" loading="lazy">
+          <span class="nm">x402</span>
+          <img class="st" src="https://img.shields.io/github/stars/x402-foundation/x402?style=flat-square&amp;label=%E2%98%85&amp;labelColor=2a2f28&amp;color=0c875a&amp;cacheSeconds=21600" alt="GitHub stars" height="17" loading="lazy">
+          <span class="np">1 merged</span>
+        </summary>
+        <p><span class="tt">settlement-failure receipt fix</span>Merged contribution to <strong>x402</strong>, the open payments protocol built on the HTTP <code>402 Payment Required</code> status code: the Python MCP payment wrappers match an incoming payment against the server&#39;s <code>accepts</code> list with <code>find_matching_requirements()</code> and verify and settle against the matched requirement, but the sync and async helpers that build the settlement-failure receipt, <code>_create_settlement_failed_result_sync</code> and <code>_create_settlement_failed_result_async</code>, still wrote <code>config.accepts[0].network</code> whenever there was no facilitator <code>SettleResponse</code> to report: a settlement exception or a metering failure. So a payment that matched the second entry on <code>eip155:1</code> and then failed settlement came back in <code>x402/payment-response</code> as a failure on <code>eip155:84532</code>, and a client reading the receipt saw the wrong chain. Both helpers now take a keyword-only <code>network</code> argument and every call site without a settle response passes <code>payment_requirements.network</code>, which is what the FastMCP wrapper already did. The first-entry fallback stays for callers that pass nothing, and sync and async regression tests fail settlement on a non-first entry and assert the receipt names its network. <a href="https://github.com/x402-foundation/x402/pull/4261">x402-foundation/x402 #4261</a></p>
       </details>
     </div>
 
@@ -1589,6 +1598,7 @@ details.job img.st{vertical-align:middle}
     {label:"Lance PR",hint:"merged · lance-format/lance #8479",url:"https://github.com/lance-format/lance/pull/8479"},
     {label:"Mooncake PR",hint:"merged · kvcache-ai/Mooncake #4402",url:"https://github.com/kvcache-ai/Mooncake/pull/4402"},
     {label:"vLLM PR",hint:"merged · vllm-project/vllm #49539",url:"https://github.com/vllm-project/vllm/pull/49539"},
+    {label:"x402 PR",hint:"merged · x402-foundation/x402 #4261",url:"https://github.com/x402-foundation/x402/pull/4261"},
     {label:"StragglerPolicy paper",hint:"research · Zenodo DOI",url:"https://doi.org/10.5281/zenodo.20574905"},
     {label:"kv-exec-bench paper",hint:"executable correctness under KV compression · Zenodo",url:"https://doi.org/10.5281/zenodo.20805562"},
     {label:"kv-exec-bench",hint:"open benchmark · pjdurden/kv-exec-bench",url:"https://github.com/pjdurden/kv-exec-bench"},
